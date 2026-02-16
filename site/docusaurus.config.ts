@@ -4,6 +4,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+const repoName = 'AI-Productivity';
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+
 const config: Config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
@@ -17,13 +20,11 @@ const config: Config = {
   // Set the production url of your site here
   url: 'https://rwyatt2.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/AI-Productivity/',
+  baseUrl: isGitHubPages ? `/${repoName}/` : '/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'rwyatt2',
-  projectName: 'AI-Productivity',
+  projectName: repoName,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
