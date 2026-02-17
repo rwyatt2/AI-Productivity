@@ -10,6 +10,7 @@ const sidebars: SidebarsConfig = {
             items: [
                 "getting-started/what-is-this",
                 "getting-started/install-by-copying",
+                "getting-started/global-rules",
                 "getting-started/what-to-fill-in",
                 "getting-started/downloads"
             ]

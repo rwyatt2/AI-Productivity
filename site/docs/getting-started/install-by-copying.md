@@ -37,6 +37,10 @@ You copy everything from the `kit/` folder (or the contents of `starter/`) into 
    * Router prompt
 4. If something is missing, the AI should ask exactly ONE question and wait. Answer it, then it continues.
 
+## Optional: set Global Rules for a better experience
+
+If you sometimes work in repos that don’t have this kit, you can set **Global Rules** in Cursor so the AI still follows the same behavior (one question at a time, switches, no inventing). See [Global Rules](global-rules) for what they are and how to paste them into Cursor settings.
+
 ## Common mistakes
 
 * **Putting the kit in a subfolder.** Keep `.cursor/`, `docs/`, etc. at the **project root**. If you unzipped into `ai-kit-starter`, move everything out to the root and delete the empty folder.
