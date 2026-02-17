@@ -1,11 +1,20 @@
 .features {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   padding: 2rem 0;
   width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.feature {
+  padding: 0 1rem;
+}
+
+.feature h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.95rem;
 }

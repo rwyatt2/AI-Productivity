@@ -1,49 +1,112 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
-/**
- * Creating a sidebar enables you to:
- - create an ordered group of docs
- - render a sidebar for each doc of that group
- - provide next/previous navigation
-
- The sidebars can be generated from the filesystem, or explicitly defined here.
-
- Create as many sidebars as you want.
- */
 const sidebars: SidebarsConfig = {
-  tutorialSidebar: [
-    {
-      type: 'category',
-      label: 'Getting Started',
-      items: [
-        'getting-started/what-is-this',
-        'getting-started/install-by-copying',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Daily Workflow',
-      items: [
-        'daily-workflow/spec-first',
-        'daily-workflow/implement',
-        'daily-workflow/switching',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Reference (Exact Text)',
-      items: [
-        'reference/ai-config',
-        'reference/cursor-rules-operating-system',
-        'reference/cursor-rules-security',
-        'reference/context-pack-template',
-        'reference/github-pr-template',
-        'reference/copilot-instructions',
-      ],
-    },
-  ],
+    tutorialSidebar: [
+        "intro",
+        {
+            type: "category",
+            label: "Start here",
+            collapsed: false,
+            items: [
+                "getting-started/what-is-this",
+                "getting-started/install-by-copying"
+            ]
+        },
+        {
+            type: "category",
+            label: "Daily workflow",
+            collapsed: false,
+            items: [
+                "daily-workflow/spec-first",
+                "daily-workflow/implement",
+                "daily-workflow/switching"
+            ]
+        },
+
+        {
+            type: "category",
+            label: "Context pack",
+            collapsed: true,
+            items: [
+                "context-pack/template"
+            ]
+        },
+
+        {
+            type: "category",
+            label: "Switches",
+            collapsed: true,
+            items: [
+                "switches/platform-type",
+                "switches/exposure-level",
+                "switches/data-sensitivity"
+            ]
+        },
+
+        {
+            type: "category",
+            label: "Lenses",
+            collapsed: true,
+            items: [
+                "lenses/overview",
+                "lenses/pm",
+                "lenses/design",
+                "lenses/security"
+            ]
+        },
+
+        {
+            type: "category",
+            label: "Security",
+            collapsed: true,
+            items: [
+                "security/triggers",
+                "security/threat-model-lite"
+            ]
+        },
+
+        {
+            type: "category",
+            label: "Editor support",
+            collapsed: true,
+            items: [
+                "editor-support/cursor",
+                "editor-support/copilot"
+            ]
+        },
+
+        {
+            type: "category",
+            label: "Customization",
+            collapsed: true,
+            items: [
+                "customization/design-system-placeholder"
+            ]
+        },
+
+        {
+            type: "category",
+            label: "Troubleshooting",
+            collapsed: true,
+            items: [
+                "troubleshooting/common-failures"
+            ]
+        },
+
+        {
+            type: "category",
+            label: "Reference (Exact Text)",
+            collapsed: true,
+            items: [
+                "reference/ai-config",
+                "reference/context-pack-template",
+                "reference/copilot-instructions",
+                "reference/cursor-rules-operating-system",
+                "reference/cursor-rules-security",
+                "reference/github-pr-template"
+            ]
+        }
+    ]
 };
 
 export default sidebars;

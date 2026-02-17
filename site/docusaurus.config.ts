@@ -3,26 +3,23 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+// Branding: change title, tagline, navbar.title, footer.copyright here; styles in src/css/custom.css
 
 const repoName = 'AI-Productivity';
 const isGitHubPages = process.env.GITHUB_PAGES === 'true';
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'AI Productivity',
+  tagline: 'AI Kit for Cursor and Copilot',
+  favicon: 'img/favicon.svg',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
   url: 'https://rwyatt2.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: isGitHubPages ? `/${repoName}/` : '/',
 
-  // GitHub pages deployment config.
   organizationName: 'rwyatt2',
   projectName: repoName,
 
@@ -43,22 +40,12 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/rwyatt2/AI-Productivity/tree/main/site',
         },
         blog: {
           showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
+          feedOptions: { type: ['rss', 'atom'], xslt: true },
+          editUrl: 'https://github.com/rwyatt2/AI-Productivity/tree/main/site',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -71,15 +58,15 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo.svg',
     colorMode: {
-      respectPrefersColorScheme: true,
+      defaultMode: 'light',
+      respectPrefersColorScheme: true, // system preference when set
     },
     navbar: {
-      title: 'My Site',
+      title: 'AI Productivity',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'AI Productivity',
         src: 'img/logo.svg',
       },
       items: [
@@ -87,11 +74,11 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Docs',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/rwyatt2/AI-Productivity',
           label: 'GitHub',
           position: 'right',
         },
@@ -103,44 +90,18 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
+            { label: 'Intro', to: '/docs/intro' },
+            { label: 'Getting Started', to: '/docs/getting-started/what-is-this' },
           ],
         },
         {
-          title: 'Community',
+          title: 'Repo',
           items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
+            { label: 'GitHub', href: 'https://github.com/rwyatt2/AI-Productivity' },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} AI Productivity.`,
     },
     prism: {
       theme: prismThemes.github,
