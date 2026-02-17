@@ -2,29 +2,27 @@
 title: Context Pack template
 ---
 
-The Context Pack is the only "big message" you should paste often.
+# What this is
 
-It keeps AI focused and avoids confusion.
+The Context Pack is one message you paste at the start (or when you change topics). It tells the AI what kind of project this is and how sensitive the data is. That keeps the AI focused and stops it from guessing wrong.
 
-## Copy/paste template
-Use the exact template from the Reference page:
+## When to use it
 
-* Reference → Context Pack Template
+Use it at the start of a new chat or when you switch to a new task. Paste it before or right after the Session Kickoff and Router.
 
-## How to fill it (easy)
-* Platform type:
-    * data-platform OR developer-platform
-    * If you don't know, leave blank and the AI will ask one question.
-* Exposure level:
-    * internal (default)
-    * external-authenticated
-    * public
-* Data sensitivity:
-    * internal (default)
-    * public / confidential / restricted
+## Steps
 
-## Tip
-If you paste too much text or too many files, AI gets confused.
-Prefer:
-* 3 to 7 relevant files
-* short bullet points
+**Do this:**
+
+1. Get the exact template from **Reference → Context Pack Template** (exact text).
+2. Fill it in simply:
+   * **Platform type:** Is this a data platform or a developer platform? If you don’t know, leave it blank; the AI will ask one question.
+   * **Exposure level:** internal (only your company), external-authenticated (internet but you must sign in), or public (anyone).
+   * **Data sensitivity:** internal, public, confidential, or restricted (secrets, credentials, strict rules).
+3. Paste the filled Context Pack in the chat. Prefer 3–7 relevant files and short bullet points. Too much text confuses the AI.
+
+## Common mistakes
+
+* Not pasting the Context Pack. The AI then guesses platform and risk level and can give wrong advice.
+* Pasting a huge wall of text or too many files. Keep it short. Use bullets.
+* Changing exposure or data sensitivity in the middle of a task without saying so. If the context changes, paste an updated Context Pack or say “Now we’re working on something public” (or internal, etc.).

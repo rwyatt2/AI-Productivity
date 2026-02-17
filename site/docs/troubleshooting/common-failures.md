@@ -2,26 +2,35 @@
 title: Common failures (and fixes)
 ---
 
-## "It asked me 5 questions at once"
-Reply:
-* "Ask EXACTLY ONE question and stop."
+# What this is
 
-## "It is making up file paths or APIs"
-Reply:
-* "Do not invent. Ask for the exact file you need."
+This page lists problems people often hit and the simplest way to fix them. Each fix is short: one reply or one command.
 
-Also add more truth into:
-* `docs/ai/current-state.md`
+## When to use it
 
-## "The conversation got confused"
-Start a new thread and paste:
-* Session Kickoff
-* a fresh Context Pack
+Use it when the AI is asking too many questions, making things up, getting confused, or doing the wrong kind of work (spec vs code).
 
-## "I need code but it is writing specs"
-Type:
-* Switch: IMPLEMENT
+## Steps (fixes)
 
-## "It is writing code but I need the spec first"
-Type:
-* Switch: SPEC
+**Do this:**
+
+* **“It asked me 5 questions at once.”**  
+  Reply: “Ask exactly one question and stop.”
+
+* **“It is making up file paths or APIs.”**  
+  Reply: “Do not invent. Ask for the exact file you need.”  
+  Also add more real info to `docs/ai/current-state.md` (routing, state, data, file layout) so the AI has truth to use.
+
+* **“The conversation got confused.”**  
+  Start a new chat. Paste Session Kickoff and a fresh Context Pack. Then paste the Router. Don’t paste a huge old thread.
+
+* **“I need code but it is writing specs.”**  
+  Type: **Switch: IMPLEMENT**
+
+* **“It is writing code but I need the spec first.”**  
+  Type: **Switch: SPEC**
+
+## Common mistakes
+
+* Replying with a long message instead of the exact phrase. “Ask exactly one question and stop” and “Switch: IMPLEMENT” work because they are clear and short.
+* Not updating `docs/ai/current-state.md` when the AI invents structure. The more real context you give, the less it will invent.

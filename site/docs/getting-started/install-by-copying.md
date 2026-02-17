@@ -2,39 +2,37 @@
 title: Install (by copying the kit)
 ---
 
-You can use this kit without npm.
+# What this is
 
-## Step 1: Copy the kit files
-Copy everything inside the `kit/` folder into the root of your target repo.
+You install the kit by copying files. No npm install needed.
 
-After copying, your target repo should contain:
-* `.cursor/` (rules, prompts, agents)
-* `docs/ai/` (the source of truth)
-* `.github/` (PR template, Copilot instructions)
+You copy everything from the `kit/` folder into the root of your project.
 
-## Step 2: Fill the placeholders (important)
-The only parts that need your input are in `docs/ai/`. See **[What to fill in](what-to-fill-in)** for the full list.
+## When to use it
 
-At minimum, open `docs/ai/ai-config.md` and fill the Design System section:
+Do this when you want to add the AI Kit to a new or existing project.
 
-* `Design system name: <...>`
-* `Design system docs: <...>`
-* `Design system imports/package: <...>`
+## Steps
 
-If you don't fill these, the kit still works, but AI may guess UI patterns.
+**Do this:**
 
-## Step 3: Confirm it works
-Open Cursor in the repo.
+1. Copy everything inside the `kit/` folder into the root of your target repo.
+2. Check that your repo now has:
+   * `.cursor/` (rules and prompts)
+   * `docs/ai/` (config and source of truth)
+   * `.github/` (PR template and Copilot instructions)
+3. Open `docs/ai/ai-config.md`. Fill in the Design System part:
+   * Design system name
+   * Design system docs (a link)
+   * Design system imports or package name
+4. Open Cursor in the repo. In a new chat, paste:
+   * Session Kickoff (see Daily workflow)
+   * Context Pack template
+   * Router prompt
+5. If something is missing, the AI should ask exactly ONE question and wait. Answer it, then it continues.
 
-In a new chat:
-* paste the Session Kickoff (see Daily Workflow)
-* paste the Context Pack template
-* paste the Router prompt
+## Common mistakes
 
-If it is missing important info, it should ask EXACTLY ONE question and stop.
-
-## If something feels wrong
-Use:
-* Switch: SPEC
-or
-* Switch: IMPLEMENT
+* Not filling the Design System placeholders. The kit still works, but the AI may guess UI patterns and look inconsistent.
+* Pasting too much at once. Keep the Context Pack short. Use 3–7 relevant files and bullet points.
+* If the AI feels wrong, say **Switch: SPEC** or **Switch: IMPLEMENT** instead of starting over without a plan.

@@ -2,31 +2,35 @@
 title: Daily workflow (IMPLEMENT)
 ---
 
-IMPLEMENT mode is for code changes.
+# What this is
 
-Use IMPLEMENT when you explicitly want:
-* a PR plan
-* code edits
-* file changes
-* tests
-* bug fixes
+IMPLEMENT mode is for writing and changing code. The AI suggests files to change, edits, and tests.
 
-## How to enter IMPLEMENT mode
-Either:
-* Ask directly: "Implement this change"
-or
-* Say: Switch: IMPLEMENT
+## When to use it
 
-## What you should get back
-An "Implementation Package" including:
-* files to change
-* a short plan
-* concrete edits
-* verification checklist
-* tests (or reason why not)
-* security notes when triggers apply
+Use IMPLEMENT when you want:
 
-## Safety rules (simple)
-* Minimal safe diffs
-* No made-up file paths or APIs
-* Ask exactly one question if blocked
+* A plan for a pull request (PR).
+* Code edits and file changes.
+* Tests or a reason why not.
+* Bug fixes.
+
+## Steps
+
+**Do this:**
+
+1. Say **Switch: IMPLEMENT** or ask directly: “Implement this change.”
+2. The AI gives you an “Implementation Package” with:
+   * Which files to change
+   * A short plan
+   * Concrete edits
+   * A checklist to verify
+   * Tests (or why not)
+   * Security notes if you are touching login, permissions, secrets, uploads, etc.
+3. The AI should make small, safe changes. It should not invent file paths or APIs. If it is stuck, it asks exactly one question.
+
+## Common mistakes
+
+* Asking for code when you have no spec. For bigger changes, do SPEC first, then **Switch: IMPLEMENT**.
+* Letting it make up file names or APIs. Say: “Do not invent. Ask for the exact file you need.” Add more info to `docs/ai/current-state.md` so the AI knows the real structure.
+* Ignoring security notes. If you touch login, permissions, or sensitive data, read the security part of the response.

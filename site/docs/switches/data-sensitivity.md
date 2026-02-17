@@ -2,27 +2,26 @@
 title: Data sensitivity
 ---
 
-Data sensitivity means: "How bad is it if this data leaks?"
+# What this is
 
-## Values
-* public
-* internal
-* confidential
-* restricted
+Data sensitivity means: how bad is it if this data gets out? Some data is fine to share. Some is secret or regulated. The kit uses this to decide how careful to be with storage, access, and leaks.
 
-## Examples
-public:
-* safe to share on the internet
+## When to use it
 
-internal:
-* company internal info
+You set it in the Context Pack. Even “internal” tools can be high risk if they touch restricted data.
 
-confidential:
-* sensitive business info, private project info
+## Steps
 
-restricted:
-* secrets, credentials, high-risk personal data, regulated data
+**Do this:**
 
-## Why it matters
-Even internal tools can be high risk if they touch restricted data.
-So data sensitivity is separate from exposure level.
+1. In the Context Pack, pick one:
+   * **public** — Safe to share on the internet.
+   * **internal** — Company-internal only.
+   * **confidential** — Sensitive business or private project info.
+   * **restricted** — Secrets, passwords, credentials, or data with strict rules (e.g. health, finance).
+2. If your feature touches more than one kind, use the most sensitive one for that feature.
+
+## Common mistakes
+
+* Saying “internal” when the data is actually secrets or credentials. Use restricted.
+* Treating exposure and sensitivity as the same. They are different: something can be internal (low exposure) but restricted (high sensitivity). Set both in the Context Pack.

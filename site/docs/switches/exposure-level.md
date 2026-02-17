@@ -2,27 +2,25 @@
 title: Exposure level
 ---
 
-Exposure level means: "Who can reach this thing?"
+# What this is
 
-## Values
-* internal
-* external-authenticated
-* public
+Exposure level means: who can reach this thing? Only your company, only people who sign in, or everyone on the internet? More exposure usually means more risk, so the kit thinks harder about security when exposure is high.
 
-## Examples
-internal:
-* only on company network / VPN / SSO
+## When to use it
 
-external-authenticated:
-* on the internet, but you must sign in
+You set it in the Context Pack. Use it for every task so the AI knows how careful to be.
 
-public:
-* on the internet, no sign-in needed
+## Steps
 
-## Why it matters
-More exposure usually means more risk:
-* abuse (spam, brute force)
-* attack surface
-* privacy concerns
+**Do this:**
 
-The kit uses exposure level to decide how deep to go on security.
+1. In the Context Pack, pick one:
+   * **internal** — Only on your company network, VPN, or behind sign-in that only your org uses.
+   * **external-authenticated** — On the internet, but users must sign in.
+   * **public** — On the internet, no sign-in needed.
+2. The kit uses this to decide how deep to go on security (e.g. abuse, spam, privacy).
+
+## Common mistakes
+
+* Saying “internal” when the feature is actually on the public web. That underplays risk.
+* Saying “public” when only logged-in users can see it. That overplays risk and can make the AI too cautious. Use external-authenticated instead.

@@ -9,7 +9,9 @@ const sidebars: SidebarsConfig = {
             collapsed: false,
             items: [
                 "getting-started/what-is-this",
-                "getting-started/install-by-copying"
+                "getting-started/install-by-copying",
+                "getting-started/what-to-fill-in",
+                "getting-started/downloads"
             ]
         },
         {
@@ -49,9 +51,14 @@ const sidebars: SidebarsConfig = {
             collapsed: true,
             items: [
                 "lenses/overview",
+                "lenses/discovery",
                 "lenses/pm",
                 "lenses/design",
-                "lenses/security"
+                "lenses/analytics",
+                "lenses/security",
+                "lenses/fe",
+                "lenses/qa",
+                "lenses/validation"
             ]
         },
 
@@ -61,7 +68,8 @@ const sidebars: SidebarsConfig = {
             collapsed: true,
             items: [
                 "security/triggers",
-                "security/threat-model-lite"
+                "security/threat-model-lite",
+                "security/definition-of-done"
             ]
         },
 

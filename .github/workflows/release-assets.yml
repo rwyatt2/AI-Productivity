@@ -1,0 +1,61 @@
+# Optional: build kit and starter zips and attach them to a Release when you push a version tag (e.g. v1.0.0).
+# To use: git tag v1.0.0 && git push origin v1.0.0
+# To skip automation: ignore this file and follow RELEASING.md manually.
+
+name: Release assets
+
+on:
+    push:
+        tags:
+            - 'v*'
+
+permissions:
+    contents: write
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: npm
+                  cache-dependency-path: site/package-lock.json
+
+            - name: Install site deps
+              run: npm ci
+              working-directory: site
+
+            - name: Sync reference docs
+              run: npm run sync
+              continue-on-error: true
+
+            - name: Build site
+              run: npm run site:build
+              continue-on-error: true
+
+            - name: Create kit-only zip
+              run: |
+                  cd kit
+                  zip -r ../ai-kit-only.zip .
+
+            - name: Create starter zip
+              run: |
+                  cd starter
+                  zip -r ../ai-kit-starter.zip .
+
+            - name: Create Release and upload assets
+              uses: softprops/action-gh-release@v2
+              with:
+                  files: |
+                      ai-kit-only.zip
+                      ai-kit-starter.zip
+                  generate_release_notes: true
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

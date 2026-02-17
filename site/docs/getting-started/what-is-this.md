@@ -2,30 +2,30 @@
 title: What is this?
 ---
 
-This repo contains an "AI Kit" to help you work faster and safer with AI tools like Cursor.
+# What this is
 
-It helps you:
-* Solve the right problem (not just build the first idea)
-* Write clear specs (what to build)
-* Implement safely (how to build)
-* Remember security (so you don't forget important risks)
+This is a kit that helps you use AI (like Cursor) in a clear, safe way.
 
-It works with:
-* Cursor (default)
-* GitHub Copilot (optional)
+* It helps you figure out the right problem before you build.
+* It helps you write down what you want (a spec).
+* It helps you write code without making up stuff.
+* It reminds you to think about security.
 
-## The big idea (super simple)
-Every time you ask AI for help, it should:
-* Ask only ONE question if it is unsure
-* Otherwise give you a clear result
+It works with Cursor and with GitHub Copilot.
 
-And if it starts doing the wrong thing, you can say:
-* Switch: SPEC
-* Switch: IMPLEMENT
+## When to use it
 
-## Two modes
-SPEC mode (default):
-* Helps you think and plan (PM + Design + Security when needed)
+Use it when you want AI to help you plan or code without getting confused or inventing things.
 
-IMPLEMENT mode:
-* Helps you change code (FE + QA + Security notes when needed)
+## Steps
+
+1. Copy the kit into your project (see Install).
+2. Fill in a few placeholders (design system, project info).
+3. When you start work, paste the Session Kickoff and Context Pack.
+4. If the AI does the wrong thing, type: **Switch: SPEC** or **Switch: IMPLEMENT**.
+
+## Common mistakes
+
+* Skipping the Context Pack. The AI needs it to stay focused.
+* Letting the AI ask many questions at once. It should ask only ONE question, then you answer, then it continues.
+* Forgetting to switch. If it is writing specs and you want code, type **Switch: IMPLEMENT**. If it is writing code and you want a plan first, type **Switch: SPEC**.

@@ -1,0 +1,9 @@
+---
+description: Security rules and threat model
+---
+
+# Security
+
+- When touching auth, permissions, sensitive data, uploads, or exports: include a short threat model and security acceptance criteria.
+- Use the threat model lite template (exposure level, data sensitivity, assets, entry points, threats, mitigations, acceptance criteria).
+- Do not invent or hardcode secrets; ask for the exact mechanism (env, vault, etc.) when needed.

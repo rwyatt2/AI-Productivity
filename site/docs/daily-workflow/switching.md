@@ -2,27 +2,33 @@
 title: Switching modes (no confusion)
 ---
 
-Sometimes AI starts doing the wrong thing.
+# What this is
 
-That is normal.
+Sometimes the AI starts doing the wrong thing (e.g. writing code when you wanted a plan, or writing a long spec when you wanted code). Switching changes the mode so you and the AI are aligned.
 
-We fix it with switch commands.
+## When to use it
 
-## Switch commands
-Type one of these:
-* Switch: SPEC
-* Switch: IMPLEMENT
+Use it when the AI is in the wrong “mode”:
 
-## What the AI must do when switching
-It must output a short "Handoff Summary":
-* current goal
-* what we decided
-* key constraints
-* what is unknown
-* next step
+* It is writing code but you wanted a plan first → **Switch: SPEC**
+* It is writing a long spec but you want code now → **Switch: IMPLEMENT**
 
-Then it continues in the new mode.
+## Steps
 
-## Why this prevents confusion
-It makes the current state explicit.
-So you don't lose work and the AI does not mix spec text with code text.
+**Do this:**
+
+1. Type exactly one of these:
+   * **Switch: SPEC**
+   * **Switch: IMPLEMENT**
+2. The AI must then write a short “Handoff Summary”:
+   * What we are trying to do right now
+   * What we already decided
+   * Important limits or rules
+   * What we still don’t know
+   * What happens next
+3. After that, it continues in the new mode.
+
+## Common mistakes
+
+* Typing a long message instead of just “Switch: SPEC” or “Switch: IMPLEMENT.” Keep the switch command clear.
+* Expecting it to redo everything. The handoff summary keeps context so you don’t lose work and the AI does not mix spec text with code.
