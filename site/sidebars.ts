@@ -106,6 +106,7 @@ const sidebars: SidebarsConfig = {
             label: "Reference (Exact Text)",
             collapsed: true,
             items: [
+                "reference/kit-preview",
                 "reference/ai-config",
                 "reference/context-pack-template",
                 "reference/copilot-instructions",

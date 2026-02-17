@@ -19,4 +19,6 @@ A small **AI Kit** for working faster and more safely with Cursor (and optionall
 2. **[Install (by copying the kit)](getting-started/install-by-copying)** — Copy the `kit/` into your repo and fill placeholders.
 3. **[Daily workflow (SPEC-first)](daily-workflow/spec-first)** — Session Kickoff, Context Pack, Router.
 
+**Preview the kit files:** See the folder structure and exact text of each file in [Reference → Kit file preview](reference/kit-preview).
+
 Use the **Docs** menu on the left to browse the full guide.

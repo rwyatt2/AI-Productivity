@@ -2,7 +2,41 @@
 title: AI Config (Reference)
 ---
 
-This page is a reference placeholder.
+## What this is
 
-TODO:
-* Populate from `kit/docs/ai/ai-config.md` (copy/paste for now, or automate later).
+`docs/ai/ai-config.md` is the kit’s **config file** you edit once. It holds your design system name, docs link, and optional project brief. The AI uses it to stay consistent with your UI and conventions.
+
+## When to use it
+
+- **After installing the kit:** Fill in the Design system section so the AI uses your design system (e.g. Tailwind, your component library) instead of guessing.
+- **Optional:** Add project-brief, current-state, or partner-map so the AI has context about your product and repo.
+
+## Steps
+
+1. Open `docs/ai/ai-config.md` in your repo (at project root).
+2. Replace the **Design system** placeholders: name, docs URL, and imports/package name.
+3. Optionally fill **Project**: project-brief, current-state, partner-map.
+4. Save. The rules and prompts in the kit reference this file.
+
+## Exact text (from kit)
+
+
+Source: `docs/ai/ai-config.md`
+
+```
+# AI Kit config
+
+## Design system (TODO)
+
+Fill these so the AI uses your design system consistently:
+
+* Design system name: TODO
+* Design system docs: TODO
+* Design system imports/package: TODO
+
+## Project (optional)
+
+* project-brief: what the platform is, who uses it, what success means
+* current-state: repo conventions (routing, state, data)
+* partner-map: who owns what
+```

@@ -30,6 +30,10 @@ jobs:
                     cache-dependency-path: |
                         site/package-lock.json
 
+            - name: Sync reference docs from kit
+              run: npm run sync
+              continue-on-error: true
+
             - name: Install site deps
               run: npm ci
               working-directory: site
