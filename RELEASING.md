@@ -10,7 +10,34 @@ A release is a saved version of the project. When you create a release, you can 
 
 ---
 
-## How to create a release (manual)
+## What’s already in this repo
+
+- **`kit/`** and **`starter/`** — source for the two zips (no content is missing).
+- **`.github/workflows/release-assets.yml`** — when you push a version tag, it builds the zips and attaches them to a GitHub Release.
+- **Docs** — the [Downloads](site/docs/getting-started/downloads.md) page points people to the Releases page and explains what to do if no release exists yet.
+
+So the repo is ready. What’s missing is **doing the release once** (see below).
+
+---
+
+## Option A: Automatic release (recommended)
+
+1. Decide the version, e.g. `v1.0.0`.
+2. Create and push the tag from your machine:
+   ```bash
+   git tag v1.0.0
+   git push origin v1.0.0
+   ```
+3. On GitHub, open **Actions** and confirm the “Release assets” workflow ran successfully.
+4. Open **Releases** — you should see the new release with **ai-kit-only.zip** and **ai-kit-starter.zip** under Assets.
+
+The workflow will: run sync, build the site, zip `kit/` and `starter/`, create the release for that tag, and upload both zips.
+
+---
+
+## Option B: Manual release
+
+If you prefer not to use the workflow, follow these steps.
 
 ### Step 1: Decide the version
 
@@ -46,16 +73,3 @@ Pick a version tag, e.g. `v1.0.0`. You will use it as the release tag.
 8. Click **Publish release**.
 
 Done. The two zips now appear under **Assets** for that release. The [Downloads](site/docs/getting-started/downloads.md) doc already points people to the Releases page; they open the latest release and click the zip they want.
-
----
-
-## Optional: automatic releases with a workflow
-
-If you use **tags** (e.g. `v1.0.0`) and want the zips to be built and uploaded for you, you can use the workflow in `.github/workflows/release-assets.yml`. It runs only when you push a tag that looks like a version (e.g. `v1.0.0`). It will:
-
-1. Run the sync script (so reference docs are up to date).
-2. Build the site (so the docs build is valid).
-3. Create **ai-kit-only.zip** from `kit/` and **ai-kit-starter.zip** from `starter/`.
-4. Create or update a GitHub Release for that tag and upload the two zips as assets.
-
-To use it: push a tag (e.g. `git tag v1.0.0 && git push origin v1.0.0`). Then check **Actions** and **Releases** on GitHub. If you prefer to release by hand, ignore this workflow and follow the manual steps above.

@@ -6,6 +6,8 @@ title: Downloads
 
 You can get the AI Kit in three ways. Pick one.
 
+**No release yet?** This repo may not have any releases published. If you open [Releases](https://github.com/rwyatt2/AI-Productivity/releases) and see no releases (or no zip assets), use the repo directly: **clone the repo** and copy the **`kit/`** folder into your project, or copy the **`starter/`** folder to start a new project. Option 3 below also works without releases.
+
 ---
 
 ## 1) Download kit-only (just the kit files)
@@ -23,7 +25,7 @@ You can get the AI Kit in three ways. Pick one.
 5. Copy everything inside the unzipped folder into the **root** of your project (the same folder that has your code). If your project already has `.cursor/` or `docs/`, merge or replace as needed.
 6. Fill in the placeholders (see [What to fill in](what-to-fill-in)).
 
-**If you don’t see ai-kit-only.zip:** A release might not be published yet. You can instead copy the `kit/` folder from the repo (see “Download individual pieces” below).
+**If you don’t see ai-kit-only.zip:** There may be no release yet. Clone the repo or download it, then copy everything inside the **`kit/`** folder into your project root. Or use “Download individual pieces” below.
 
 ---
 
@@ -41,7 +43,7 @@ You can get the AI Kit in three ways. Pick one.
 4. Unzip the file. You get a folder that looks like a small project (e.g. with a `kit/` or already-unpacked `.cursor/`, `docs/ai/`, `.github/`).
 5. Open that folder in Cursor. Paste Session Kickoff, Context Pack, and Router and start working.
 
-**If you don’t see ai-kit-starter.zip:** The starter might not be published yet. Use “Download kit-only” or “Download individual pieces” instead.
+**If you don’t see ai-kit-starter.zip:** There may be no release yet. Clone the repo and copy the **`starter/`** folder (or use it as your new project). Or copy **`kit/`** into an existing repo (see option 1).
 
 ---
 
@@ -84,4 +86,4 @@ You can get the AI Kit in three ways. Pick one.
 
 ## What are GitHub Releases?
 
-Releases are packaged versions of the project. Maintainers create a release when they want to offer a fixed set of files (like the kit-only zip or the starter zip) for download. When a release exists, the zip files appear under **Assets** on that release page. If you don’t see any assets yet, no release has been published; you can still use the repo by copying the `kit/` folder or individual files from the main branch.
+Releases are packaged versions of the project. Maintainers create a release when they want to offer a fixed set of files (like the kit-only zip or the starter zip) for download. When a release exists, the zip files appear under **Assets** on that release page. **Right now there may be no releases** — you can still use the kit by cloning the repo and copying the **`kit/`** or **`starter/`** folder, or by using the individual file links in option 3.
