@@ -29,7 +29,8 @@
   --ifm-code-border-radius: 6px;
   --ifm-global-radius: 8px;
   --ifm-border-color: #e5e5e5;
-  --ifm-content-max-width: 720px;
+  /* Doc page content width; adjust to taste (e.g. 720px, 840px, 960px) */
+  --ifm-content-max-width: 840px;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
 }
 

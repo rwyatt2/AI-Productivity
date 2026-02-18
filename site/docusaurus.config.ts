@@ -70,6 +70,12 @@ const config: Config = {
           label: 'Docs',
         },
         {
+          type: 'doc',
+          docId: 'whats-new',
+          label: "What's New",
+          position: 'left',
+        },
+        {
           href: 'https://github.com/rwyatt2/AI-Productivity',
           label: 'GitHub',
           position: 'right',
