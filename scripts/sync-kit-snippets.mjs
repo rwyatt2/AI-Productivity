@@ -8,8 +8,17 @@ const OUT = path.join(ROOT, "site", "docs", "reference");
 const FILES = [
     { src: "docs/ai/ai-config.md", dest: "ai-config.md", title: "AI Config (Reference)" },
     { src: "docs/ai/START-HERE.md", dest: "start-here.md", title: "Start Here (Reference)" },
+    { src: "docs/ai/project-brief.md", dest: "project-brief.md", title: "Project Brief (Reference)" },
+    { src: "docs/ai/current-state.md", dest: "current-state.md", title: "Current State (Reference)" },
+    { src: "docs/ai/partner-map.md", dest: "partner-map.md", title: "Partner Map (Reference)" },
+    { src: "docs/ai/glossary.md", dest: "glossary.md", title: "Glossary (Reference)" },
+    { src: "docs/ai/decisions.md", dest: "decisions.md", title: "Decisions (Reference)" },
+    { src: "docs/ai/checklists/spec-dod.md", dest: "spec-dod.md", title: "Spec DoD (Reference)" },
+    { src: "docs/ai/checklists/impl-dod.md", dest: "impl-dod.md", title: "Impl DoD (Reference)" },
+    { src: "docs/ai/checklists/security-dod.md", dest: "security-dod.md", title: "Security DoD (Reference)" },
     { src: "docs/ai/checklists/threat-model-lite.md", dest: "threat-model-lite.md", title: "Threat Model Lite (Reference)" },
     { src: ".cursor/rules/00-operating-system.mdc", dest: "cursor-rules-operating-system.md", title: "Cursor Rules - Operating System (Reference)" },
+    { src: ".cursor/rules/05-environment.mdc", dest: "cursor-rules-environment.md", title: "Cursor Rules - Environment (Reference)" },
     { src: ".cursor/rules/10-spec-package.mdc", dest: "cursor-rules-spec-package.md", title: "Cursor Rules - Spec Package (Reference)" },
     { src: ".cursor/rules/20-implementation-package.mdc", dest: "cursor-rules-implementation-package.md", title: "Cursor Rules - Implementation Package (Reference)" },
     { src: ".cursor/rules/30-context-discipline.mdc", dest: "cursor-rules-context-discipline.md", title: "Cursor Rules - Context Discipline (Reference)" },
@@ -269,6 +278,114 @@ The **Context Pack** is a short message you paste into chat at the start of a se
 
 1. When switching or handing off, the AI should output a Handoff Summary (max 8 bullets) then continue.
 2. Use \`.cursor/prompts/90-handoff-summary.md\` or the exact text below as the template.
+
+## Exact text (from kit)
+`,
+
+    "project-brief.md": `## What this is
+
+\`docs/ai/project-brief.md\` is the **project brief** template: one-liner, who uses it, jobs-to-be-done, success, non-goals, constraints, and links. The AI uses it to stay aligned with your product.
+
+## When to use it
+
+- After installing the kit: fill it so the AI knows what the platform is and what success means.
+- Keep it short; link to longer docs if needed.
+
+## Exact text (from kit)
+`,
+
+    "current-state.md": `## What this is
+
+\`docs/ai/current-state.md\` holds **repo conventions**: routing, data fetching, state, forms, styling, testing, telemetry, and common pitfalls. Each section has "what we do / where it lives / what to avoid" so the AI does not invent paths.
+
+## When to use it
+
+- After installing the kit: fill each section (or mark TODO) so the AI follows your stack and file layout.
+- Prevents hallucinations about routes, APIs, and file paths.
+
+## Exact text (from kit)
+`,
+
+    "partner-map.md": `## What this is
+
+\`docs/ai/partner-map.md\` is the **partner map** template: who owns what, when to involve them (triggers), constraints they care about, and escalation path.
+
+## When to use it
+
+- Fill when multiple teams or owners touch the repo; helps the AI know when to call out review or constraints.
+- Keep the table short; add rows as needed.
+
+## Exact text (from kit)
+`,
+
+    "glossary.md": `## What this is
+
+\`docs/ai/glossary.md\` is the **glossary** template: terms and definitions the AI (and humans) should use consistently. Cap at ~10–20 terms; each entry has definition, common confusion/pitfall, and optional example.
+
+## When to use it
+
+- Add terms that cause real confusion or misuse so the AI does not invent or mix terminology.
+- Keep the list scannable.
+
+## Exact text (from kit)
+`,
+
+    "decisions.md": `## What this is
+
+\`docs/ai/decisions.md\` is the **decision log** template: date, decision, why, tradeoffs, follow-ups. Append new entries at the top.
+
+## When to use it
+
+- Log notable product/tech decisions so the AI (and team) can reference rationale and constraints.
+- Copy the template block when adding a new decision.
+
+## Exact text (from kit)
+`,
+
+    "spec-dod.md": `## What this is
+
+\`docs/ai/checklists/spec-dod.md\` is the **Spec definition of done**: a checklist (switches, scope, acceptance criteria, UX states, a11y, risks, security) so a spec is ready for implementation.
+
+## When to use it
+
+- Before implementation: ensure every box is checked (or explicitly deferred).
+- Run it when the AI produces a spec; use the exact text below to copy or restore.
+
+## Exact text (from kit)
+`,
+
+    "impl-dod.md": `## What this is
+
+\`docs/ai/checklists/impl-dod.md\` is the **Implementation definition of done**: switches, files, plan, diffs, verification, tests/rationale, security when triggered.
+
+## When to use it
+
+- Before marking implementation "done": ensure every box is checked.
+- Use the exact text below to copy or restore the checklist.
+
+## Exact text (from kit)
+`,
+
+    "security-dod.md": `## What this is
+
+\`docs/ai/checklists/security-dod.md\` is the **Security definition of done**: switches, no secrets in code/logs, least privilege, threat-model-lite, security acceptance criteria.
+
+## When to use it
+
+- When the work touches auth, uploads, sensitive data, or external systems (see \`.cursor/rules/40-security.mdc\` triggers).
+- When in doubt, run it. Use the exact text below to copy or restore.
+
+## Exact text (from kit)
+`,
+
+    "cursor-rules-environment.md": `## What this is
+
+\`.cursor/rules/05-environment.mdc\` is a **Cursor rule** with cross-platform path and OS guidance (e.g. path separators, OS notes). Cursor loads it with the rest of the rules.
+
+## When to use it
+
+- You **don't edit this file** for normal use. It's part of the kit.
+- Use the block below to see or copy the exact rule.
 
 ## Exact text (from kit)
 `

@@ -13,6 +13,7 @@ const sidebars: SidebarsConfig = {
                 "getting-started/install-by-copying",
                 "getting-started/global-rules",
                 "getting-started/what-to-fill-in",
+                "getting-started/source-of-truth",
                 "getting-started/downloads"
             ]
         },
