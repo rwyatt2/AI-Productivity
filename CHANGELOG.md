@@ -4,6 +4,29 @@ All notable changes to the AI Productivity Kit are documented here. The format i
 
 ---
 
+## [1.2.0] - 2026-02-18
+
+### Added
+
+- **Automation: starter sync**
+  - `scripts/sync-starter-from-kit.mjs` — deletes and recreates `starter/.cursor`, `starter/docs/ai`, `starter/.github`, and `starter/cursor-ai-kit.config.json` from `kit/`; preserves `starter/README.md`.
+  - `npm run sync:starter` script in root `package.json`.
+
+- **CI: drift prevention**
+  - `.github/workflows/check-starter-sync.yml` — runs on push and PR to `main`; runs `npm run sync:starter` then `git diff --exit-code starter` to fail if `starter/` drifts from `kit/`.
+  - `.github/workflows/release-assets.yml` — new "Sync starter from kit" step (`npm ci` + `npm run sync:starter`) runs before creating the starter zip so release assets always match `kit/`.
+
+- **Sync script: preflight guard**
+  - `scripts/sync-kit-snippets.mjs` — preflight check verifies all `FILES` entries exist under `kit/` before writing any output; fails with a clear error listing missing paths and exits non-zero (CI-safe).
+
+### Changed
+
+- **kit/ established as canonical source of truth** — `starter/` is fully generated from `kit/`; do not edit `starter/` directly.
+- **Maintainer docs** — `README.md`, `LAUNCH_CHECKLIST.md`, `RELEASING.md` updated with canonical statement, `sync:starter` steps, and correct commit order.
+- **Version** — bumped to `1.2.0` in `kit/cursor-ai-kit.config.json` and `starter/cursor-ai-kit.config.json`.
+
+---
+
 ## [1.1.0] - 2025-02-17
 
 ### Added
@@ -92,5 +115,6 @@ All notable changes to the AI Productivity Kit are documented here. The format i
 
 ---
 
+[1.2.0]: https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.2.0
 [1.1.0]: https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.1.0
 [1.0.0]: https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.0.0

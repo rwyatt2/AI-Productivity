@@ -7,6 +7,29 @@ All notable changes to the AI Productivity Kit. Format based on [Keep a Changelo
 
 ---
 
+## [1.2.0] - 2026-02-18
+
+### Added
+
+- **Automation: starter sync**
+  - `scripts/sync-starter-from-kit.mjs` — deletes and recreates `starter/.cursor`, `starter/docs/ai`, `starter/.github`, and `starter/cursor-ai-kit.config.json` from `kit/`; preserves `starter/README.md`.
+  - `npm run sync:starter` script added to root `package.json`.
+
+- **CI: drift prevention**
+  - New workflow `check-starter-sync` — runs on push and PR to `main`; fails if `starter/` drifts from `kit/`.
+  - `release-assets` workflow — now syncs starter from kit before creating the starter zip so release assets always match `kit/`.
+
+- **Sync script: preflight guard**
+  - `scripts/sync-kit-snippets.mjs` now performs a preflight check: fails with a clear error (exit 1) if any required kit file is missing before writing any output.
+
+### Changed
+
+- **kit/ is canonical** — `starter/` is fully generated from `kit/`; do not edit `starter/` directly.
+- **Maintainer docs** (`README.md`, `LAUNCH_CHECKLIST.md`, `RELEASING.md`) — canonical statement added; `sync:starter` steps added to all sync and release workflows.
+- **Version** — bumped to `1.2.0` in `kit/cursor-ai-kit.config.json` and `starter/cursor-ai-kit.config.json`.
+
+---
+
 ## [1.1.0] - 2025-02-17
 
 ### Added
@@ -95,5 +118,6 @@ All notable changes to the AI Productivity Kit. Format based on [Keep a Changelo
 
 ---
 
-[1.1.0]: https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.1.0  
+[1.2.0]: https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.2.0
+[1.1.0]: https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.1.0
 [1.0.0]: https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.0.0
