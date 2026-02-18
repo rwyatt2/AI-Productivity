@@ -9,7 +9,45 @@ If information is missing and needed to proceed safely, the AI must ask **exactl
 * **Confidence gate:** 85 (if the AI is less than 85% sure, it asks exactly one question and stops).
 * **Default exposure:** internal
 * **Default data sensitivity:** internal
-* **Platform type mode:** infer if clear; if unsure, ask one question and stop (data-platform vs developer-platform).
+* **Platform type mode:** use the value set in the Platform type section below; if missing, ask exactly one question and stop.
+
+## Platform type
+
+<!-- ============================================================
+  HOW TO SET YOUR PLATFORM TYPE
+  ============================================================
+  1. Replace the TODO slug below with a short, lowercase, hyphenated
+     name that describes what you are building.
+
+     Common examples (use one or invent your own):
+       consumer-app        — product for end users (web or mobile)
+       internal-tool       — tool used only inside your org or team
+       data-platform       — data, analytics, dashboards, reports
+       developer-platform  — APIs, SDKs, CLIs, tools for other devs
+       ecommerce           — shopping, checkout, product catalog
+       saas-b2b            — multi-tenant SaaS sold to businesses
+       mobile-app          — native iOS / Android product
+       ai-product          — an AI-powered end-user product
+
+  2. Replace the Description TODO with 1–2 sentences about your product.
+     The AI uses this to make better decisions about architecture,
+     UX focus, and security priorities.
+
+  3. Replace the Emphasis TODO with what the AI should prioritise.
+     Examples: "data integrity and audit trails", "API ergonomics and
+     backwards compatibility", "fast iteration and visual polish".
+
+  4. When you start a task, paste the slug into your Context Pack:
+       Platform type: consumer-app
+
+  5. If your product has more than one distinct surface (e.g. an admin
+     console + a consumer app), add both slugs below and pick one per
+     task in your Context Pack.
+  ============================================================ -->
+
+* **Platform type slug:** TODO  <!-- e.g. consumer-app -->
+* **Description:** TODO  <!-- e.g. "A B2B SaaS dashboard for finance teams focused on data accuracy and role-based access." -->
+* **What the AI should emphasise:** TODO  <!-- e.g. "structured outputs, access control, audit trails over visual polish" -->
 
 ## Design system (TODO)
 

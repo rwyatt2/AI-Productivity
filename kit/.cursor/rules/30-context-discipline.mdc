@@ -15,8 +15,8 @@ description: Context discipline — small context, no invention, allowed values
 
 | Dimension | Allowed values |
 |-----------|----------------|
-| **Platform type** | `data-platform` \| `developer-platform` |
+| **Platform type** | The slug defined in `docs/ai/ai-config.md` → **Platform type slug**. Common examples: `consumer-app`, `internal-tool`, `data-platform`, `developer-platform`, `ecommerce`, `saas-b2b`. If the slug is missing from ai-config, ask exactly one question: "What platform type should I use for this project?" and stop. |
 | **Exposure level** | `internal` \| `external-authenticated` \| `public` |
 | **Data sensitivity** | `public` \| `internal` \| `confidential` \| `restricted` |
 
-If the user or context uses a value outside this set, ask one clarifying question (e.g. "Which exposure level applies: internal, external-authenticated, or public?") and stop until resolved.
+If the user or context uses an exposure level or data sensitivity value outside the allowed set, ask one clarifying question and stop until resolved. For platform type, defer to `docs/ai/ai-config.md` — do not reject a custom slug that is defined there.

@@ -29,8 +29,8 @@
   --ifm-code-border-radius: 6px;
   --ifm-global-radius: 8px;
   --ifm-border-color: #e5e5e5;
-  /* Doc page content width; adjust to taste (e.g. 720px, 840px, 960px) */
-  --ifm-content-max-width: 840px;
+  /* Overall page container max-width (sidebar + content share this budget) */
+  --ifm-container-width-xl: 1200px;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
 }
 
@@ -62,10 +62,6 @@
   border-top: 1px solid var(--ifm-border-color);
 }
 
-/* Main content: readable width and spacing */
-.main-wrapper .container {
-  max-width: var(--ifm-content-max-width);
-}
 .markdown {
   line-height: var(--ifm-line-height-base);
 }
