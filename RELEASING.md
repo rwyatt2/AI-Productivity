@@ -22,12 +22,13 @@ So the repo is ready. What’s missing is **doing the release once** (see below)
 
 ## Option A: Automatic release (recommended)
 
-1. Decide the version, e.g. `v1.0.0`.
+1. Decide the version, e.g. `v1.1.0` (replace with your release tag).
 2. Create and push the tag from your machine:
    ```bash
-   git tag v1.0.0
-   git push origin v1.0.0
+   git tag v1.1.0
+   git push origin v1.1.0
    ```
+   (Use your chosen tag instead of `v1.1.0` if different.)
 3. On GitHub, open **Actions** and confirm the “Release assets” workflow ran successfully.
 4. Open **Releases** — you should see the new release with **ai-kit-only.zip** and **ai-kit-starter.zip** under Assets.
 
@@ -41,7 +42,7 @@ If you prefer not to use the workflow, follow these steps.
 
 ### Step 1: Decide the version
 
-Pick a version tag, e.g. `v1.0.0`. You will use it as the release tag.
+Pick a version tag, e.g. `v1.1.0` or `vX.Y.Z`. You will use it as the release tag.
 
 ### Step 2: Create the two zips on your computer
 
@@ -66,8 +67,8 @@ Pick a version tag, e.g. `v1.0.0`. You will use it as the release tag.
 1. Open the repo on GitHub: **https://github.com/rwyatt2/AI-Productivity**
 2. Click **Releases** (right side).
 3. Click **Draft a new release** (or **Create a new release**).
-4. Under **Choose a tag**, type a new tag (e.g. `v1.0.0`) and choose **Create new tag**. Tag the current `main` (or the commit you want).
-5. Set **Release title** (e.g. `v1.0.0` or `Release 1.0.0`).
+4. Under **Choose a tag**, type a new tag (e.g. `v1.1.0` or `vX.Y.Z`) and choose **Create new tag**. Tag the current `main` (or the commit you want).
+5. Set **Release title** (e.g. `v1.1.0` or `Release 1.1.0` — use your chosen tag).
 6. In **Describe this release**, add a short note (e.g. "Kit and starter bundle for this version.").
 7. Under **Assets**, click **Attach binaries by dropping them here or selecting them**. Upload **ai-kit-only.zip** and **ai-kit-starter.zip**.
 8. Click **Publish release**.

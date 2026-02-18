@@ -16,7 +16,7 @@ You can get the AI Kit in three ways. Pick one.
 
 **What you get:** A zip with only the kit: `.cursor/`, `docs/ai/`, `.github/`, and `cursor-ai-kit.config.json`. No sample code. You copy these into your own repo.
 
-**Download:** [Releases page](https://github.com/rwyatt2/AI-Productivity/releases) → open the **latest release** → under **Assets**, click **ai-kit-only.zip**. (Direct link for a specific version: `https://github.com/rwyatt2/AI-Productivity/releases/download/v1.0.0/ai-kit-only.zip` — replace `v1.0.0` with the release tag.)
+**Download:** [Releases page](https://github.com/rwyatt2/AI-Productivity/releases) → open the **latest release** → under **Assets**, click **ai-kit-only.zip**. (Direct link for a specific version: `https://github.com/rwyatt2/AI-Productivity/releases/download/vX.Y.Z/ai-kit-only.zip` — replace `vX.Y.Z` with your release tag.)
 
 **Steps:**
 
@@ -37,7 +37,7 @@ You can get the AI Kit in three ways. Pick one.
 
 **Important:** The **unzipped folder is your project root**. The kit files (`.cursor/`, `.github/`, `docs/`, `cursor-ai-kit.config.json`, `README.md`) must live at the **root** of your project—not inside a subfolder like `ai-kit-starter`. Open the unzipped folder in Cursor (or rename it to your project name, then open it). Do **not** leave the kit nested inside another folder.
 
-**Download:** [Releases page](https://github.com/rwyatt2/AI-Productivity/releases) → open the **latest release** → under **Assets**, click **ai-kit-starter.zip**. (Direct link for a specific version: `https://github.com/rwyatt2/AI-Productivity/releases/download/v1.0.0/ai-kit-starter.zip` — replace `v1.0.0` with the release tag.)
+**Download:** [Releases page](https://github.com/rwyatt2/AI-Productivity/releases) → open the **latest release** → under **Assets**, click **ai-kit-starter.zip**. (Direct link for a specific version: `https://github.com/rwyatt2/AI-Productivity/releases/download/vX.Y.Z/ai-kit-starter.zip` — replace `vX.Y.Z` with your release tag.)
 
 **Steps:**
 

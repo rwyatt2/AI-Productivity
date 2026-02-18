@@ -19,7 +19,7 @@ Use it when the AI is asking too many questions, making things up, getting confu
 
 * **“It is making up file paths or APIs.”**  
   Reply: “Do not invent. Ask for the exact file you need.”  
-  Also add more real info to `docs/ai/current-state.md` (routing, state, data, file layout) so the AI has truth to use.
+  Also add more real info to `docs/ai/ai-config.md` (e.g. the **Project** / current-state section: routing, state, data, file layout) so the AI has truth to use.
 
 * **“The conversation got confused.”**  
   Start a new chat. Paste Session Kickoff and a fresh Context Pack. Then paste the Router. Don’t paste a huge old thread.
@@ -33,4 +33,4 @@ Use it when the AI is asking too many questions, making things up, getting confu
 ## Common mistakes
 
 * Replying with a long message instead of the exact phrase. “Ask exactly one question and stop” and “Switch: IMPLEMENT” work because they are clear and short.
-* Not updating `docs/ai/current-state.md` when the AI invents structure. The more real context you give, the less it will invent.
+* Not updating `docs/ai/ai-config.md` (Project / current-state) when the AI invents structure. The more real context you give, the less it will invent.

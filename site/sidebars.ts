@@ -108,12 +108,20 @@ const sidebars: SidebarsConfig = {
             collapsed: true,
             items: [
                 "reference/kit-preview",
+                "reference/start-here",
                 "reference/ai-config",
+                "reference/session-kickoff",
                 "reference/context-pack-template",
-                "reference/copilot-instructions",
+                "reference/router",
+                "reference/handoff-summary",
                 "reference/cursor-rules-operating-system",
+                "reference/cursor-rules-spec-package",
+                "reference/cursor-rules-implementation-package",
+                "reference/cursor-rules-context-discipline",
                 "reference/cursor-rules-security",
-                "reference/github-pr-template"
+                "reference/threat-model-lite",
+                "reference/github-pr-template",
+                "reference/copilot-instructions"
             ]
         }
     ]

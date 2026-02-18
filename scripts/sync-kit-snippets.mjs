@@ -7,9 +7,17 @@ const OUT = path.join(ROOT, "site", "docs", "reference");
 
 const FILES = [
     { src: "docs/ai/ai-config.md", dest: "ai-config.md", title: "AI Config (Reference)" },
+    { src: "docs/ai/START-HERE.md", dest: "start-here.md", title: "Start Here (Reference)" },
+    { src: "docs/ai/checklists/threat-model-lite.md", dest: "threat-model-lite.md", title: "Threat Model Lite (Reference)" },
     { src: ".cursor/rules/00-operating-system.mdc", dest: "cursor-rules-operating-system.md", title: "Cursor Rules - Operating System (Reference)" },
+    { src: ".cursor/rules/10-spec-package.mdc", dest: "cursor-rules-spec-package.md", title: "Cursor Rules - Spec Package (Reference)" },
+    { src: ".cursor/rules/20-implementation-package.mdc", dest: "cursor-rules-implementation-package.md", title: "Cursor Rules - Implementation Package (Reference)" },
+    { src: ".cursor/rules/30-context-discipline.mdc", dest: "cursor-rules-context-discipline.md", title: "Cursor Rules - Context Discipline (Reference)" },
     { src: ".cursor/rules/40-security.mdc", dest: "cursor-rules-security.md", title: "Cursor Rules - Security (Reference)" },
+    { src: ".cursor/prompts/00-session-kickoff.md", dest: "session-kickoff.md", title: "Session Kickoff (Reference)" },
     { src: ".cursor/prompts/10-context-pack.md", dest: "context-pack-template.md", title: "Context Pack Template (Reference)" },
+    { src: ".cursor/prompts/20-router.md", dest: "router.md", title: "Router (Reference)" },
+    { src: ".cursor/prompts/90-handoff-summary.md", dest: "handoff-summary.md", title: "Handoff Summary (Reference)" },
     { src: ".github/pull_request_template.md", dest: "github-pr-template.md", title: "GitHub PR Template (Reference)" },
     { src: ".github/copilot-instructions.md", dest: "copilot-instructions.md", title: "GitHub Copilot Instructions (Reference)" }
 ];
@@ -123,6 +131,144 @@ The **Context Pack** is a short message you paste into chat at the start of a se
 1. Copy \`.github/copilot-instructions.md\` from the kit into your repo’s \`.github/\` folder.
 2. Optionally tweak the instructions for your org (e.g. add project-specific rules).
 3. The exact text is below for reference.
+
+## Exact text (from kit)
+`,
+
+    "start-here.md": `## What this is
+
+\`docs/ai/START-HERE.md\` is the **entry point** for the kit’s \`docs/ai/\` folder. It points you to ai-config, profiles, and checklists so the AI (and you) know how to behave and what “done” means.
+
+## When to use it
+
+- **After installing the kit:** Read it once to see where defaults, profiles, and checklists live.
+- **Onboarding others:** Point them to \`docs/ai/START-HERE.md\` so they find ai-config, spec-dod, impl-dod, security-dod, and threat-model-lite.
+
+## Steps
+
+1. Open \`docs/ai/START-HERE.md\` in your repo (at project root).
+2. Follow the links to ai-config.md, profiles/, and checklists/.
+3. Use the exact text below if you need to restore or copy the file.
+
+## Exact text (from kit)
+`,
+
+    "threat-model-lite.md": `## What this is
+
+\`docs/ai/checklists/threat-model-lite.md\` is a **short threat-model template** for when security is triggered (auth, uploads, sensitive data, external exposure). It asks for: assets, entry points, threats, mitigations, and acceptance criteria.
+
+## When to use it
+
+- When the work touches **auth, uploads, exports, external APIs, or sensitive data** (see \`.cursor/rules/40-security.mdc\` triggers).
+- Before marking a PR or release “done” if security-dod applies.
+
+## Steps
+
+1. When a security trigger applies, open \`docs/ai/checklists/threat-model-lite.md\` (or the sync’d reference below).
+2. Fill each section with what’s real for the change; don’t invent.
+3. Use the exact text below to copy or restore the template.
+
+## Exact text (from kit)
+`,
+
+    "cursor-rules-spec-package.md": `## What this is
+
+\`.cursor/rules/10-spec-package.mdc\` is a **Cursor rule** that defines the **Spec Package** output contract: every SPEC-mode response must include UX states, a11y, risks + open questions, and platform type + exposure + data sensitivity.
+
+## When to use it
+
+- You **don’t edit this file** for normal use. It’s part of the kit.
+- Use it as reference when you want the AI’s spec output to follow the contract (e.g. when writing or reviewing specs).
+
+## Steps
+
+1. Ensure the kit is at your **project root** so Cursor sees \`.cursor/rules/\`.
+2. In SPEC mode, the AI will follow this contract. Use the block below to see or copy the exact rule.
+
+## Exact text (from kit)
+`,
+
+    "cursor-rules-implementation-package.md": `## What this is
+
+\`.cursor/rules/20-implementation-package.mdc\` is a **Cursor rule** that defines the **Implementation Package** output contract: every IMPLEMENT-mode response must include files, plan, diffs, verification, tests/rationale, and security notes when triggers apply.
+
+## When to use it
+
+- You **don’t edit this file** for normal use. It’s part of the kit.
+- Use it as reference when you want the AI’s implementation output to follow the contract (e.g. when reviewing PRs or handoffs).
+
+## Steps
+
+1. Ensure the kit is at your **project root** so Cursor sees \`.cursor/rules/\`.
+2. In IMPLEMENT mode, the AI will follow this contract. Use the block below to see or copy the exact rule.
+
+## Exact text (from kit)
+`,
+
+    "cursor-rules-context-discipline.md": `## What this is
+
+\`.cursor/rules/30-context-discipline.mdc\` is a **Cursor rule** that encourages small context packs and file citations, forbids inventing paths/APIs/events/deps, and defines allowed values for platform type, exposure level, and data sensitivity.
+
+## When to use it
+
+- You **don’t edit this file** for normal use. It’s part of the kit.
+- Use it as reference when the AI invents paths or uses invalid switch values; the rule tells it to ask one question and stop.
+
+## Steps
+
+1. Ensure the kit is at your **project root** so Cursor sees \`.cursor/rules/\`.
+2. Use the block below to see or copy the exact rule.
+
+## Exact text (from kit)
+`,
+
+    "session-kickoff.md": `## What this is
+
+\`.cursor/prompts/00-session-kickoff.md\` is the **Session Kickoff** prompt you paste at the start of a new chat. It sets SPEC-first, 85% gate, one-question protocol, and switch commands so the AI follows the kit.
+
+## When to use it
+
+- At the **start of a new chat** (before or with the Context Pack and Router).
+- When the AI is not following the protocol (paste it again to re-anchor behavior).
+
+## Steps
+
+1. Open \`.cursor/prompts/00-session-kickoff.md\` in your repo (or use the exact text below).
+2. Paste it into the chat, then paste your Context Pack (from \`10-context-pack.md\`), then the Router (\`20-router.md\`) if needed.
+
+## Exact text (from kit)
+`,
+
+    "router.md": `## What this is
+
+\`.cursor/prompts/20-router.md\` is the **Router** prompt. It tells the AI how to choose between SPEC and IMPLEMENT behavior using the Context Pack (platform type, exposure, data sensitivity) and to ask one question if platform type is missing.
+
+## When to use it
+
+- When you need the AI to **switch or stick to SPEC vs IMPLEMENT** based on the Context Pack.
+- When the AI is mixing planning and code in one response; paste the Router to enforce the split.
+
+## Steps
+
+1. Ensure your Context Pack is in the chat (platform type, exposure, data sensitivity).
+2. Paste \`.cursor/prompts/20-router.md\` (or the exact text below) when you want SPEC/IMPLEMENT routing applied.
+
+## Exact text (from kit)
+`,
+
+    "handoff-summary.md": `## What this is
+
+\`.cursor/prompts/90-handoff-summary.md\` is the **Handoff Summary** template: max 8 bullets for switching context (e.g. SPEC → IMPLEMENT) or handing off to another person or session.
+
+## When to use it
+
+- When you **switch mode** (e.g. say "Switch: IMPLEMENT") so the next response starts with a short handoff.
+- When **handing off** to a teammate or a new chat; paste the template and fill the bullets that apply.
+
+## Steps
+
+1. When switching or handing off, the AI should output a Handoff Summary (max 8 bullets) then continue.
+2. Use \`.cursor/prompts/90-handoff-summary.md\` or the exact text below as the template.
 
 ## Exact text (from kit)
 `

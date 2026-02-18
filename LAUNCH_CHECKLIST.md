@@ -42,7 +42,7 @@ One place for: update kit, sync, deploy docs, publish a release.
 ## 4) How to publish a release
 
 * **Manual:** Follow ** [RELEASING.md](RELEASING.md)** — create the two zips (kit-only, starter) and attach them to a new GitHub Release.
-* **Automated (optional):** Push a version tag, e.g. `git tag v1.0.0 && git push origin v1.0.0`. The **Release assets** workflow builds the zips and uploads them to the release for that tag. See RELEASING.md for details.
+* **Automated (optional):** Push a version tag, e.g. `git tag v1.1.0 && git push origin v1.1.0` (replace with your release tag). The **Release assets** workflow builds the zips and uploads them to the release for that tag. See RELEASING.md for details.
 
 ---
 
