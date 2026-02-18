@@ -24,7 +24,10 @@ const sidebars: SidebarsConfig = {
             items: [
                 "daily-workflow/spec-first",
                 "daily-workflow/implement",
-                "daily-workflow/switching"
+                "daily-workflow/switching",
+                "daily-workflow/cursor-modes",
+                "daily-workflow/context-windows",
+                "daily-workflow/model-switching"
             ]
         },
 

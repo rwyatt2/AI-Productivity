@@ -22,7 +22,13 @@ Use it when the AI is asking too many questions, making things up, getting confu
   Also add more real info to `docs/ai/ai-config.md` (e.g. the **Project** / current-state section: routing, state, data, file layout) so the AI has truth to use.
 
 * **“The conversation got confused.”**  
-  Start a new chat. Paste Session Kickoff and a fresh Context Pack. Then paste the Router. Don’t paste a huge old thread.
+  Start a new chat. Paste Session Kickoff and a fresh Context Pack. Then paste the Router. Don’t paste a huge old thread. See [Context windows](../daily-workflow/context-windows).
+
+* **“I keep getting plausible-but-wrong answers.”**  
+  See [Model switching](../daily-workflow/model-switching) (switch up to a stronger or best-coding model).
+
+* **“I’m not sure which Cursor mode to use (Chat vs multi-file vs small edit).”**  
+  See [Cursor modes](../daily-workflow/cursor-modes).
 
 * **“I need code but it is writing specs.”**  
   Type: **Switch: IMPLEMENT**
