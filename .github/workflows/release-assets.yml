@@ -45,6 +45,11 @@ jobs:
                   cd kit
                   zip -r ../ai-kit-only.zip .
 
+            - name: Sync starter from kit
+              run: |
+                  npm ci
+                  npm run sync:starter
+
             - name: Create starter zip
               run: |
                   cd starter

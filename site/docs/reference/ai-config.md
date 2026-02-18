@@ -29,17 +29,6 @@ Source: `docs/ai/ai-config.md`
 This file is the **source of truth** for the AI.
 If information is missing and needed to proceed safely, the AI must ask **exactly one** question and stop.
 
-## Where to put truth
-
-Keep high-signal, AI-safe truth in these docs (same folder as this file unless noted):
-
-* [project-brief.md](project-brief.md) — one-liner, who uses it, jobs-to-be-done, success, non-goals, constraints, links
-* [current-state.md](current-state.md) — routing, data fetching, state, forms, styling, testing, telemetry, pitfalls (what we do / where it lives / what to avoid)
-* [partner-map.md](partner-map.md) — who owns what, when to involve them, escalation
-* [glossary.md](glossary.md) — terms and definitions (~10–20 terms; definition, confusion/pitfall, example)
-* [decisions.md](decisions.md) — decision log (date, decision, why, tradeoffs, follow-ups)
-* **Checklists:** [checklists/spec-dod.md](checklists/spec-dod.md), [checklists/impl-dod.md](checklists/impl-dod.md), [checklists/security-dod.md](checklists/security-dod.md), [checklists/threat-model-lite.md](checklists/threat-model-lite.md)
-
 ## Defaults
 
 * **Default route:** SPEC (plan first; no code until you say "Switch: IMPLEMENT" or ask for code).
@@ -74,5 +63,7 @@ If your org has specific rules, write them here:
 
 ## Project (optional)
 
-See **Where to put truth** above. Fill [project-brief.md](project-brief.md), [current-state.md](current-state.md), and [partner-map.md](partner-map.md) as needed.
+* project-brief: what the platform is, who uses it, what success means
+* current-state: repo conventions (routing, state, data, forms, styling, testing, telemetry)
+* partner-map: who owns what
 ```

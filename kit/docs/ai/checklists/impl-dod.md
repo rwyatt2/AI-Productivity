@@ -2,12 +2,11 @@
 
 Implementation is "done" when all of these are true:
 
-* [ ] **Switches** — Platform type, exposure level, and data sensitivity match the spec or Context Pack (no guessing).
 * [ ] **Files** — We listed what we created or changed. No surprise files.
-* [ ] **Plan** — Short step-by-step plan; we followed it or said why we changed it.
-* [ ] **Diffs** — Changes are small and clear. No big refactors unless we said so.
-* [ ] **Verification** — How to check it works (e.g. run X, click Y, see Z).
-* [ ] **Tests / rationale** — We ran existing tests or said why we didn't add one (or one sentence on test plan).
-* [ ] **Security** — If the work touched auth, uploads, sensitive data, or external exposure: security-dod and threat-model-lite are done; security notes in the impl package.
+* [ ] **Plan** — We had a short step-by-step plan and we followed it (or said why we changed it).
+* [ ] **Diffs** — The code changes are small and clear. No huge refactors unless we said so.
+* [ ] **Verification** — We said how to check it works (e.g. run X, click Y, see Z).
+* [ ] **Tests / rationale** — We ran existing tests or said why we didn't add a new one (or one sentence on test plan).
+* [ ] **Security** — If the work touched auth, uploads, sensitive data, or external exposure: we ran the security checklist and added security notes (see impl package contract).
 
 If any box is unchecked, the implementation is not ready to ship.

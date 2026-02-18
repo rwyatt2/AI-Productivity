@@ -30,7 +30,7 @@ description: Context discipline — small context, no invention, allowed values
 
 **Encourage:**
 - Small context packs: 3–7 relevant items (file paths, bullet points, or short excerpts). Prefer less; add only what is needed for the current task.
-- File citations: When referring to code or config, cite the actual path and line/region if helpful. Do not describe “a file that does X” without a path.
+- File citations: When referring to code or config, cite the actual path and line/region if helpful. Do not describe "a file that does X" without a path.
 
 **Forbid:**
 - Do not invent file paths, API endpoints, event names, or dependencies. Use only what exists in the repo or what the user has explicitly stated. If something is needed and unknown, ask **exactly one** question and stop.
@@ -43,5 +43,5 @@ description: Context discipline — small context, no invention, allowed values
 | **Exposure level** | `internal` \| `external-authenticated` \| `public` |
 | **Data sensitivity** | `public` \| `internal` \| `confidential` \| `restricted` |
 
-If the user or context uses a value outside this set, ask one clarifying question (e.g. “Which exposure level applies: internal, external-authenticated, or public?”) and stop until resolved.
+If the user or context uses a value outside this set, ask one clarifying question (e.g. "Which exposure level applies: internal, external-authenticated, or public?") and stop until resolved.
 ```

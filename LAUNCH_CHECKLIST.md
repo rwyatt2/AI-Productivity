@@ -2,6 +2,8 @@
 
 One place for: update kit, sync, deploy docs, publish a release.
 
+**kit/ is canonical. Only edit kit/. starter/ is generated. Do not edit starter directly.**
+
 ---
 
 ## 1) How to update the kit
@@ -12,7 +14,7 @@ One place for: update kit, sync, deploy docs, publish a release.
   * `kit/.github/*`
   * `kit/cursor-ai-kit.config.json`
 * If you add or rename a file that should appear in Reference, update **`scripts/sync-kit-snippets.mjs`** (add or change an entry in the `FILES` array).
-* Keep **`starter/`** in sync with `kit/` when the kit changes (same structure and content at the root of `starter/`).
+* After editing kit, run **`npm run sync:starter`** so `starter/` is regenerated from `kit/` (do not edit `starter/` directly).
 
 ---
 
@@ -20,10 +22,12 @@ One place for: update kit, sync, deploy docs, publish a release.
 
 * From the **repo root** run:
   ```bash
+  npm run sync:starter
   npm run sync
   ```
-* This reads from `kit/` and writes/updates **`site/docs/reference/*`** (exact-text pages).
-* Then **commit** the updated `site/docs/reference/*` files so the docs don’t drift from the kit.
+* **sync:starter** regenerates `starter/` from `kit/`.
+* **sync** reads from `kit/` and writes/updates **`site/docs/reference/*`** (exact-text pages).
+* Then **commit** the updated `starter/` (if changed) and `site/docs/reference/*` files so nothing drifts from the kit.
 
 ---
 
@@ -35,7 +39,7 @@ One place for: update kit, sync, deploy docs, publish a release.
 * **Option B — Local build:**
   * From repo root: `npm run site:build`
   * To test production build locally: `cd site && npx serve build` then open the URL shown (with base path `/AI-Productivity/` if testing GH Pages).
-* Before pushing, run **`npm run sync`** and commit reference changes so the deployed docs match the kit.
+* Before pushing, run **`npm run sync:starter`** and **`npm run sync`** and commit changes so the deployed docs and starter match the kit.
 
 ---
 
@@ -46,4 +50,4 @@ One place for: update kit, sync, deploy docs, publish a release.
 
 ---
 
-**Quick order:** Edit `kit/` → `npm run sync` → commit `site/docs/reference/*` → push (docs deploy) → when ready, create a release (manual or by pushing a tag).
+**Quick order:** Edit `kit/` → `npm run sync:starter` → `npm run sync` → commit (`starter/` and `site/docs/reference/*`) → push (docs deploy) → when ready, create a release (manual or by pushing a tag).

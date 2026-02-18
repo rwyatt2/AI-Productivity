@@ -8,4 +8,4 @@ Extends [base](base.md). Use for validating solutions in dev tools, docs, APIs, 
 * **Success + guardrails:** Expected behavior in spec; no breaking change for declared consumers. Guardrails: monitor errors, latency, adoption; alert on contract or version drift.
 * **Rollback plan:** Revert deploy or feature flag; restore previous API version or docs; communicate breaking change and migration path if already released.
 
-Use when the “solution” is an API, doc, tool, or platform feature for developers.
+Use when the "solution" is an API, doc, tool, or platform feature for developers.

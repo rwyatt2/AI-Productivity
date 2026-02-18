@@ -409,21 +409,32 @@ ${content.replace(/\n$/, "")}
 `;
 }
 
+async function preflight() {
+    const missing = [];
+    for (const f of FILES) {
+        const abs = path.join(KIT, f.src);
+        try {
+            await fs.access(abs);
+        } catch (err) {
+            if (err.code === "ENOENT") missing.push(f.src);
+            else throw err;
+        }
+    }
+    if (missing.length > 0) {
+        const list = missing.map((p) => `- ${p}`).join("\n");
+        throw new Error(
+            `Reference sync failed: missing required kit files:\n${list}\nFix: create these files under kit/ or remove them from FILES.`
+        );
+    }
+}
+
 async function main() {
+    await preflight();
     await ensureDir(OUT);
 
     for (const f of FILES) {
         const abs = path.join(KIT, f.src);
-        let content;
-        try {
-            content = await fs.readFile(abs, "utf8");
-        } catch (err) {
-            if (err.code === "ENOENT") {
-                console.warn(`Skip (missing): ${f.src}`);
-                continue;
-            }
-            throw err;
-        }
+        const content = await fs.readFile(abs, "utf8");
 
         const destAbs = path.join(OUT, f.dest);
         const page = wrapAsReferencePage(f.title, f.src, content, CONTEXT[f.dest] ?? null);

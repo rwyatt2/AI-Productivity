@@ -33,7 +33,7 @@ When in **SPEC** mode, every spec response must include a **Spec Package** with 
 **Required sections:**
 
 1. **UX states** — Default, loading, empty, error, success. Call out any missing or out-of-scope states.
-2. **A11y** — Focus, labels/aria, contrast, keyboard; pass/fail or “defer to implementation” with rationale.
+2. **A11y** — Focus, labels/aria, contrast, keyboard; pass/fail or "defer to implementation" with rationale.
 3. **Risks + open questions** — 0–5 items. Risks that could block or derail; open questions that need an answer before implementation.
 4. **Platform type + exposure + data sensitivity** — From Context Pack or stated explicitly: [ data-platform | developer-platform ], [ internal | external-authenticated | public ], [ public | internal | confidential | restricted ]. If missing and uncertain, ask exactly one question and stop.
 

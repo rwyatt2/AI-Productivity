@@ -2,7 +2,7 @@
 
 ## Protocol
 * If blocked or &lt; 85% confident: ask **exactly one** clarifying question, then stop.
-* **Do not invent event naming conventions** if the repo or product does not define them. If unknown, ask exactly one question (e.g. “What event taxonomy or naming standard does this codebase use?”) and stop until answered.
+* **Do not invent event naming conventions** if the repo or product does not define them. If unknown, ask exactly one question (e.g. "What event taxonomy or naming standard does this codebase use?") and stop until answered.
 
 ## Required output (every analytics response)
 * **Success metrics:** What to measure; target or baseline; how it ties to the goal.

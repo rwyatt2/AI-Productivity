@@ -1,6 +1,6 @@
 # Copilot instructions (AI Kit)
 
-Follow these so Copilot matches the kit’s operating system.
+Follow these so Copilot matches the kit's operating system.
 
 **Protocol**
 - **SPEC-first by default:** Plan and scope before code. Do not propose implementation until the user says "Switch: IMPLEMENT" or explicitly asks for code.

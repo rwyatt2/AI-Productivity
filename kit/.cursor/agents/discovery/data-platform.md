@@ -8,4 +8,4 @@ Extends [base](base.md). Use for validating problems in data pipelines, analytic
 * **Hypotheses:** Source vs transform vs load; schema/contract drift; permissions or filtering; upstream dependency; tool/config.
 * **Smallest validation step:** One query, one pipeline run, one comparison to source or baseline; or a short user/stakeholder check. Define pass/fail before running.
 
-Use when the “problem” is about data quality, availability, or trust.
+Use when the "problem" is about data quality, availability, or trust.

@@ -2,6 +2,8 @@
 
 This page explains how to publish a release so people can download the **kit-only zip** and the **starter zip** from GitHub.
 
+**kit/ is canonical. Only edit kit/. starter/ is generated. Do not edit starter directly.** Before releasing, run `npm run sync:starter` (and `npm run sync` for reference docs) and commit changes so the zips match the kit.
+
 ---
 
 ## What is a release?
@@ -44,7 +46,12 @@ If you prefer not to use the workflow, follow these steps.
 
 Pick a version tag, e.g. `v1.1.0` or `vX.Y.Z`. You will use it as the release tag.
 
-### Step 2: Create the two zips on your computer
+### Step 2: Sync and commit
+
+1. From the repo root run: `npm run sync:starter` then `npm run sync`.
+2. Commit any changes to `starter/` and `site/docs/reference/*` so the zips you create match the kit.
+
+### Step 3: Create the two zips on your computer
 
 **Kit-only zip**
 
@@ -62,7 +69,7 @@ Pick a version tag, e.g. `v1.1.0` or `vX.Y.Z`. You will use it as the release ta
 4. Name the file: **ai-kit-starter.zip**.  
    So when you unzip it, someone gets a ready-to-use project root.
 
-### Step 3: Create the release on GitHub
+### Step 4: Create the release on GitHub
 
 1. Open the repo on GitHub: **https://github.com/rwyatt2/AI-Productivity**
 2. Click **Releases** (right side).
