@@ -25,11 +25,88 @@
   pointer-events: none;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  z-index: 0;
 }
 
 @keyframes gridDrift {
   from { background-position: 0 0; }
   to { background-position: 48px 48px; }
+}
+
+/* Radial glow blob behind hero text */
+.heroGlow {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 680px;
+  height: 340px;
+  background: radial-gradient(ellipse at center, rgba(137,180,250,0.14) 0%, rgba(137,180,250,0.05) 45%, transparent 70%);
+  pointer-events: none;
+  filter: blur(55px);
+  z-index: 0;
+}
+
+/* Floating code badges */
+.floatingBadgesContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.floatingBadge {
+  position: absolute;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(137, 180, 250, 0.65);
+  background: rgba(137, 180, 250, 0.07);
+  border: 1px solid rgba(137, 180, 250, 0.16);
+  border-radius: 6px;
+  padding: 4px 10px;
+  opacity: 0;
+  animation: floatY 6s ease-in-out infinite;
+}
+
+.floatBadge1 {
+  top: 20%;
+  left: 7%;
+  animation-delay: 0.4s;
+}
+
+.floatBadge2 {
+  top: 16%;
+  right: 8%;
+  animation-delay: 1.4s;
+}
+
+.floatBadge3 {
+  top: 66%;
+  left: 9%;
+  animation-delay: 0.9s;
+}
+
+.floatBadge4 {
+  top: 62%;
+  right: 6%;
+  animation-delay: 2.0s;
+}
+
+@keyframes floatY {
+  0%   { opacity: 0;   transform: translateY(0px) rotate(0deg); }
+  12%  { opacity: 1; }
+  50%  { opacity: 0.65; transform: translateY(-9px) rotate(1deg); }
+  88%  { opacity: 1; }
+  100% { opacity: 0;   transform: translateY(0px) rotate(0deg); }
+}
+
+@media (max-width: 768px) {
+  .floatingBadgesContainer {
+    display: none;
+  }
 }
 
 .heroBadge {
@@ -73,11 +150,135 @@
   flex-wrap: wrap;
 }
 
+/* ==============================
+   How It Works
+   ============================== */
+
+.howItWorks {
+  margin: 4rem 0 3rem;
+  text-align: center;
+}
+
+.howItWorksTitle {
+  font-size: 1.5rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem !important;
+  color: var(--ifm-heading-color) !important;
+}
+
+.stepRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 160px;
+  text-align: center;
+}
+
+.stepCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(137, 180, 250, 0.1);
+  border: 1.5px solid rgba(137, 180, 250, 0.35);
+  color: #89b4fa;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  flex-shrink: 0;
+}
+
+.stepContent {
+  padding: 0 0.5rem;
+}
+
+.stepTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ifm-heading-color);
+  margin-bottom: 0.3rem;
+}
+
+.stepDesc {
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.5;
+}
+
+/* Horizontal connector between steps */
+.stepConnector {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, rgba(137,180,250,0.15), rgba(137,180,250,0.4), rgba(137,180,250,0.15));
+  margin-top: 19px; /* vertically aligns with circle center (40px / 2 - 1px) */
+  min-width: 16px;
+  max-width: 80px;
+}
+
+@media (max-width: 700px) {
+  .stepRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .step {
+    width: 100%;
+    max-width: 300px;
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .stepCircle {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .stepContent {
+    padding: 0;
+    padding-top: 0.5rem;
+  }
+
+  /* Vertical connector on mobile */
+  .stepConnector {
+    width: 1.5px;
+    height: 24px;
+    min-width: unset;
+    max-width: unset;
+    background: linear-gradient(180deg, rgba(137,180,250,0.15), rgba(137,180,250,0.4), rgba(137,180,250,0.15));
+    margin: 0;
+    margin-left: 19px;
+    align-self: auto;
+  }
+}
+
+/* ==============================
+   CTA section
+   ============================== */
+
 .ctaSection {
   text-align: center;
   padding: 4rem 0 2rem;
   border-top: 1px solid var(--ifm-border-color);
   margin-top: 2rem;
+  background-image: radial-gradient(rgba(137,180,250,0.045) 1px, transparent 1px);
+  background-size: 24px 24px;
+  border-radius: 12px;
 }
 
 .ctaSection p {
