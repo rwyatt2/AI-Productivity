@@ -101,7 +101,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} AI Productivity.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Russell Wyatt.`,
     },
     prism: {
       theme: prismThemes.github,
