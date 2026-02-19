@@ -6,6 +6,14 @@ All notable changes to the AI Productivity Kit are documented here. The format i
 
 ---
 
+## [Unreleased]
+
+### Fixed
+
+- **Resolved duplicate security-stop-gate rule files (02 and 41)** — Removed duplicate `02-security-stop-gate.mdc`; kept `41-security-stop-gate.mdc` as the single always-on security stop gate (same content, no dangling references).
+
+---
+
 ## [1.2.0] - 2026-02-18
 
 ### Added
