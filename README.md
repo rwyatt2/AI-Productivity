@@ -5,9 +5,9 @@
 [![Starter sync](https://github.com/rwyatt2/AI-Productivity/actions/workflows/check-starter-sync.yml/badge.svg?style=flat-square)](https://github.com/rwyatt2/AI-Productivity/actions/workflows/check-starter-sync.yml)
 [![Deploy docs](https://github.com/rwyatt2/AI-Productivity/actions/workflows/deploy-pages.yml/badge.svg?style=flat-square)](https://github.com/rwyatt2/AI-Productivity/actions/workflows/deploy-pages.yml)
 [![Docs](https://img.shields.io/badge/docs-site-blue?style=flat-square)](https://rwyatt2.github.io/AI-Productivity/)
-[![Editors](https://img.shields.io/badge/editors-Cursor%20%C2%B7%20Copilot-8A2BE2?style=flat-square)](https://github.com/rwyatt2/AI-Productivity#readme)
+[![Editors](https://img.shields.io/badge/editors-Cursor%20%C2%B7%20Copilot%20%C2%B7%20Antigravity-8A2BE2?style=flat-square)](https://github.com/rwyatt2/AI-Productivity#readme)
 
-A small **AI Kit** for working faster and more safely with Cursor (and optionally GitHub Copilot). It gives you a clear workflow: plan first, code second, and security checks when it matters.
+A small **AI Kit** for working faster and more safely with Cursor, GitHub Copilot, and Google Antigravity. It gives you a clear workflow: plan first, code second, and security checks when it matters.
 
 **kit/ is canonical.** Only edit files in `kit/`. The `starter/` folder is generated from `kit/` — do not edit `starter/` directly.
 
@@ -75,7 +75,7 @@ See [What's New](https://rwyatt2.github.io/AI-Productivity/docs/whats-new) for t
 | Starter sync | CI passes when `starter/` matches `kit/` — run `npm run sync:starter` and commit before merging. |
 | Deploy docs | GitHub Pages deploy for the docs site (runs on push to `main`). |
 | Docs | Link to the docs site. |
-| Editors | This kit targets Cursor and GitHub Copilot. |
+| Editors | This kit targets Cursor, GitHub Copilot, and Google Antigravity. |
 | Security | [Vulnerability disclosure](SECURITY.md) — report via GitHub private reporting. |
 
 ## Security

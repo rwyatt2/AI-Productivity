@@ -29,7 +29,16 @@ const FILES = [
     { src: ".cursor/prompts/20-router.md", dest: "router.md", title: "Router (Reference)" },
     { src: ".cursor/prompts/90-handoff-summary.md", dest: "handoff-summary.md", title: "Handoff Summary (Reference)" },
     { src: ".github/pull_request_template.md", dest: "github-pr-template.md", title: "GitHub PR Template (Reference)" },
-    { src: ".github/copilot-instructions.md", dest: "copilot-instructions.md", title: "GitHub Copilot Instructions (Reference)" }
+    { src: ".github/copilot-instructions.md", dest: "copilot-instructions.md", title: "GitHub Copilot Instructions (Reference)" },
+    { src: ".agent/rules/00-operating-system.md", dest: "antigravity-rules-operating-system.md", title: "Antigravity Rules - Operating System (Reference)" },
+    { src: ".agent/rules/01-dispatcher-and-advisories.md", dest: "antigravity-rules-dispatcher-advisories.md", title: "Antigravity Rules - Dispatcher and Advisories (Reference)" },
+    { src: ".agent/rules/05-environment.md", dest: "antigravity-rules-environment.md", title: "Antigravity Rules - Environment (Reference)" },
+    { src: ".agent/rules/10-spec-package.md", dest: "antigravity-rules-spec-package.md", title: "Antigravity Rules - Spec Package (Reference)" },
+    { src: ".agent/rules/20-implementation-package.md", dest: "antigravity-rules-implementation-package.md", title: "Antigravity Rules - Implementation Package (Reference)" },
+    { src: ".agent/rules/25-testing.md", dest: "antigravity-rules-testing.md", title: "Antigravity Rules - Testing (Reference)" },
+    { src: ".agent/rules/30-context-discipline.md", dest: "antigravity-rules-context-discipline.md", title: "Antigravity Rules - Context Discipline (Reference)" },
+    { src: ".agent/rules/40-security.md", dest: "antigravity-rules-security.md", title: "Antigravity Rules - Security (Reference)" },
+    { src: ".agent/rules/41-security-stop-gate.md", dest: "antigravity-rules-security-stop-gate.md", title: "Antigravity Rules - Security Stop Gate (Reference)" }
 ];
 
 // Contextual docs and steps for each reference page (keyed by dest filename).

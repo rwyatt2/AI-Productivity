@@ -33,7 +33,9 @@ All notable changes to the AI Productivity Kit. Format based on [Keep a Changelo
 
 ## [Unreleased]
 
-(No changes yet.)
+### Added
+
+- **Google Antigravity editor support** — New `kit/.agent/rules/` directory with 9 Markdown rule files; synced to starter and documented. Landing and README updated to include Antigravity alongside Cursor and Copilot.
 
 ---
 

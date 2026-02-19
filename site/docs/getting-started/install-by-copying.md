@@ -16,6 +16,7 @@ You copy everything from the `kit/` folder (or the contents of `starter/`) into 
 flowchart TD
   root["your-project/ (root)"]
   root --> cursor[".cursor/\nrules and prompts"]
+  root --> agent[".agent/\nAntigravity rules"]
   root --> docsAi["docs/ai/\nconfig and source of truth"]
   root --> github[".github/\nPR template and Copilot"]
   root --> config["cursor-ai-kit.config.json"]
@@ -29,7 +30,7 @@ flowchart TD
 ## Add to an existing project
 
 1. **Get the kit:** Download **ai-kit-only.zip** from [Releases](https://github.com/rwyatt2/AI-Productivity/releases), or clone the repo and use the contents of **`kit/`** or **`starter/`** (same files).
-2. **Copy into your repo root:** Copy `.cursor/`, `docs/` (or `docs/ai/`), `.github/`, and `cursor-ai-kit.config.json` into the **root** of your existing repo. If you already have `.cursor/` or `docs/`, merge or replace.
+2. **Copy into your repo root:** Copy `.cursor/`, `.agent/`, `docs/` (or `docs/ai/`), `.github/`, and `cursor-ai-kit.config.json` into the **root** of your existing repo. If you already have `.cursor/`, `.agent/`, or `docs/`, merge or replace.
 3. **Fill in placeholders:** See [What to fill in](what-to-fill-in).
 
 **Avoid:** Don’t put the kit inside a subfolder (e.g. `ai-kit-starter`). The kit must be at the **project root** so Cursor loads rules and prompts correctly.
@@ -38,8 +39,10 @@ flowchart TD
 
 1. Check that your repo root now has:
    * `.cursor/` (rules and prompts)
+   * `.agent/` (Antigravity rules)
    * `docs/ai/` (config and source of truth)
    * `.github/` (PR template and Copilot instructions)
+   If you use **Google Antigravity**, the `.agent/rules/` directory is automatically loaded by the IDE.
 2. Open `docs/ai/ai-config.md`. Fill in the Design System part:
    * Design system name
    * Design system docs (a link)

@@ -131,7 +131,16 @@ const sidebars: SidebarsConfig = {
                 "reference/cursor-rules-security",
                 "reference/threat-model-lite",
                 "reference/github-pr-template",
-                "reference/copilot-instructions"
+                "reference/copilot-instructions",
+                "reference/antigravity-rules-operating-system",
+                "reference/antigravity-rules-dispatcher-advisories",
+                "reference/antigravity-rules-environment",
+                "reference/antigravity-rules-spec-package",
+                "reference/antigravity-rules-implementation-package",
+                "reference/antigravity-rules-testing",
+                "reference/antigravity-rules-context-discipline",
+                "reference/antigravity-rules-security",
+                "reference/antigravity-rules-security-stop-gate"
             ]
         }
     ]

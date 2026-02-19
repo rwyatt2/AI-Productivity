@@ -8,7 +8,9 @@ All notable changes to the AI Productivity Kit are documented here. The format i
 
 ## [Unreleased]
 
-(No changes yet.)
+### Added
+
+- **Google Antigravity editor support** — New `kit/.agent/rules/` directory with 9 plain Markdown rule files (operating system, dispatcher/advisories, environment, spec package, implementation package, testing, context discipline, security, security stop gate). Synced to `starter/.agent` by `npm run sync:starter`. `editorTargets.antigravity` added to `cursor-ai-kit.config.json`. Install and reference docs updated; landing and README mention Antigravity.
 
 ---
 

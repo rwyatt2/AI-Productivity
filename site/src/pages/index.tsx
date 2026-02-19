@@ -474,7 +474,7 @@ export default function Home(): JSX.Element {
             <Feature
               tag="PORTABLE"
               title="Cursor and Copilot."
-              description="Cursor rules, GitHub Copilot instructions, and a PR template — all pre-wired and shipping in the same zip."
+              description="Cursor rules, GitHub Copilot instructions, and Google Antigravity rules — all pre-wired and shipping in the same zip."
             />
           </div>
 

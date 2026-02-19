@@ -1,0 +1,4 @@
+# Environment
+
+- Prefer cross-platform paths and commands unless the project is explicitly OS-specific.
+- Note the OS when it affects behavior (e.g. line endings, path separators).

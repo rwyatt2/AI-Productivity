@@ -19,6 +19,7 @@ async function sync() {
     path.join(starter, '.cursor'),
     path.join(starter, 'docs', 'ai'),
     path.join(starter, '.github'),
+    path.join(starter, '.agent'),
   ];
 
   for (const dir of dirs) {
@@ -30,6 +31,7 @@ async function sync() {
   await cp(path.join(kit, '.cursor'), path.join(starter, '.cursor'), { recursive: true });
   await cp(path.join(kit, 'docs', 'ai'), path.join(starter, 'docs', 'ai'), { recursive: true });
   await cp(path.join(kit, '.github'), path.join(starter, '.github'), { recursive: true });
+  await cp(path.join(kit, '.agent'), path.join(starter, '.agent'), { recursive: true });
   await copyFile(
     path.join(kit, 'cursor-ai-kit.config.json'),
     path.join(starter, 'cursor-ai-kit.config.json')
@@ -39,7 +41,7 @@ async function sync() {
     path.join(starter, '.cursorignore')
   );
 
-  console.log('sync-starter-from-kit: starter/.cursor, starter/docs/ai, starter/.github, starter/cursor-ai-kit.config.json, starter/.cursorignore updated from kit.');
+  console.log('sync-starter-from-kit: starter/.cursor, starter/docs/ai, starter/.github, starter/.agent, starter/cursor-ai-kit.config.json, starter/.cursorignore updated from kit.');
 }
 
 sync().catch((err) => {

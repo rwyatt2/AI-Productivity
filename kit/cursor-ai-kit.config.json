@@ -10,6 +10,7 @@
   "platformTypeMode": "infer",
   "editorTargets": {
     "cursor": true,
-    "copilot": true
+    "copilot": true,
+    "antigravity": true
   }
 }

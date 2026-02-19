@@ -16,7 +16,7 @@ const config: Config = {
 
   customFields: {
     kitVersion: kitConfig.version,
-    heroHighlight: 'docs visuals, advisories & security stop gate',
+    heroHighlight: 'now with Google Antigravity support',
   },
 
   future: {
