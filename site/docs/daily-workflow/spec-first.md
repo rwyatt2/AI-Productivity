@@ -4,9 +4,7 @@ title: Daily workflow (SPEC-first)
 
 # What this is
 
-<div style={{textAlign: 'center', margin: '1.5rem 0'}}>
-  <img src={require('@site/static/img/docs/spec-mode.svg').default} alt="SPEC mode" width="80" />
-</div>
+![SPEC mode](../../static/img/docs/spec-mode.svg)
 
 SPEC mode is the default. It helps you think and plan before writing code.
 
