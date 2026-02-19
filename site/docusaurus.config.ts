@@ -64,6 +64,21 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/logo.svg',
+    mermaid: {
+      theme: { light: 'base', dark: 'dark' },
+      options: {
+        themeVariables: {
+          fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+          fontSize: '14px',
+          primaryColor: '#fafafa',
+          primaryTextColor: '#171717',
+          primaryBorderColor: '#e5e5e5',
+          lineColor: '#404040',
+          secondaryColor: '#f0f0f0',
+          tertiaryColor: '#e5e5e5',
+        },
+      },
+    },
     colorMode: {
       defaultMode: 'light',
       respectPrefersColorScheme: true, // system preference when set
@@ -73,6 +88,7 @@ const config: Config = {
       logo: {
         alt: 'AI Productivity',
         src: 'img/logo.svg',
+        srcDark: 'img/logo-dark.svg',
       },
       items: [
         {

@@ -66,13 +66,27 @@
   line-height: var(--ifm-line-height-base);
 }
 
-/* Code blocks: subtle background and border */
+/* Code blocks: subtle background and border; wrap long lines by default */
 pre code {
   border-radius: var(--ifm-code-border-radius);
   padding: 1rem 1.25rem;
 }
 .prism-code {
   border-radius: var(--ifm-code-border-radius);
+}
+/* Docs code blocks: wrap instead of horizontal scroll */
+.theme-doc-markdown pre,
+.main-wrapper .markdown pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+.theme-doc-markdown pre code,
+.main-wrapper .markdown pre code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Hero: neutral, not loud */
@@ -411,7 +425,20 @@ pre code {
   --ifm-alert-border-color: rgba(255, 189, 46, 0.2);
 }
 
-/* 5. Tables (match feature grid/stats) */
+/* 5. Mermaid flowcharts (match landing: neutrals, border, radius) */
+.docusaurus-mermaid-container {
+  margin: 2rem 0;
+  padding: 1.25rem;
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 12px;
+  background: var(--ifm-background-color);
+}
+.docusaurus-mermaid-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 6. Tables (match feature grid/stats) */
 .theme-doc-markdown table,
 .main-wrapper .markdown table {
   display: table;
@@ -426,11 +453,15 @@ pre code {
 
 .theme-doc-markdown th,
 .main-wrapper .markdown th {
-  background: var(--ifm-color-primary-lightest); /* Subtle header bg */
   border-bottom: 1px solid var(--ifm-border-color);
   border-right: 1px solid var(--ifm-border-color);
   padding: 0.75rem 1rem;
   font-size: 0.9rem;
+}
+[data-theme='light'] .theme-doc-markdown th,
+[data-theme='light'] .main-wrapper .markdown th {
+  background: #e5e5e5;
+  color: var(--ifm-color-content);
 }
 [data-theme='dark'] .theme-doc-markdown th,
 [data-theme='dark'] .main-wrapper .markdown th {
@@ -455,7 +486,7 @@ pre code {
   border-right: none;
 }
 
-/* 6. Inline code (consistent border/radius) */
+/* 7. Inline code (consistent border/radius) */
 .theme-doc-markdown code,
 .main-wrapper .markdown code {
   border: 1px solid var(--ifm-border-color);
@@ -470,7 +501,7 @@ pre code {
   border-color: rgba(255,255,255,0.1);
 }
 
-/* 7. Optional: Subtle background for docs area */
+/* 8. Optional: Subtle background for docs area */
 /* Only applying to the main doc container to separate it from sidebar */
 .docs-doc-page {
   /* Very subtle dot pattern to match landing feel, but extremely faint */
