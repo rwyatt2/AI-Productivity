@@ -22,15 +22,31 @@ So the repo is ready. What’s missing is **doing the release once** (see below)
 
 ---
 
+## Keeping releases up to date (missing assets?)
+
+If the **Releases** page has no assets (no **ai-kit-only.zip** or **ai-kit-starter.zip**), or you want the latest `main` to be downloadable:
+
+1. Sync and commit: `npm run sync:starter` and `npm run sync`, then commit any changes.
+2. Create and push a version tag that matches the kit (see `kit/cursor-ai-kit.config.json`), e.g. `v1.3.0`:
+   ```bash
+   git tag v1.3.0
+   git push origin v1.3.0
+   ```
+3. The **Release assets** workflow will run, create or update the release for that tag, and attach both zips.
+
+If a release for that tag already exists but has no assets, delete that release on GitHub, then push the tag again (or use a new patch tag, e.g. `v1.3.1`).
+
+---
+
 ## Option A: Automatic release (recommended)
 
-1. Decide the version, e.g. `v1.1.0` (replace with your release tag).
+1. Decide the version to match the kit (see `kit/cursor-ai-kit.config.json`), e.g. `v1.3.0`.
 2. Create and push the tag from your machine:
    ```bash
-   git tag v1.1.0
-   git push origin v1.1.0
+   git tag v1.3.0
+   git push origin v1.3.0
    ```
-   (Use your chosen tag instead of `v1.1.0` if different.)
+   (Use your chosen tag if different.)
 3. On GitHub, open **Actions** and confirm the “Release assets” workflow ran successfully.
 4. Open **Releases** — you should see the new release with **ai-kit-only.zip** and **ai-kit-starter.zip** under Assets.
 

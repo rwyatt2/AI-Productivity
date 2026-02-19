@@ -56,7 +56,7 @@ See [What's New](https://rwyatt2.github.io/AI-Productivity/docs/whats-new) for t
 
 | Badge | What it shows |
 |-------|----------------|
-| Release | Latest GitHub release (create a release so this shows the right version). |
+| Release | Latest GitHub release. Push a version tag (e.g. `v1.3.0`) to create/update the release with **ai-kit-only.zip** and **ai-kit-starter.zip**; see [RELEASING.md](RELEASING.md). |
 | Starter sync | CI passes when `starter/` matches `kit/` — run `npm run sync:starter` and commit before merging. |
 | Deploy docs | GitHub Pages deploy for the docs site (runs on push to `main`). |
 | Docs | Link to the docs site. |
