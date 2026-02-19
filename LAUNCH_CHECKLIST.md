@@ -1,5 +1,7 @@
 # Launch Checklist (maintainers)
 
+[README](README.md) · [RELEASE](RELEASE.md) · [CHANGELOG](CHANGELOG.md) · **LAUNCH_CHECKLIST**
+
 One place for: update kit, sync, deploy docs, publish a release.
 
 **kit/ is canonical. Only edit kit/. starter/ is generated. Do not edit starter directly.**

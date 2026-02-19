@@ -1,8 +1,12 @@
 # AI Productivity Kit
 
+**README** · [RELEASE](RELEASE.md) · [CHANGELOG](CHANGELOG.md) · [LAUNCH_CHECKLIST](LAUNCH_CHECKLIST.md)
+
 [![Release](https://img.shields.io/github/v/release/rwyatt2/AI-Productivity?include_prereleases=&sort=semver&style=flat-square)](https://github.com/rwyatt2/AI-Productivity/releases)
-[![CI](https://github.com/rwyatt2/AI-Productivity/actions/workflows/check-starter-sync.yml/badge.svg?style=flat-square)](https://github.com/rwyatt2/AI-Productivity/actions/workflows/check-starter-sync.yml)
+[![Starter sync](https://github.com/rwyatt2/AI-Productivity/actions/workflows/check-starter-sync.yml/badge.svg?style=flat-square)](https://github.com/rwyatt2/AI-Productivity/actions/workflows/check-starter-sync.yml)
+[![Deploy docs](https://github.com/rwyatt2/AI-Productivity/actions/workflows/deploy-pages.yml/badge.svg?style=flat-square)](https://github.com/rwyatt2/AI-Productivity/actions/workflows/deploy-pages.yml)
 [![Docs](https://img.shields.io/badge/docs-site-blue?style=flat-square)](https://rwyatt2.github.io/AI-Productivity/)
+[![Editors](https://img.shields.io/badge/editors-Cursor%20%C2%B7%20Copilot-8A2BE2?style=flat-square)](https://github.com/rwyatt2/AI-Productivity#readme)
 
 A small **AI Kit** for working faster and more safely with Cursor (and optionally GitHub Copilot). It gives you a clear workflow: plan first, code second, and security checks when it matters.
 
@@ -52,3 +56,13 @@ Reference docs are generated from **kit** so they stay in sync:
 ## Version
 
 See [What's New](https://rwyatt2.github.io/AI-Productivity/docs/whats-new) for the changelog. Current kit version is in `kit/cursor-ai-kit.config.json`.
+
+**Badges** (update `rwyatt2/AI-Productivity` in the URLs if you use a fork):
+
+| Badge | What it shows |
+|-------|----------------|
+| Release | Latest GitHub release (create a release so this shows the right version). |
+| Starter sync | CI passes when `starter/` matches `kit/` — run `npm run sync:starter` and commit before merging. |
+| Deploy docs | GitHub Pages deploy for the docs site (runs on push to `main`). |
+| Docs | Link to the docs site. |
+| Editors | This kit targets Cursor and GitHub Copilot. |

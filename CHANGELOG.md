@@ -1,5 +1,7 @@
 # Changelog
 
+[README](README.md) · [RELEASE](RELEASE.md) · **CHANGELOG** · [LAUNCH_CHECKLIST](LAUNCH_CHECKLIST.md)
+
 All notable changes to the AI Productivity Kit are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---

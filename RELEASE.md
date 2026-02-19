@@ -1,5 +1,7 @@
 # Releases
 
+[README](README.md) · **RELEASE** · [CHANGELOG](CHANGELOG.md) · [LAUNCH_CHECKLIST](LAUNCH_CHECKLIST.md)
+
 Download the latest **AI Productivity Kit** from the [Releases](https://github.com/rwyatt2/AI-Productivity/releases) page.
 
 - **ai-kit-only.zip** — Kit only (copy into an existing project).
