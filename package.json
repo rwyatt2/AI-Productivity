@@ -4,6 +4,8 @@
         "sync": "node scripts/sync-kit-snippets.mjs",
         "sync:starter": "node scripts/sync-starter-from-kit.mjs",
         "site:start": "npm --prefix site run start",
-        "site:build": "npm --prefix site run build"
+        "site:build": "npm --prefix site run build",
+    "doctor": "node scripts/doctor.mjs",
+    "hooks:install": "node scripts/install-githooks.mjs"
     }
 }

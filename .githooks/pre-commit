@@ -1,0 +1,3 @@
+#!/bin/sh
+# Pre-commit: run doctor so kit/starter/docs stay in sync and docs build.
+npm run doctor
