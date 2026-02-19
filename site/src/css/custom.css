@@ -60,6 +60,39 @@
 /* Footer: minimal, no extra branding */
 .footer {
   border-top: 1px solid var(--ifm-border-color);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer .container {
+  max-width: var(--ifm-container-width-xl);
+  padding-left: var(--ifm-container-padding);
+  padding-right: var(--ifm-container-padding);
+}
+
+.footer__title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-color-content);
+}
+
+.footer__link-item {
+  color: var(--ifm-color-content);
+  opacity: 0.8;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.footer__link-item:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: var(--ifm-link-color);
+}
+
+.footer__copyright {
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  opacity: 0.6;
 }
 
 .markdown {
@@ -432,9 +465,11 @@ pre code {
   border: 1px solid var(--ifm-border-color);
   border-radius: 12px;
   background: var(--ifm-background-color);
+  overflow-x: auto; /* Allow scrolling if diagram is wide */
 }
 .docusaurus-mermaid-container svg {
-  max-width: 100%;
+  max-width: none; /* Don't shrink to fit */
+  min-width: 100%; /* Fill space if smaller */
   height: auto;
 }
 

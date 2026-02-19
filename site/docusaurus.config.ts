@@ -69,7 +69,7 @@ const config: Config = {
       options: {
         themeVariables: {
           fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-          fontSize: '14px',
+          fontSize: '16px',
           primaryColor: '#fafafa',
           primaryTextColor: '#171717',
           primaryBorderColor: '#e5e5e5',
@@ -111,19 +111,27 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [
         {
           title: 'Docs',
           items: [
             { label: 'Intro', to: '/docs/intro' },
             { label: 'Getting Started', to: '/docs/getting-started/what-is-this' },
+            { label: "What's New", to: '/docs/whats-new' },
+          ],
+        },
+        {
+          title: 'Reference',
+          items: [
+            { label: 'Kit preview', to: '/docs/reference/kit-preview' },
           ],
         },
         {
           title: 'Repo',
           items: [
             { label: 'GitHub', href: 'https://github.com/rwyatt2/AI-Productivity' },
+            { label: 'Releases', href: 'https://github.com/rwyatt2/AI-Productivity/releases' },
           ],
         },
       ],
