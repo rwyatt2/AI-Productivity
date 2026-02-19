@@ -1,5 +1,6 @@
 {
     "private": true,
+    "version": "1.4.0",
     "scripts": {
         "sync": "node scripts/sync-kit-snippets.mjs",
         "sync:starter": "node scripts/sync-starter-from-kit.mjs",

@@ -8,6 +8,30 @@ All notable changes to the AI Productivity Kit are documented here. The format i
 
 ## [Unreleased]
 
+(No changes yet.)
+
+---
+
+## [1.4.0] - 2026-02-19
+
+### Added
+
+- **@Codebase and context references guide in daily-workflow docs** — New page `site/docs/daily-workflow/context-references.md`: three ways to give context (@Codebase, @file, docs/ai/), when to use and when not to use @Codebase, how Cursor indexes and how .cursorignore controls it, how docs/ai/ fits in, recognizing context rot; linked from context-windows and sidebar.
+- **5-minute quick start in README and docs intro** — New "⚡ Quick start (5 minutes)" section in README (get files, fill config, paste Session Kickoff, type task); same content as tip admonition on docs home; install-by-copying has "New here?" callout linking to quick start.
+- **Agents explainer documentation** — New doc `site/docs/context-pack/agents.md`: what an agent is, agents vs rules vs prompts, included agents (Security, PM, Design, Discovery, FE, QA, Validation, Analytics), when to activate, platform overlays; linked from intro and Context pack sidebar.
+- **MIT License** — LICENSE at repo root; README License section added.
+- **kit/.cursor/rules/README.md** — Rule numbering convention documented (ranges 00–99, 02 vs 41 resolution, gap 02→05).
+- **CONTRIBUTING.md** — Contributing guide at repo root (setup, golden rule, adding rules/agents/docs, doctor, release pointer, PR template, what not to do).
+- **SECURITY.md** — Vulnerability disclosure policy (supported versions, GitHub private reporting, in-scope/out-of-scope).
+- **.cursorignore template in kit/** — Recommended entries with setup documentation; sync-starter copies it to starter.
+- **MCP template (kit/.cursor/mcp.json) and setup documentation**
+- **25-testing.mdc** — Cursor rule enforcing test coverage on business logic and security-sensitive IMPLEMENT outputs.
+
+### Changed
+
+- **cursor-ai-kit.config.json** — Reformatted to pretty-printed JSON with explanatory `__comment`; no semantic changes.
+- **ai-config.md** — Renamed TODO headings (e.g. "Design system — fill in yours"), added inline commented Acme SaaS example and fill-in reminder comments to reduce new-user confusion.
+
 ### Fixed
 
 - **Resolved duplicate security-stop-gate rule files (02 and 41)** — Removed duplicate `02-security-stop-gate.mdc`; kept `41-security-stop-gate.mdc` as the single always-on security stop gate (same content, no dangling references).
@@ -37,7 +61,7 @@ All notable changes to the AI Productivity Kit are documented here. The format i
 
 ---
 
-## [1.1.0] - 2025-02-17
+## [1.1.0] - 2025-02-17 (initial public release)
 
 ### Added
 

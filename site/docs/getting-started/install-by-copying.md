@@ -2,6 +2,10 @@
 title: Install (by copying the kit)
 ---
 
+:::note New here?
+See the [5-minute quick start](../intro#quick-start) before reading this full install guide.
+:::
+
 # What this is
 
 You install the kit by copying files. No npm install needed.
@@ -50,12 +54,17 @@ flowchart TD
 
 After copying, fill the files in `docs/ai/` so the AI stops guessing. See [Source-of-truth docs](source-of-truth) for what they are and why they matter, and [What to fill in](what-to-fill-in) for a short checklist.
 
+## Optional: configure MCP servers for richer context
+
+To let the AI use live data (filesystem, GitHub, web docs), see [MCP setup](mcp).
+
 ## Optional: set Global Rules for a better experience
 
 If you sometimes work in repos that don’t have this kit, you can set **Global Rules** in Cursor so the AI still follows the same behavior (one question at a time, switches, no inventing). See [Global Rules](global-rules) for what they are and how to paste them into Cursor settings.
 
 ## Common mistakes
 
+* **Missing .cursorignore** — Cursor will index node_modules and secrets. See the [.cursorignore guide](cursorignore).
 * **Putting the kit in a subfolder.** Keep `.cursor/`, `docs/`, etc. at the **project root**. If you unzipped into `ai-kit-starter`, move everything out to the root and delete the empty folder.
 * Not filling the Design System placeholders. The kit still works, but the AI may guess UI patterns and look inconsistent.
 * Pasting too much at once. Keep the Context Pack short. Use 3–7 relevant files and bullet points.

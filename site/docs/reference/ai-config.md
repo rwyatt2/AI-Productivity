@@ -39,6 +39,7 @@ If information is missing and needed to proceed safely, the AI must ask **exactl
 
 ## Platform type
 
+<!-- Fill this in. The AI reads this file and cites only what is here. -->
 <!-- ============================================================
   HOW TO SET YOUR PLATFORM TYPE
   ============================================================
@@ -75,13 +76,21 @@ If information is missing and needed to proceed safely, the AI must ask **exactl
 * **Description:** TODO  <!-- e.g. "A B2B SaaS dashboard for finance teams focused on data accuracy and role-based access." -->
 * **What the AI should emphasise:** TODO  <!-- e.g. "structured outputs, access control, audit trails over visual polish" -->
 
-## Design system (TODO)
+## Design system — fill in yours
 
+<!-- Fill this in. The AI reads this file and cites only what is here. -->
 Fill these so the AI uses your design system consistently:
 
 * Design system name: TODO
 * Design system docs: TODO
 * Design system imports/package: TODO
+
+<!-- Example (Acme SaaS — replace with yours):
+* Design system name: Acme UI (shadcn/ui + Tailwind)
+* Design system docs: https://ui.acme.dev
+* Design system imports/package: @/components/ui/* for primitives; Tailwind for layout and tokens
+Token conventions: Spacing — Tailwind spacing scale only (e.g. p-4, gap-2). Colors — use semantic tokens (primary, muted, destructive); avoid raw hex in components.
+-->
 
 Design system rules:
 * Prefer design-system components before custom UI.
@@ -92,6 +101,7 @@ Design system rules:
 
 ## Security / data handling (optional but recommended)
 
+<!-- Fill this in. The AI reads this file and cites only what is here. -->
 If your org has specific rules, write them here:
 
 * What counts as **restricted** data in this org: TODO
@@ -101,6 +111,7 @@ If your org has specific rules, write them here:
 
 ## Project (optional)
 
+<!-- Fill this in. The AI reads this file and cites only what is here. -->
 * project-brief: what the platform is, who uses it, what success means
 * current-state: repo conventions (routing, state, data, forms, styling, testing, telemetry)
 * partner-map: who owns what

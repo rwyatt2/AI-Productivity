@@ -101,3 +101,7 @@ The AI will give you a short map you can keep in `docs/ai/current-state.md` or p
 * Pasting the **entire old thread** into a new chat. That overloads the context again. Use the carryover summary (max 8 bullets) instead.
 * Putting **20 files** in the Context Pack after a reset. Stick to 3–7 so the AI stays focused.
 * Not starting a **new chat** when the AI is clearly confused or contradicting itself. One more message in the same chat usually doesn’t fix it.
+
+---
+
+See also: [Context references (@Codebase, @file, docs/ai/)](context-references).

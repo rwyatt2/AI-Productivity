@@ -11,7 +11,22 @@ A small **AI Kit** for working faster and more safely with Cursor (and optionall
 
 **kit/ is canonical.** Only edit files in `kit/`. The `starter/` folder is generated from `kit/` — do not edit `starter/` directly.
 
+## ⚡ Quick start (5 minutes)
 
+**Step 1 — Get the files**  
+Download `ai-kit-only.zip` from [Releases](https://github.com/rwyatt2/AI-Productivity/releases) and unzip into your project root. Or copy everything from `kit/` into your project root.
+
+**Step 2 — Fill in your config**  
+Open `docs/ai/ai-config.md` and fill in:
+- Your design system name and docs URL
+- Your component import pattern (e.g., `import { Button } from '@/components/ui'`)
+
+**Step 3 — Open Cursor and paste the Session Kickoff**  
+Start a new Composer session and paste the Session Kickoff prompt.  
+Full text: [Session Kickoff reference](https://rwyatt2.github.io/AI-Productivity/docs/reference/session-kickoff).
+
+**Step 4 — Type your first task**  
+The AI will clarify one thing if it needs to, then plan before coding.
 
 ## What it does
 
@@ -61,3 +76,16 @@ See [What's New](https://rwyatt2.github.io/AI-Productivity/docs/whats-new) for t
 | Deploy docs | GitHub Pages deploy for the docs site (runs on push to `main`). |
 | Docs | Link to the docs site. |
 | Editors | This kit targets Cursor and GitHub Copilot. |
+| Security | [Vulnerability disclosure](SECURITY.md) — report via GitHub private reporting. |
+
+## Security
+
+See [SECURITY.md](SECURITY.md) for supported versions and how to report a vulnerability.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+MIT © Russell Wyatt. See [LICENSE](LICENSE).

@@ -2,6 +2,7 @@
 
 This folder is the **kit-only** bundle. It contains:
 
+* **Cursor Rules** — See [.cursor/rules/README.md](.cursor/rules/README.md) for the rule numbering convention and where to add your own rules.
 * `.cursor/` — rules and prompts
 * `docs/ai/` — config and source of truth
 * `.github/` — PR template and Copilot instructions

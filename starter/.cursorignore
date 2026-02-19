@@ -1,0 +1,35 @@
+# Cursor ignores these paths when indexing your project.
+# Edit this file to add paths specific to your project.
+
+# Dependencies — keep node_modules and package manager caches out of context
+node_modules/
+.pnp/
+.pnp.js
+
+# Build outputs — generated artifacts; the AI should not treat these as source
+dist/
+build/
+.next/
+out/
+.turbo/
+
+# Environment and secrets — never send these to the AI
+.env
+.env.*
+*.pem
+*.key
+
+# Large lockfiles — optional: uncomment if context is too large; omit if you want the AI to see dependency versions
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Binary and media — reduce noise and token use; narrow (e.g. static/**/*.png) if needed
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.pdf
+*.mp4
+*.webm

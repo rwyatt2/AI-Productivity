@@ -21,6 +21,7 @@ const FILES = [
     { src: ".cursor/rules/05-environment.mdc", dest: "cursor-rules-environment.md", title: "Cursor Rules - Environment (Reference)" },
     { src: ".cursor/rules/10-spec-package.mdc", dest: "cursor-rules-spec-package.md", title: "Cursor Rules - Spec Package (Reference)" },
     { src: ".cursor/rules/20-implementation-package.mdc", dest: "cursor-rules-implementation-package.md", title: "Cursor Rules - Implementation Package (Reference)" },
+    { src: ".cursor/rules/25-testing.mdc", dest: "cursor-rules-testing.md", title: "Cursor Rules - Testing (Reference)" },
     { src: ".cursor/rules/30-context-discipline.mdc", dest: "cursor-rules-context-discipline.md", title: "Cursor Rules - Context Discipline (Reference)" },
     { src: ".cursor/rules/40-security.mdc", dest: "cursor-rules-security.md", title: "Cursor Rules - Security (Reference)" },
     { src: ".cursor/prompts/00-session-kickoff.md", dest: "session-kickoff.md", title: "Session Kickoff (Reference)" },
@@ -210,6 +211,23 @@ The **Context Pack** is a short message you paste into chat at the start of a se
 
 1. Ensure the kit is at your **project root** so Cursor sees \`.cursor/rules/\`.
 2. In IMPLEMENT mode, the AI will follow this contract. Use the block below to see or copy the exact rule.
+
+## Exact text (from kit)
+`,
+
+    "cursor-rules-testing.md": `## What this is
+
+\`.cursor/rules/25-testing.mdc\` is a **Cursor rule** that requires a Tests / rationale section for IMPLEMENT outputs that touch business logic or security-sensitive code, with an exclusion list for config-only, generated, or asset-only files.
+
+## When to use it
+
+- You **don't edit this file** for normal use. It's part of the kit.
+- Use it as reference when reviewing that the AI provided a test story (or rationale) for code changes.
+
+## Steps
+
+1. Ensure the kit is at your **project root** so Cursor sees \`.cursor/rules/\`.
+2. In IMPLEMENT mode, the AI will follow this rule. Use the block below to see or copy the exact rule.
 
 ## Exact text (from kit)
 `,

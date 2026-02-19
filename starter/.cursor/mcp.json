@@ -1,0 +1,4 @@
+{
+  "__comment": "MCP server config for Cursor. Add server entries under mcpServers as needed. See docs: getting-started/mcp. All servers are opt-in.",
+  "mcpServers": {}
+}

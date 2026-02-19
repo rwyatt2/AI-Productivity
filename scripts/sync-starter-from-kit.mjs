@@ -2,7 +2,7 @@
 /**
  * Sync starter/ from kit/ so starter is generated from kit (prevents drift).
  * Deletes and recreates starter/.cursor, starter/docs/ai, starter/.github,
- * copies from kit, and copies cursor-ai-kit.config.json. Does NOT touch starter/README.md.
+ * copies from kit, and copies cursor-ai-kit.config.json and .cursorignore. Does NOT touch starter/README.md.
  */
 
 import { rm, cp, copyFile } from 'fs/promises';
@@ -34,8 +34,12 @@ async function sync() {
     path.join(kit, 'cursor-ai-kit.config.json'),
     path.join(starter, 'cursor-ai-kit.config.json')
   );
+  await copyFile(
+    path.join(kit, '.cursorignore'),
+    path.join(starter, '.cursorignore')
+  );
 
-  console.log('sync-starter-from-kit: starter/.cursor, starter/docs/ai, starter/.github, starter/cursor-ai-kit.config.json updated from kit.');
+  console.log('sync-starter-from-kit: starter/.cursor, starter/docs/ai, starter/.github, starter/cursor-ai-kit.config.json, starter/.cursorignore updated from kit.');
 }
 
 sync().catch((err) => {

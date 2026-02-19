@@ -7,11 +7,33 @@ All notable changes to the AI Productivity Kit. Format based on [Keep a Changelo
 
 ---
 
-## [Unreleased]
+## [1.4.0] - 2026-02-19
+
+[**v1.4.0**](https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.4.0)
+
+### Added
+
+- **@Codebase and context references guide** — New daily-workflow page: when to use @Codebase vs @file, how indexing and .cursorignore work, how docs/ai/ fits in, link to context rot; cross-referenced from context-windows.
+- **5-minute quick start in README and docs intro** — Quick start section in README and as tip on docs home; install guide has "New here?" callout to quick start.
+- **Agents explainer documentation** — New doc in Context pack: what an agent is, agents vs rules vs prompts, included agents, when to activate, platform overlays; linked from intro.
+- **.cursorignore template in kit/** — Recommended entries with setup documentation; sync-starter copies it to starter.
+- **MCP template (kit/.cursor/mcp.json) and setup documentation**
+- **25-testing.mdc** — Cursor rule enforcing test coverage on business logic and security-sensitive IMPLEMENT outputs.
+
+### Changed
+
+- **cursor-ai-kit.config.json** — Pretty-printed JSON with explanatory comment; no semantic changes.
+- **ai-config.md** — Renamed TODO headings (e.g. "Design system — fill in yours"), added inline commented Acme SaaS example and fill-in reminder comments to reduce new-user confusion.
 
 ### Fixed
 
 - **Resolved duplicate security-stop-gate rule files (02 and 41)** — Removed duplicate `02-security-stop-gate.mdc`; kept `41-security-stop-gate.mdc` as the single always-on security stop gate (same content, no dangling references).
+
+---
+
+## [Unreleased]
+
+(No changes yet.)
 
 ---
 
@@ -66,7 +88,7 @@ All notable changes to the AI Productivity Kit. Format based on [Keep a Changelo
 
 ---
 
-## [1.1.0] - 2025-02-17
+## [1.1.0] - 2025-02-17 (initial public release)
 
 ### Added
 

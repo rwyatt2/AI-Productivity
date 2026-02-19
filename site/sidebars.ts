@@ -11,6 +11,8 @@ const sidebars: SidebarsConfig = {
             items: [
                 "getting-started/what-is-this",
                 "getting-started/install-by-copying",
+                "getting-started/cursorignore",
+                "getting-started/mcp",
                 "getting-started/global-rules",
                 "getting-started/what-to-fill-in",
                 "getting-started/source-of-truth",
@@ -27,6 +29,7 @@ const sidebars: SidebarsConfig = {
                 "daily-workflow/switching",
                 "daily-workflow/cursor-modes",
                 "daily-workflow/context-windows",
+                "daily-workflow/context-references",
                 "daily-workflow/model-switching"
             ]
         },
@@ -36,7 +39,8 @@ const sidebars: SidebarsConfig = {
             label: "Context pack",
             collapsed: true,
             items: [
-                "context-pack/template"
+                "context-pack/template",
+                "context-pack/agents"
             ]
         },
 
@@ -122,6 +126,7 @@ const sidebars: SidebarsConfig = {
                 "reference/cursor-rules-operating-system",
                 "reference/cursor-rules-spec-package",
                 "reference/cursor-rules-implementation-package",
+                "reference/cursor-rules-testing",
                 "reference/cursor-rules-context-discipline",
                 "reference/cursor-rules-security",
                 "reference/threat-model-lite",
