@@ -4,8 +4,6 @@ title: Security triggers
 
 # What this is
 
-![Security gate](../../static/img/docs/security-gate.svg)
-
 Security triggers are situations where you must be extra careful. When you touch login, permissions, exports, secrets, uploads, or sensitive data, the kit expects you to do a short threat model and write security acceptance criteria (things you can check before you ship).
 
 ## When to use it

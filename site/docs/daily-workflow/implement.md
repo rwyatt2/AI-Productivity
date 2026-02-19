@@ -4,8 +4,6 @@ title: Daily workflow (IMPLEMENT)
 
 # What this is
 
-![IMPLEMENT mode](../../static/img/docs/implement-mode.svg)
-
 IMPLEMENT mode is for writing and changing code. The AI suggests files to change, edits, and tests.
 
 ## Advisories block

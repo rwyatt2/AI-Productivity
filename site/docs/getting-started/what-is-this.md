@@ -4,8 +4,6 @@ title: What is this?
 
 # What this is
 
-![One question at a time](../../static/img/docs/one-question.svg)
-
 This is a kit that helps you use AI (like Cursor) in a clear, safe way.
 
 * It helps you figure out the right problem before you build.

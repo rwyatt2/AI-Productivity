@@ -4,8 +4,6 @@ title: Daily workflow (SPEC-first)
 
 # What this is
 
-![SPEC mode](../../static/img/docs/spec-mode.svg)
-
 SPEC mode is the default. It helps you think and plan before writing code.
 
 You get a clear description of the problem, what “done” looks like, and what could go wrong.

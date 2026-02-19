@@ -4,8 +4,6 @@ title: Switching modes (no confusion)
 
 # What this is
 
-![Switch modes](../../static/img/docs/switch.svg)
-
 Sometimes the AI starts doing the wrong thing (e.g. writing code when you wanted a plan, or writing a long spec when you wanted code). Switching changes the mode so you and the AI are aligned.
 
 ## Advisories block
