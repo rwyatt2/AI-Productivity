@@ -323,9 +323,166 @@ pre code {
   line-height: 1.3 !important;
 }
 
-.feature-desc {
-  font-size: 0.875rem;
-  color: #888;
-  line-height: 1.6;
-  margin: 0;
+
+/* ==============================
+   Docs styling (audit & alignment)
+   ============================== */
+
+/* 1. Doc content container (readability) */
+.theme-doc-markdown,
+.main-wrapper .markdown {
+  max-width: 80ch; /* ~700-800px depending on font size */
+  margin: 0 auto;
+}
+
+.theme-doc-markdown p,
+.main-wrapper .markdown p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+/* 2. Headings (match landing weight/spacing) */
+.theme-doc-markdown h1, .main-wrapper .markdown h1 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.theme-doc-markdown h2, .main-wrapper .markdown h2 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ifm-border-color); /* Subtle divider for major sections */
+}
+
+.theme-doc-markdown h3, .main-wrapper .markdown h3 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* 3. Links (match landing accent) */
+.theme-doc-markdown a,
+.main-wrapper .markdown a {
+  color: #1a56db; /* Light mode accent */
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+[data-theme='dark'] .theme-doc-markdown a,
+[data-theme='dark'] .main-wrapper .markdown a {
+  color: #89b4fa; /* Dark mode accent */
+}
+
+.theme-doc-markdown a:hover,
+.main-wrapper .markdown a:hover {
+  text-decoration: underline;
+}
+
+/* 4. Admonitions (match landing cards) */
+.alert {
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+/* Tip (info) */
+.alert--info {
+  --ifm-alert-background-color: rgba(26, 86, 219, 0.03);
+  --ifm-alert-border-color: rgba(26, 86, 219, 0.15);
+}
+[data-theme='dark'] .alert--info {
+  --ifm-alert-background-color: rgba(137, 180, 250, 0.05);
+  --ifm-alert-border-color: rgba(137, 180, 250, 0.15);
+}
+
+/* Note (secondary) */
+.alert--secondary {
+  --ifm-alert-background-color: var(--ifm-background-color);
+  border-color: var(--ifm-border-color);
+}
+
+/* Warning */
+.alert--warning {
+  --ifm-alert-background-color: rgba(255, 189, 46, 0.05);
+  --ifm-alert-border-color: rgba(255, 189, 46, 0.2);
+}
+
+/* 5. Tables (match feature grid/stats) */
+.theme-doc-markdown table,
+.main-wrapper .markdown table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.theme-doc-markdown th,
+.main-wrapper .markdown th {
+  background: var(--ifm-color-primary-lightest); /* Subtle header bg */
+  border-bottom: 1px solid var(--ifm-border-color);
+  border-right: 1px solid var(--ifm-border-color);
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+[data-theme='dark'] .theme-doc-markdown th,
+[data-theme='dark'] .main-wrapper .markdown th {
+  background: rgba(255,255,255,0.03);
+}
+
+.theme-doc-markdown td,
+.main-wrapper .markdown td {
+  border-bottom: 1px solid var(--ifm-border-color);
+  border-right: 1px solid var(--ifm-border-color);
+  padding: 0.75rem 1rem;
+}
+
+.theme-doc-markdown tr:last-child td,
+.main-wrapper .markdown tr:last-child td {
+  border-bottom: none;
+}
+.theme-doc-markdown tr td:last-child,
+.theme-doc-markdown tr th:last-child,
+.main-wrapper .markdown tr td:last-child,
+.main-wrapper .markdown tr th:last-child {
+  border-right: none;
+}
+
+/* 6. Inline code (consistent border/radius) */
+.theme-doc-markdown code,
+.main-wrapper .markdown code {
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 6px;
+  background: rgba(0,0,0,0.03);
+  padding: 0.1rem 0.3rem;
+  font-size: 0.9em;
+}
+[data-theme='dark'] .theme-doc-markdown code,
+[data-theme='dark'] .main-wrapper .markdown code {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* 7. Optional: Subtle background for docs area */
+/* Only applying to the main doc container to separate it from sidebar */
+.docs-doc-page {
+  /* Very subtle dot pattern to match landing feel, but extremely faint */
+  background-image: radial-gradient(var(--ifm-border-color) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0;
+  opacity: 1;
+}
+/* Ensure the background doesn't overwhelm (using opacity on a pseudo-element is harder here without layout shifts, so using faint border color dots) */
+[data-theme='light'] .docs-doc-page {
+  background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+}
+[data-theme='dark'] .docs-doc-page {
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
 }
