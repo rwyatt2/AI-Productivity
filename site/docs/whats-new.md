@@ -7,6 +7,34 @@ All notable changes to the AI Productivity Kit. Format based on [Keep a Changelo
 
 ---
 
+## [1.3.0] - 2026-02-18
+
+### Added
+
+- **Docs: visual elements**
+  - Mermaid diagrams enabled; flowcharts and sequences added across intro, getting-started, daily workflow, security, and troubleshooting.
+  - Spot SVG icons (spec-mode, implement-mode, one-question, switch, security-gate) in `site/static/img/docs/` and used on key pages.
+  - Diagrams: SPEC vs IMPLEMENT flow (intro); problem→spec→code→security (what-is-this); kit folder structure (install-by-copying); minimum vs high-ROI files (what-to-fill-in); fill→AI stops guessing (source-of-truth); Session Kickoff→Context Pack→Router→Spec Package (spec-first); implement and switching flows; security stop gate; quick-fix decision tree (common-failures); context lifecycle (context-windows); model tiers (model-switching).
+  - Homepage terminal demo: fixed height (320px) so layout stays stable while the typing animation runs.
+
+- **Rules: dispatcher and advisories**
+  - `kit/.cursor/rules/01-dispatcher-and-advisories.mdc` (always-on): auto-route SPEC vs IMPLEMENT; Advisories block (Route, model class, context risk, switch recommendation) at top of every response; HIGHLY RECOMMENDED triggers for security/cyber, route mismatch, model switching, context management; cost awareness when user reports high API usage.
+
+- **Rules: security stop gate**
+  - `kit/.cursor/rules/41-security-stop-gate.mdc` (always-on): when work is high-risk (auth, permissions, exports, uploads, integrations, external exposure, confidential/restricted data), the assistant asks exactly one security question and stops until answered; then restates assumptions and proceeds.
+
+- **Docs: advisories and security stop gate**
+  - Advisories block explained (Route, model class, context risk, HIGHLY RECOMMENDED and what to do) and security/cyber trigger list added to spec-first, implement, switching, and common-failures.
+  - API usage note: “If your API usage is high, stay on Auto/Fast unless the AI says HIGHLY RECOMMENDED.”
+  - Security triggers page: new section “Security stop gate (why the AI may stop)” with diagram and example question; Reference link to Cursor Rules – Security.
+  - Troubleshooting: new entry “It stopped and asked one security question” with link to Security triggers.
+
+### Changed
+
+- **Version** — bumped to `1.3.0` in `kit/cursor-ai-kit.config.json` and `starter/cursor-ai-kit.config.json`.
+
+---
+
 ## [1.2.0] - 2026-02-18
 
 ### Added
@@ -118,6 +146,7 @@ All notable changes to the AI Productivity Kit. Format based on [Keep a Changelo
 
 ---
 
+[1.3.0]: https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.3.0
 [1.2.0]: https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.2.0
 [1.1.0]: https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.1.0
 [1.0.0]: https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.0.0

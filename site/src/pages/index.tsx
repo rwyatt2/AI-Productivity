@@ -383,7 +383,7 @@ export default function Home(): JSX.Element {
         <div className={styles.heroGlow} aria-hidden="true" />
         <FloatingBadges />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className={styles.heroBadge}>v1.2.0 — now with Cursor best practices</div>
+          <div className={styles.heroBadge}>v1.3.0 — docs visuals, advisories &amp; security stop gate</div>
           <Heading as="h1" className={clsx('hero__title', styles.heroTitle)}>
             Stop Chatting.<br />Start Building.
           </Heading>
