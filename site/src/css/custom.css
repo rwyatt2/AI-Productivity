@@ -32,6 +32,9 @@
   /* Overall page container max-width (sidebar + content share this budget) */
   --ifm-container-width-xl: 1200px;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
+
+  /* Sidebar width (increased from default 300px) */
+  --doc-sidebar-width: 320px;
 }
 
 [data-theme='dark'] {
@@ -551,4 +554,51 @@ pre code {
 }
 [data-theme='dark'] .docs-doc-page {
   background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
+/* ==============================
+   Sidebar improvements
+   ============================== */
+
+/* 1. Hierarchy: Categories vs Links */
+.theme-doc-sidebar .menu__link--sublist {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ifm-color-content);
+}
+
+.theme-doc-sidebar .menu__link:not(.menu__link--sublist) {
+  font-weight: 400;
+  font-size: 0.9rem;
+  opacity: 0.85; /* Muted for hierarchy */
+}
+
+.theme-doc-sidebar .menu__link--active:not(.menu__link--sublist) {
+  opacity: 1;
+  font-weight: 500;
+  background-color: var(--ifm-menu-color-background-active);
+}
+
+/* 2. Spacing: Breathing room */
+.theme-doc-sidebar .menu__list-item {
+  margin-bottom: 0.2rem;
+}
+
+.theme-doc-sidebar .menu__link {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  padding-left: 0.75rem; /* Increase from default */
+  padding-right: 0.75rem;
+}
+
+/* 3. Text Wrap: Prevent truncation */
+/* Target the span that Docusaurus modules use for labels */
+.theme-doc-sidebar .menu__link span,
+.theme-doc-sidebar .menu__link {
+  overflow: visible !important;
+  white-space: normal !important;
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  height: auto !important;
 }
