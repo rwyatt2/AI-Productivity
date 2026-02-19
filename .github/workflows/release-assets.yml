@@ -8,6 +8,12 @@ on:
     push:
         tags:
             - 'v*'
+    workflow_dispatch:
+        inputs:
+            tag_name:
+                description: 'Tag to build and attach assets to (e.g. v1.3.0)'
+                required: true
+                default: 'v1.3.0'
 
 permissions:
     contents: write
@@ -19,6 +25,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
               with:
+                  ref: ${{ github.event.inputs.tag_name || github.ref }}
                   fetch-depth: 0
 
             - name: Setup Node
@@ -54,6 +61,11 @@ jobs:
               run: |
                   cd starter
                   zip -r ../ai-kit-starter.zip .
+
+            - name: Verify zip assets exist before upload
+              run: |
+                  ls -la ai-kit-only.zip ai-kit-starter.zip
+                  test -f ai-kit-only.zip && test -f ai-kit-starter.zip || (echo "Missing zip assets" && exit 1)
 
             - name: Create Release and upload assets
               uses: softprops/action-gh-release@v2
