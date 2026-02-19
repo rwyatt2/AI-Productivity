@@ -5,7 +5,7 @@ title: Security triggers
 # What this is
 
 <div style={{textAlign: 'center', margin: '1.5rem 0'}}>
-  <img src="/img/docs/security-gate.svg" alt="Security gate" width="80" />
+  <img src={require('@site/static/img/docs/security-gate.svg').default} alt="Security gate" width="80" />
 </div>
 
 Security triggers are situations where you must be extra careful. When you touch login, permissions, exports, secrets, uploads, or sensitive data, the kit expects you to do a short threat model and write security acceptance criteria (things you can check before you ship).

@@ -5,7 +5,7 @@ title: Daily workflow (IMPLEMENT)
 # What this is
 
 <div style={{textAlign: 'center', margin: '1.5rem 0'}}>
-  <img src="/img/docs/implement-mode.svg" alt="IMPLEMENT mode" width="80" />
+  <img src={require('@site/static/img/docs/implement-mode.svg').default} alt="IMPLEMENT mode" width="80" />
 </div>
 
 IMPLEMENT mode is for writing and changing code. The AI suggests files to change, edits, and tests.

@@ -5,7 +5,7 @@ title: What is this?
 # What this is
 
 <div style={{textAlign: 'center', margin: '1.5rem 0'}}>
-  <img src="/img/docs/one-question.svg" alt="One question at a time" width="80" />
+  <img src={require('@site/static/img/docs/one-question.svg').default} alt="One question at a time" width="80" />
 </div>
 
 This is a kit that helps you use AI (like Cursor) in a clear, safe way.
