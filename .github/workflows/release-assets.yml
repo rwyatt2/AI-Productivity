@@ -54,7 +54,7 @@ jobs:
 
             - name: Sync starter from kit
               run: |
-                  npm ci
+                  if [ -f package-lock.json ]; then npm ci; else npm install; fi
                   npm run sync:starter
 
             - name: Create starter zip
