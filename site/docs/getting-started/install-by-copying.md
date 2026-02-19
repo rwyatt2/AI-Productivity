@@ -8,6 +8,15 @@ You install the kit by copying files. No npm install needed.
 
 You copy everything from the `kit/` folder (or the contents of `starter/`) into the **root** of your project—the same folder that has your app or code. For a preview of the folder structure and links to each file’s full text, see [Kit file preview](../reference/kit-preview).
 
+```mermaid
+flowchart TD
+  root["your-project/ (root)"]
+  root --> cursor[".cursor/\nrules and prompts"]
+  root --> docsAi["docs/ai/\nconfig and source of truth"]
+  root --> github[".github/\nPR template and Copilot"]
+  root --> config["cursor-ai-kit.config.json"]
+```
+
 ## When to use it
 
 * **New project:** Use the **starter zip** (see [Downloads](downloads)): unzip it and open that folder as your project root. The unzipped folder is your project; don’t leave the kit nested inside a subfolder like `ai-kit-starter`.

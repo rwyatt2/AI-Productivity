@@ -1,0 +1,10 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circle background -->
+  <circle cx="40" cy="40" r="38" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <!-- Chat bubble shape -->
+  <path d="M18 22 Q18 16 24 16 L56 16 Q62 16 62 22 L62 46 Q62 52 56 52 L44 52 L38 60 L36 52 L24 52 Q18 52 18 46 Z" fill="white" stroke="#f59e0b" stroke-width="2.5"/>
+  <!-- Question mark body -->
+  <path d="M35 28 Q35 24 40 24 Q45 24 45 29 Q45 33 40 36 L40 40" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Question mark dot -->
+  <circle cx="40" cy="45" r="2" fill="#f59e0b"/>
+</svg>

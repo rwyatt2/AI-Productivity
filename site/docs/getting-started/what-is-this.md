@@ -4,6 +4,10 @@ title: What is this?
 
 # What this is
 
+<div style={{textAlign: 'center', margin: '1.5rem 0'}}>
+  <img src="/img/docs/one-question.svg" alt="One question at a time" width="80" />
+</div>
+
 This is a kit that helps you use AI (like Cursor) in a clear, safe way.
 
 * It helps you figure out the right problem before you build.
@@ -12,6 +16,14 @@ This is a kit that helps you use AI (like Cursor) in a clear, safe way.
 * It reminds you to think about security.
 
 It works with Cursor and with GitHub Copilot.
+
+```mermaid
+flowchart LR
+  problem[Problem] --> specStep["Spec\nWhat done looks like"]
+  specStep --> codeStep["Code\nSafe, minimal diffs"]
+  codeStep --> secStep["Security check\nWhen it matters"]
+  secStep --> ship[Ship]
+```
 
 ## When to use it
 

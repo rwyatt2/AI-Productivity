@@ -13,6 +13,17 @@ A small **AI Kit** for working faster and more safely with Cursor (and optionall
 - **One question at a time** — The AI asks exactly one question when it needs input, then continues.
 - **Switches** — Say `Switch: SPEC` or `Switch: IMPLEMENT` when the conversation goes the wrong way.
 
+## How SPEC and IMPLEMENT work together
+
+```mermaid
+flowchart LR
+  task([Your task]) --> route{Need a plan?}
+  route -->|yes| spec["SPEC mode\nClarify · Spec · Security"]
+  route -->|"code ready"| impl["IMPLEMENT mode\nFiles · Edits · Tests"]
+  spec -->|"Switch: IMPLEMENT"| impl
+  impl -->|"Switch: SPEC"| spec
+```
+
 ## Get started
 
 1. **[What is this?](getting-started/what-is-this)** — Overview and big idea.

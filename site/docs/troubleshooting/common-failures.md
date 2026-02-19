@@ -10,6 +10,28 @@ This page lists problems people often hit and the simplest way to fix them. Each
 
 Use it when the AI is asking too many questions, making things up, getting confused, or doing the wrong kind of work (spec vs code).
 
+```mermaid
+flowchart TD
+  problem["Something went wrong"] --> q1{"Too many\nquestions?"}
+  q1 -->|yes| fix1["Reply: Ask exactly\none question and stop"]
+  q1 -->|no| q2{"Wrong mode\nor mixing?"}
+  q2 -->|yes| fix2["Type Switch: SPEC\nor Switch: IMPLEMENT"]
+  q2 -->|no| q3{"Confused or\nguessing?"}
+  q3 -->|yes| fix3["New chat + Session Kickoff\n+ fresh Context Pack"]
+  q3 -->|no| fix4["Check model-switching\nor update ai-config.md"]
+```
+
+## Advisories block
+
+At the top of replies you may see an **Advisories** block. It tells you how the AI is working and when you should change something.
+
+* **Route** — Is the AI in plan mode (SPEC) or code mode (IMPLEMENT) for this reply?
+* **Model class** — Fast (quick), Reasoning (hard stuff), or Best-coding (many files). The AI suggests which fits.
+* **Context risk** — Low, Medium, or High. How likely the AI is to get mixed up with the files and chat you have open.
+* **HIGHLY RECOMMENDED** — The AI is saying: you should do something (switch mode, use a stronger model, or start a new chat). Do what it says in the reply.
+
+The AI says HIGHLY RECOMMENDED when the work touches things that need extra care: login/auth, permissions, exports or bulk/reporting, restricted or confidential data, external or public exposure, integrations or webhooks, file uploads, or secrets/tokens. Follow the suggestion in the response.
+
 ## Steps (fixes)
 
 **Do this:**
@@ -35,6 +57,12 @@ Use it when the AI is asking too many questions, making things up, getting confu
 
 * **“It is writing code but I need the spec first.”**  
   Type: **Switch: SPEC**
+
+* **"My API usage is high."**  
+  Stay on Auto/Fast unless the AI says HIGHLY RECOMMENDED.
+
+* **"It stopped and asked one security question."**  
+  Answer it. That is the security stop gate. See [Security triggers](../security/triggers) for context.
 
 ## Common mistakes
 

@@ -4,6 +4,13 @@ title: What to fill in
 
 These are the only parts of the kit that need your input. Keep them small. Only update them when something changes.
 
+```mermaid
+flowchart LR
+  startNode([Start here]) --> minFile["Minimum — do first\nai-config.md\nDesign system name + docs + imports"]
+  minFile --> roiFiles["High-ROI — fill when you can\nproject-brief · current-state\npartner-map · glossary · decisions"]
+  roiFiles --> ruleNode(["Only update\nwhen something changes"])
+```
+
 ---
 
 ## The minimum (you should do this)

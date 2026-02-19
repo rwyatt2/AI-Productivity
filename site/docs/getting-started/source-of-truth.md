@@ -14,6 +14,13 @@ When you fill them in, you’re telling the AI: “This is how our project works
 
 If you don’t tell the AI how your repo is set up, it will **guess**. It might invent file paths, API names, or UI patterns that don’t exist. That causes wrong code and wasted time.
 
+```mermaid
+flowchart LR
+  fill["You fill docs/ai/\nwith real info"] --> aiReads["AI reads\nyour files"]
+  aiReads --> correct["Real paths · Real patterns\nReal conventions used"]
+  correct --> noGuess["No invented code\nFewer mistakes"]
+```
+
 When you put the real info in these files, the AI **reads them** and follows what you wrote. So it stops guessing and starts using your actual conventions, your real design system, and your real “who owns what.” Fewer mistakes, less rework.
 
 ---

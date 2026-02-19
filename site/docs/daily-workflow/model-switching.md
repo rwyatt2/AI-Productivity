@@ -12,6 +12,14 @@ Many AI tools let you pick which “model” does the work: some are fast and ch
 
 Think of models in three buckets (your tool may use different names):
 
+```mermaid
+flowchart TD
+  task[Your task] --> check{"How complex?"}
+  check -->|"quick or routine"| fast["Fast model\nCheap and quick\nMechanical edits · copy"]
+  check -->|"fuzzy or multi-step"| reasoning["Reasoning model\nPlanning · debugging\nArchitecture decisions"]
+  check -->|"real code to ship"| bestCode["Best-coding model\nNew features · refactors\nSecurity changes"]
+```
+
 * **Fast model** — Cheap and quick. Good for simple, repetitive tasks. Use when speed and cost matter more than deep thinking.
 * **Strong reasoning model** — Better at multi-step logic, planning, and “figuring it out.” Use when the task is fuzzy or the answer isn’t obvious.
 * **Best coding model** — Best at code: structure, correctness, and staying true to your repo. Use when the code has to be right and maintainable.

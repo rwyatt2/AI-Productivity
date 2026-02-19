@@ -6,6 +6,14 @@ title: Context windows (overload, rot, reset)
 
 The AI can only “see” so much of your chat and files at once. When too much is in there, it gets confused or forgets things. This page tells you how to spot that, how to fix it (the reset recipe), and how to bring only the important stuff into a new chat (carryover summary and repo map).
 
+```mermaid
+flowchart LR
+  fresh["Fresh chat\nClean context"] --> growing["Chat grows\nFiles added"]
+  growing --> overload["Overloaded or rotted\nGeneric answers · Forgets · Contradicts"]
+  overload --> reset["Reset:\nNew chat + Session Kickoff\n+ Context Pack 3-7 items"]
+  reset --> fresh
+```
+
 ---
 
 ## Signs the context window is overloaded
