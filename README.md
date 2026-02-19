@@ -1,6 +1,5 @@
 # AI Productivity Kit
 
-**README** · [RELEASE](RELEASE.md) · [CHANGELOG](CHANGELOG.md) · [LAUNCH_CHECKLIST](LAUNCH_CHECKLIST.md)
 
 [![Release](https://img.shields.io/github/v/release/rwyatt2/AI-Productivity?include_prereleases=&sort=semver&style=flat-square)](https://github.com/rwyatt2/AI-Productivity/releases)
 [![Starter sync](https://github.com/rwyatt2/AI-Productivity/actions/workflows/check-starter-sync.yml/badge.svg?style=flat-square)](https://github.com/rwyatt2/AI-Productivity/actions/workflows/check-starter-sync.yml)
@@ -12,11 +11,7 @@ A small **AI Kit** for working faster and more safely with Cursor (and optionall
 
 **kit/ is canonical.** Only edit files in `kit/`. The `starter/` folder is generated from `kit/` — do not edit `starter/` directly.
 
-| Doc | Description |
-|-----|-------------|
-| [RELEASE.md](RELEASE.md) | Where to get releases (kit-only & starter zips) |
-| [CHANGELOG.md](CHANGELOG.md) | Version history and changes |
-| [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md) | Pre-launch and release checklist for maintainers |
+
 
 ## What it does
 
