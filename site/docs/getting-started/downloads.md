@@ -14,7 +14,7 @@ You can get the AI Kit in three ways. Pick one.
 
 ## 1) Download kit-only (just the kit files)
 
-**What you get:** A zip with only the kit: `.cursor/`, `docs/ai/`, `.github/`, and `cursor-ai-kit.config.json`. No sample code. You copy these into your own repo.
+**What you get:** A zip with only the kit: `.cursor/`, `.agent/` (Antigravity rules), `docs/ai/`, `.github/`, and `cursor-ai-kit.config.json`. No sample code. You copy these into your own repo.
 
 **Download:** [Releases page](https://github.com/rwyatt2/AI-Productivity/releases) → open the **latest release** → under **Assets**, click **ai-kit-only.zip**. (Direct link for a specific version: `https://github.com/rwyatt2/AI-Productivity/releases/download/vX.Y.Z/ai-kit-only.zip` — replace `vX.Y.Z` with your release tag.)
 
@@ -24,7 +24,7 @@ You can get the AI Kit in three ways. Pick one.
 2. Open the latest release.
 3. Under **Assets**, click **ai-kit-only.zip** to download.
 4. Unzip the file on your computer.
-5. Copy everything inside the unzipped folder into the **root** of your project (the same folder that has your code). If your project already has `.cursor/` or `docs/`, merge or replace as needed.
+5. Copy everything inside the unzipped folder into the **root** of your project (the same folder that has your code). If your project already has `.cursor/`, `.agent/`, or `docs/`, merge or replace as needed.
 6. Fill in the placeholders (see [What to fill in](what-to-fill-in)).
 
 **If you don’t see ai-kit-only.zip:** There may be no release yet. Clone the repo or download it, then copy everything inside the **`kit/`** folder into your project root. Or use “Download individual pieces” below.
@@ -35,7 +35,7 @@ You can get the AI Kit in three ways. Pick one.
 
 **What you get:** A zip of a ready-to-use starter. The kit is already in place. You unzip it and use that folder as your **project root**.
 
-**Important:** The **unzipped folder is your project root**. The kit files (`.cursor/`, `.github/`, `docs/`, `cursor-ai-kit.config.json`, `README.md`) must live at the **root** of your project—not inside a subfolder like `ai-kit-starter`. Open the unzipped folder in Cursor (or rename it to your project name, then open it). Do **not** leave the kit nested inside another folder.
+**Important:** The **unzipped folder is your project root**. The kit files (`.cursor/`, `.agent/`, `.github/`, `docs/`, `cursor-ai-kit.config.json`, `README.md`) must live at the **root** of your project—not inside a subfolder like `ai-kit-starter`. Open the unzipped folder in Cursor or Antigravity (or rename it to your project name, then open it). Do **not** leave the kit nested inside another folder.
 
 **Download:** [Releases page](https://github.com/rwyatt2/AI-Productivity/releases) → open the **latest release** → under **Assets**, click **ai-kit-starter.zip**. (Direct link for a specific version: `https://github.com/rwyatt2/AI-Productivity/releases/download/vX.Y.Z/ai-kit-starter.zip` — replace `vX.Y.Z` with your release tag.)
 
@@ -44,7 +44,7 @@ You can get the AI Kit in three ways. Pick one.
 1. Go to [Releases](https://github.com/rwyatt2/AI-Productivity/releases).
 2. Open the latest release.
 3. Under **Assets**, click **ai-kit-starter.zip** to download.
-4. Unzip the file. You get a folder whose **contents** are `.cursor/`, `.github/`, `docs/`, `cursor-ai-kit.config.json`, and `README.md`.
+4. Unzip the file. You get a folder whose **contents** are `.cursor/`, `.agent/`, `.github/`, `docs/`, `cursor-ai-kit.config.json`, and `README.md`.
 5. **If the zip created a wrapper folder** (e.g. named `ai-kit-starter`): move everything *inside* that folder to your real project root, then delete the empty wrapper folder. The kit files must sit at the root of your project, not inside `ai-kit-starter`.
 6. Open your **project root** in Cursor (the folder that directly contains `.cursor/`, `docs/`, etc.). Paste Session Kickoff, Context Pack, and Router and start working.
 
@@ -64,6 +64,7 @@ You can get the AI Kit in three ways. Pick one.
    * [GitHub Copilot Instructions (Reference)](../reference/copilot-instructions)
    * [Cursor Rules – Operating System (Reference)](../reference/cursor-rules-operating-system)
    * [Cursor Rules – Security (Reference)](../reference/cursor-rules-security)
+   * [Antigravity Rules – Operating System (Reference)](../reference/antigravity-rules-operating-system)
    * [GitHub PR Template (Reference)](../reference/github-pr-template)
 
 2. **Open or copy the same files on GitHub** (so you can download or copy-paste):
@@ -85,13 +86,13 @@ You can get the AI Kit in three ways. Pick one.
 If you already have a repo and want to add the kit:
 
 1. **Get the kit:** Download **ai-kit-only.zip** from [Releases](https://github.com/rwyatt2/AI-Productivity/releases) (or clone the repo and use the contents of the **`starter/`** folder—same files).
-2. **Copy into your repo root:** Copy `.cursor/`, `docs/` (or at least `docs/ai/`), `.github/`, and `cursor-ai-kit.config.json` into the **root** of your existing repo (the same folder that contains your app or code).
+2. **Copy into your repo root:** Copy `.cursor/`, `.agent/`, `docs/` (or at least `docs/ai/`), `.github/`, and `cursor-ai-kit.config.json` into the **root** of your existing repo (the same folder that contains your app or code).
 3. **Merge if needed:** If you already have `.cursor/` or `docs/`, merge or replace. The kit files should sit alongside your code at the root, not in a subfolder.
 4. **Fill in placeholders:** See [What to fill in](what-to-fill-in).
 
 **Avoid these mistakes:**
 
-* **Don’t leave the kit inside a subfolder.** Cursor and the prompts expect `.cursor/`, `docs/ai/`, etc. at the **project root**. If you unzipped into a folder named `ai-kit-starter`, move everything *out* of that folder into your repo root and delete the empty folder.
+* **Don’t leave the kit inside a subfolder.** Cursor, Antigravity, and the prompts expect `.cursor/`, `.agent/`, `docs/ai/`, etc. at the **project root**. If you unzipped into a folder named `ai-kit-starter`, move everything *out* of that folder into your repo root and delete the empty folder.
 * **Don’t nest the kit under a folder named `ai-kit-starter` (or similar).** The kit must be at the root so rules and prompts load correctly.
 
 ---

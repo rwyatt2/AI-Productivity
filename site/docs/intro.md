@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # AI Productivity Kit
 
-A small **AI Kit** for working faster and more safely with Cursor (and optionally GitHub Copilot).
+A small **AI Kit** for working faster and more safely with Cursor, GitHub Copilot, and Google Antigravity.
 
 ## Quick start {#quick-start}
 
@@ -17,8 +17,8 @@ Open `docs/ai/ai-config.md` and fill in:
 - Your design system name and docs URL
 - Your component import pattern (e.g. `import { Button } from '@/components/ui'`)
 
-**Step 3 — Open Cursor and paste the Session Kickoff**  
-Start a new Composer session and paste the Session Kickoff prompt.  
+**Step 3 — Open Cursor (or Antigravity) and paste the Session Kickoff**  
+Start a new Composer session and paste the Session Kickoff prompt. In **Google Antigravity**, open the repo there; rules load from `.agent/rules/` automatically.  
 Full text: [Session Kickoff reference](reference/session-kickoff).
 
 **Step 4 — Type your first task**  

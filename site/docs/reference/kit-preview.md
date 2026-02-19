@@ -30,6 +30,8 @@ When you unzip **ai-kit-only.zip** or **ai-kit-starter.zip**, or copy from **kit
   rules/
     00-operating-system.mdc ← How the AI should behave (Cursor)
     40-security.mdc          ← Security rules (Cursor)
+.agent/
+  rules/                    ← Antigravity rules (*.md, same content as Cursor rules)
 .github/
   copilot-instructions.md   ← Instructions for GitHub Copilot
   pull_request_template.md  ← PR template
@@ -53,6 +55,7 @@ Each link goes to a page that includes: **What this is**, **When to use it**, **
 | `.cursor/rules/00-operating-system.mdc` | Cursor rules: one question at a time, switches, cross-platform behavior. | [Cursor Rules – Operating System (Reference)](./cursor-rules-operating-system) |
 | `.cursor/rules/40-security.mdc` | Cursor rules for security (secrets, credentials, sensitivity). | [Cursor Rules – Security (Reference)](./cursor-rules-security) |
 | `.github/copilot-instructions.md` | Instructions for GitHub Copilot (optional; aligns with Cursor). | [GitHub Copilot Instructions (Reference)](./copilot-instructions) |
+| `.agent/rules/*.md` | Rules for Google Antigravity (plain Markdown; same content as Cursor rules). | [Antigravity Rules – Operating System (Reference)](./antigravity-rules-operating-system) (and other Antigravity Rules in this Reference section) |
 | `.github/pull_request_template.md` | Default PR description (What, Why, Checklist). | [GitHub PR Template (Reference)](./github-pr-template) |
 
 ## Other files

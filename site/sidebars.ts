@@ -89,7 +89,8 @@ const sidebars: SidebarsConfig = {
             collapsed: true,
             items: [
                 "editor-support/cursor",
-                "editor-support/copilot"
+                "editor-support/copilot",
+                "editor-support/antigravity"
             ]
         },
 

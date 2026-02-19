@@ -11,7 +11,7 @@ This is a kit that helps you use AI (like Cursor) in a clear, safe way.
 * It helps you write code without making up stuff.
 * It reminds you to think about security.
 
-It works with Cursor and with GitHub Copilot.
+It works with Cursor, GitHub Copilot, and Google Antigravity.
 
 ```mermaid
 flowchart LR
