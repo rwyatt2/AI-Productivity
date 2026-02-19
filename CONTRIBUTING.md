@@ -42,11 +42,15 @@ From repo root: `npm run doctor`. It checks kit completeness, runs sync:starter 
 
 See [RELEASING.md](RELEASING.md). Sync and commit before tagging. Version must match `kit/cursor-ai-kit.config.json`. Push a tag (e.g. `v1.3.0`) to trigger the Release assets workflow.
 
-## 9. PR expectations
+## 9. Updating the Landing Page Progress
+
+To add a progress item, edit `site/data/progress.json`; the landing page will reflect it. There is no need to cut a new release for every progress update.
+
+## 10. PR expectations
 
 Use the repo PR template: [.github/pull_request_template.md](.github/pull_request_template.md) (in kit; synced to starter). Fill What, Why, and the checklist. Check-starter-sync and doctor run on PRs and must pass.
 
-## 10. What NOT to do
+## 11. What NOT to do
 
 - **Don’t edit starter/ or site/docs/reference/*** — they are generated from kit.
 - **Don’t skip sync** — after editing kit, run `npm run sync:starter` and `npm run sync`.

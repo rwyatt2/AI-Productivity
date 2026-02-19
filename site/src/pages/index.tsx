@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import progressData from '../../data/progress.json';
 
 import styles from './index.module.css';
 
@@ -38,9 +39,19 @@ function useTypingSequence() {
   const [pausing, setPausing] = useState(false);
   const [done, setDone] = useState(false);
 
+  // Check for reduced motion
+  const prefersReducedMotion = useRef(false);
+  useEffect(() => {
+    prefersReducedMotion.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion.current) {
+      setVisibleLines(LINES.map(l => ({ type: l.type, prefix: l.prefix, text: l.text })));
+      setDone(true);
+    }
+  }, []);
+
   // Main typing loop
   useEffect(() => {
-    if (done) return;
+    if (done || prefersReducedMotion.current) return;
     if (lineIndex >= LINES.length) {
       setDone(true);
       return;
@@ -75,7 +86,7 @@ function useTypingSequence() {
 
   // Loop: reset after done
   useEffect(() => {
-    if (!done) return;
+    if (!done || prefersReducedMotion.current) return;
     const t = setTimeout(() => {
       setVisibleLines([]);
       setCurrentText('');
@@ -272,9 +283,9 @@ const ICONS: Record<string, React.ReactElement> = {
       <path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
     </svg>
   ),
-  AGENTS: (
+  ADVISORIES: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+      <path d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
     </svg>
   ),
   SECURITY: (
@@ -370,26 +381,49 @@ function FloatingBadges() {
   );
 }
 
+// --- Progress / Latest ---
+
+function ProgressShowcase() {
+  const latest = progressData.slice(0, 3);
+  return (
+    <div className={styles.progressSection}>
+      <Heading as="h2" className={styles.progressSectionTitle}>Latest Progress</Heading>
+      <div className={styles.progressGrid}>
+        {latest.map((item, i) => (
+          <Link key={i} href={item.link} className={styles.progressCard}>
+            <div className={styles.progressHeader}>
+              <span className={styles.progressTitle}>{item.title}</span>
+              {item.date && <span className={styles.progressDate}>{item.date}</span>}
+            </div>
+            <p className={styles.progressDesc}>{item.description}</p>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // --- Page ---
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
+  const { kitVersion, heroHighlight } = siteConfig.customFields as { kitVersion: string; heroHighlight: string };
   return (
     <Layout
       title="AI Productivity Kit"
-      description="The Missing Operating System for AI Coding Agents.">
+      description="Spec-first AI kit for Cursor and Copilot. One question, two modes, no invented paths.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className={styles.heroBg} aria-hidden="true" />
         <div className={styles.heroGlow} aria-hidden="true" />
         <FloatingBadges />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className={styles.heroBadge}>v1.3.0 — docs visuals, advisories &amp; security stop gate</div>
+          <div className={styles.heroBadge}>v{kitVersion} — {heroHighlight}</div>
           <Heading as="h1" className={clsx('hero__title', styles.heroTitle)}>
             Stop Chatting.<br />Start Building.
           </Heading>
           <p className={clsx('hero__subtitle', styles.heroSubtitle)}>
-            A strict, grounded operating system for AI coding agents.<br />
-            One rule, one question, zero hallucinations.
+            The spec-first AI kit for Cursor and Copilot.<br />
+            One question, two modes, no invented paths.
           </p>
           <div className={styles.buttons}>
             <Link className="button button--primary button--lg" to="/docs/getting-started/install-by-copying">
@@ -399,6 +433,9 @@ export default function Home(): JSX.Element {
               See how it works
             </Link>
           </div>
+          <p style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)' }}>
+            Copy into your repo in 5 minutes.
+          </p>
         </div>
       </header>
 
@@ -411,28 +448,28 @@ export default function Home(): JSX.Element {
           <div className="feature-grid">
             <Feature
               tag="PROTOCOL"
-              title="One question. Then it stops."
-              description="The 85% confidence gate means the AI either acts or asks — never guesses and never spirals. If it is unsure, it asks exactly one question and waits."
+              title="One question at a time."
+              description="The 85% confidence gate means the AI either acts or asks — never guesses. If unsure, it asks exactly one question and waits."
             />
             <Feature
               tag="MODES"
-              title="SPEC first. Code second."
-              description="Switch: SPEC and Switch: IMPLEMENT are explicit mode changes. Planning and coding never mix in the same response."
+              title="Two modes."
+              description="SPEC (planning, PM, design) and IMPLEMENT (code, tests). Say Switch: SPEC or Switch: IMPLEMENT when needed."
             />
             <Feature
               tag="GROUNDING"
-              title="No invented paths or APIs."
-              description="The AI reads your docs/ai/ai-config.md and cites only what exists. Tickets and logs are data — never instructions."
+              title="Spec-first."
+              description="Clarify the problem and acceptance criteria before code. The AI reads your docs/ai/ai-config.md. No invented paths or APIs."
             />
             <Feature
-              tag="AGENTS"
-              title="8 lenses baked in."
-              description="PM, Design, FE, QA, Security, Discovery, Validation, Analytics — each with platform and exposure overlays."
+              tag="ADVISORIES"
+              title="Advisories."
+              description="Every response starts with a route, recommended model, context risk, and switch recommendations so you stay in control."
             />
             <Feature
               tag="SECURITY"
-              title="Triggers, not vibes."
-              description="Auth, uploads, exports, external calls — each triggers a threat-model-lite and security acceptance criteria automatically."
+              title="Security stop gate."
+              description="For high-risk work like auth, uploads, or exports, the AI asks one security question and stops until you answer."
             />
             <Feature
               tag="PORTABLE"
@@ -440,6 +477,8 @@ export default function Home(): JSX.Element {
               description="Cursor rules, GitHub Copilot instructions, and a PR template — all pre-wired and shipping in the same zip."
             />
           </div>
+
+          <ProgressShowcase />
 
           <div className={styles.ctaSection}>
             <Heading as="h2">Ready to take control?</Heading>

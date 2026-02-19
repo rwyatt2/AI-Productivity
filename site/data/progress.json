@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Docs visual overhaul",
+    "description": "Added dark mode support, refined spacing, and better mobile navigation across all doc pages.",
+    "date": "2026-02-15",
+    "link": "/docs/whats-new"
+  },
+  {
+    "title": "Advisories and Security Stop Gate",
+    "description": "New security checklists and a hard stop gate for sensitive actions like uploads or auth changes.",
+    "date": "2026-01-20",
+    "link": "/docs/whats-new"
+  }
+]

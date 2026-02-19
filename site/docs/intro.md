@@ -6,9 +6,9 @@ sidebar_position: 1
 
 A small **AI Kit** for working faster and more safely with Cursor (and optionally GitHub Copilot).
 
-<span id="quick-start"></span>
+## Quick start {#quick-start}
 
-:::tip Quick start (5 minutes)
+:::tip (5 minutes)
 **Step 1 — Get the files**  
 Download `ai-kit-only.zip` from [Releases](https://github.com/rwyatt2/AI-Productivity/releases) and unzip into your project root. Or copy everything from `kit/` into your project root.
 
@@ -28,9 +28,10 @@ The AI will clarify one thing if it needs to, then plan before coding.
 ## What it does
 
 - **Spec-first** — Clarify the problem and acceptance criteria before code.
-- **Two modes** — **SPEC** (planning, PM, design, security) and **IMPLEMENT** (code, tests, safe diffs).
+- **Two modes** — **SPEC** (planning, PM, design, security) and **IMPLEMENT** (code, tests, safe diffs). Say `Switch: SPEC` or `Switch: IMPLEMENT` when the conversation goes the wrong way.
 - **One question at a time** — The AI asks exactly one question when it needs input, then continues.
-- **Switches** — Say `Switch: SPEC` or `Switch: IMPLEMENT` when the conversation goes the wrong way.
+- **Advisories** — Every response starts with a short block: route (SPEC/IMPLEMENT), recommended model, context risk, and when to switch or start a new thread.
+- **Security stop gate** — For high-risk work (auth, permissions, exports, uploads, integrations, confidential data), the AI asks one security question and stops until you answer.
 
 ## How SPEC and IMPLEMENT work together
 

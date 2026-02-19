@@ -3,8 +3,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: #0f0f12;
-  color: #fff;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
 }
 
 @media screen and (max-width: 966px) {
@@ -28,6 +28,12 @@
   z-index: 0;
 }
 
+html[data-theme='light'] .heroBg {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+}
+
 @keyframes gridDrift {
   from { background-position: 0 0; }
   to { background-position: 48px 48px; }
@@ -45,6 +51,10 @@
   pointer-events: none;
   filter: blur(55px);
   z-index: 0;
+}
+
+html[data-theme='light'] .heroGlow {
+  background: radial-gradient(ellipse at center, rgba(26, 86, 219, 0.08) 0%, rgba(26, 86, 219, 0.03) 45%, transparent 70%);
 }
 
 /* Floating code badges */
@@ -95,6 +105,12 @@
   animation-delay: 2.0s;
 }
 
+html[data-theme='light'] .floatingBadge {
+  color: rgba(26, 86, 219, 0.75);
+  background: rgba(26, 86, 219, 0.05);
+  border-color: rgba(26, 86, 219, 0.15);
+}
+
 @keyframes floatY {
   0%   { opacity: 0;   transform: translateY(0px) rotate(0deg); }
   12%  { opacity: 1; }
@@ -123,23 +139,33 @@
   margin-bottom: 1.25rem;
 }
 
+html[data-theme='light'] .heroBadge {
+  color: #1a56db;
+  background: rgba(26, 86, 219, 0.08);
+  border-color: rgba(26, 86, 219, 0.25);
+}
+
 .heroTitle {
   font-size: clamp(2.4rem, 5vw, 4rem) !important;
   font-weight: 900 !important;
   letter-spacing: -0.04em !important;
   line-height: 1.05 !important;
-  color: #fff !important;
+  color: var(--ifm-heading-color) !important;
   margin-bottom: 1.25rem !important;
 }
 
 .heroSubtitle {
   font-size: 1.15rem !important;
-  color: rgba(255,255,255,0.6) !important;
+  color: var(--ifm-color-secondary-darkest) !important;
   line-height: 1.7 !important;
   margin-bottom: 2.5rem !important;
   max-width: 560px;
   margin-left: auto;
   margin-right: auto;
+}
+
+html[data-theme='dark'] .heroSubtitle {
+  color: rgba(255,255,255,0.6) !important;
 }
 
 .buttons {
@@ -265,6 +291,77 @@
     margin-left: 19px;
     align-self: auto;
   }
+}
+
+/* ==============================
+   Progress Section
+   ============================== */
+
+.progressSection {
+  margin: 4rem 0 3rem;
+  padding: 0 1rem;
+}
+
+.progressSectionTitle {
+  font-size: 1.5rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem !important;
+  color: var(--ifm-heading-color) !important;
+  text-align: center;
+}
+
+.progressGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.progressCard {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progressCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-color: #89b4fa;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.progressTitle {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ifm-heading-color);
+}
+
+.progressDate {
+  font-size: 0.75rem;
+  color: var(--ifm-color-secondary-darkest);
+  white-space: nowrap;
+}
+
+.progressDesc {
+  font-size: 0.9rem;
+  color: var(--ifm-color-secondary-darkest);
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* ==============================

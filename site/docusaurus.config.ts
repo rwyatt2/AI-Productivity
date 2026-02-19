@@ -7,11 +7,17 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const repoName = 'AI-Productivity';
 const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+const kitConfig = require('../kit/cursor-ai-kit.config.json');
 
 const config: Config = {
   title: 'AI Productivity',
   tagline: 'AI Kit for Cursor and Copilot',
   favicon: 'img/favicon.svg',
+
+  customFields: {
+    kitVersion: kitConfig.version,
+    heroHighlight: 'docs visuals, advisories & security stop gate',
+  },
 
   future: {
     v4: true,
