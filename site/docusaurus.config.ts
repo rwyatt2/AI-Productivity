@@ -67,9 +67,10 @@ const config: Config = {
     mermaid: {
       theme: { light: 'base', dark: 'dark' },
       options: {
+        useMaxWidth: false,
         themeVariables: {
           fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-          fontSize: '16px',
+          fontSize: '20px',
           primaryColor: '#fafafa',
           primaryTextColor: '#171717',
           primaryBorderColor: '#e5e5e5',

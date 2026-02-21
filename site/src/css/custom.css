@@ -468,7 +468,7 @@ pre code {
   border: 1px solid var(--ifm-border-color);
   border-radius: 12px;
   background: var(--ifm-background-color);
-  overflow-x: auto; /* Allow scrolling if diagram is wide */
+  overflow: auto; /* Allow scrolling if diagram is wide or tall */
 }
 .docusaurus-mermaid-container svg {
   max-width: none; /* Don't shrink to fit */
