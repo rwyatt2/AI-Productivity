@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # AI Productivity Kit
 
-A small **AI Kit** for working faster and more safely with Cursor, GitHub Copilot, and Google Antigravity. Use it for **any** project—web apps, APIs, mobile, data tools, CLIs—not just websites.
+Rules, prompts, and config files you copy into your repo so Cursor (and Copilot / Antigravity) plan before coding, ask one question at a time, and pause for security when it matters. Use it for **any** project—web apps, APIs, mobile, data tools, CLIs—not just websites.
 
 :::info Any stack, any project
 The kit works the same whether you're building a website, a Python app, an API, a CLI, or an internal tool. The workflow (plan → spec → code → security) is the same; only your tech stack and optional design system change.

@@ -11,7 +11,7 @@ const kitConfig = require('../kit/cursor-ai-kit.config.json');
 
 const config: Config = {
   title: 'AI Productivity',
-  tagline: 'AI Kit for Cursor and Copilot',
+  tagline: 'Rules and prompts you copy into your repo. Plan first, code second, security when it matters.',
   favicon: 'img/favicon.svg',
 
   customFields: {

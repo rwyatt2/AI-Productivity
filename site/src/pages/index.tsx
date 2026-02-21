@@ -411,7 +411,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title="AI Productivity Kit"
-      description="Spec-first AI kit for Cursor and Copilot. One question, two modes, no invented paths.">
+      description="Rules and prompts you copy into your repo. Plan first, code second, security when it matters.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className={styles.heroBg} aria-hidden="true" />
         <div className={styles.heroGlow} aria-hidden="true" />
@@ -424,6 +424,9 @@ export default function Home(): JSX.Element {
           <p className={clsx('hero__subtitle', styles.heroSubtitle)}>
             The spec-first AI kit for Cursor and Copilot.<br />
             One question, two modes, no invented paths.
+          </p>
+          <p style={{ marginTop: '0.75rem', marginBottom: 0, fontSize: '1rem', opacity: 0.95, maxWidth: '36rem', marginLeft: 'auto', marginRight: 'auto' }}>
+            Rules, prompts, and config files you copy into your repo so Cursor (and Copilot / Antigravity) plan before coding, ask one question at a time, and pause for security when it matters.
           </p>
           <div className={styles.buttons}>
             <Link className="button button--primary button--lg" to="/docs/getting-started/install-by-copying">

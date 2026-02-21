@@ -4,7 +4,7 @@ title: What is this?
 
 # What this is
 
-This is a kit that helps you use AI (like Cursor) in a clear, safe way.
+Rules, prompts, and config files you copy into your repo so Cursor (and Copilot / Antigravity) plan before coding, ask one question at a time, and pause for security when it matters.
 
 * It helps you figure out the right problem before you build.
 * It helps you write down what you want (a spec).
