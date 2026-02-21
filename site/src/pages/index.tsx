@@ -366,7 +366,7 @@ const FLOATING_BADGES = [
   { text: 'Switch: SPEC', cls: styles.floatBadge1 },
   { text: '85% gate', cls: styles.floatBadge2 },
   { text: 'one question', cls: styles.floatBadge3 },
-  { text: 'no invented paths', cls: styles.floatBadge4 },
+  { text: 'copy into repo', cls: styles.floatBadge4 },
 ];
 
 function FloatingBadges() {
@@ -422,11 +422,8 @@ export default function Home(): JSX.Element {
             Stop Chatting.<br />Start Building.
           </Heading>
           <p className={clsx('hero__subtitle', styles.heroSubtitle)}>
-            The spec-first AI kit for Cursor and Copilot.<br />
-            One question, two modes, no invented paths.
-          </p>
-          <p style={{ marginTop: '0.75rem', marginBottom: 0, fontSize: '1rem', opacity: 0.95, maxWidth: '36rem', marginLeft: 'auto', marginRight: 'auto' }}>
-            Rules, prompts, and config files you copy into your repo so Cursor (and Copilot / Antigravity) plan before coding, ask one question at a time, and pause for security when it matters.
+            Rules and prompts you copy into your repo —<br />
+            plan first, code second, security when it matters.
           </p>
           <div className={styles.buttons}>
             <Link className="button button--primary button--lg" to="/docs/getting-started/install-by-copying">
