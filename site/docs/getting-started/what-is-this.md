@@ -13,6 +13,10 @@ This is a kit that helps you use AI (like Cursor) in a clear, safe way.
 
 It works with Cursor, GitHub Copilot, and Google Antigravity.
 
+## What kind of projects?
+
+Use it for **any** kind of software project—websites, APIs, mobile apps, Python scripts, data pipelines, internal tools. The workflow (plan → spec → code → security) is the same; only the tech stack and optional design system change. If your project has no UI (e.g. API, CLI, data pipeline), you can leave the design system as TODO.
+
 ```mermaid
 flowchart LR
   problem[Problem] --> specStep["Spec\nWhat done looks like"]
@@ -27,8 +31,9 @@ Use it when you want AI to help you plan or code without getting confused or inv
 
 ## Steps
 
+0. **Get your stuff together:** Project folder (new or existing), and if you have a UI, your design system name and docs. See [Prerequisites](prerequisites).
 1. **Get the kit:** For a **new project**, use the starter zip (see [Downloads](downloads))—unzip it and open that folder as your project root. For an **existing project**, use the kit-only zip or copy the kit into your repo root (see [Install by copying](install-by-copying)). The kit files (`.cursor/`, `docs/`, etc.) must be at the **project root**, not inside a subfolder.
-2. Fill in a few placeholders (design system, project info). See [What to fill in](what-to-fill-in).
+2. Fill in a few placeholders (platform type, project info; design system if you have UI). See [What to fill in](what-to-fill-in).
 3. When you start work, paste the Session Kickoff and Context Pack.
 4. If the AI does the wrong thing, type: **Switch: SPEC** or **Switch: IMPLEMENT**.
 

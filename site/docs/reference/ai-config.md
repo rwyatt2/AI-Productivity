@@ -76,10 +76,10 @@ If information is missing and needed to proceed safely, the AI must ask **exactl
 * **Description:** TODO  <!-- e.g. "A B2B SaaS dashboard for finance teams focused on data accuracy and role-based access." -->
 * **What the AI should emphasise:** TODO  <!-- e.g. "structured outputs, access control, audit trails over visual polish" -->
 
-## Design system — fill in yours
+## Design system — fill in yours (optional if no UI)
 
 <!-- Fill this in. The AI reads this file and cites only what is here. -->
-Fill these so the AI uses your design system consistently:
+**Skip or leave TODO** if this project has no UI (e.g. API, CLI, data pipeline). Otherwise fill these so the AI uses your design system consistently:
 
 * Design system name: TODO
 * Design system docs: TODO

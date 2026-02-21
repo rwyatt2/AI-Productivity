@@ -4,18 +4,23 @@ sidebar_position: 1
 
 # AI Productivity Kit
 
-A small **AI Kit** for working faster and more safely with Cursor, GitHub Copilot, and Google Antigravity.
+A small **AI Kit** for working faster and more safely with Cursor, GitHub Copilot, and Google Antigravity. Use it for **any** project—web apps, APIs, mobile, data tools, CLIs—not just websites.
+
+:::info Any stack, any project
+The kit works the same whether you're building a website, a Python app, an API, a CLI, or an internal tool. The workflow (plan → spec → code → security) is the same; only your tech stack and optional design system change.
+:::
 
 ## Quick start {#quick-start}
 
 :::tip (5 minutes)
+**Step 0 — Get your stuff together**  
+Have your project folder ready (new or existing). If you have a UI, have your design system name and docs handy. See [Prerequisites](getting-started/prerequisites).
+
 **Step 1 — Get the files**  
 Download `ai-kit-only.zip` from [Releases](https://github.com/rwyatt2/AI-Productivity/releases) and unzip into your project root. Or copy everything from `kit/` into your project root.
 
 **Step 2 — Fill in your config**  
-Open `docs/ai/ai-config.md` and fill in:
-- Your design system name and docs URL
-- Your component import pattern (e.g. `import { Button } from '@/components/ui'`)
+Open `docs/ai/ai-config.md` and fill in your platform type and project info. If you have a **UI or design system**, add its name, docs URL, and import pattern (e.g. `import { Button } from '@/components/ui'`). Back-end-only or CLI projects can leave design system as TODO.
 
 **Step 3 — Open Cursor (or Antigravity) and paste the Session Kickoff**  
 Start a new Composer session and paste the Session Kickoff prompt. In **Google Antigravity**, open the repo there; rules load from `.agent/rules/` automatically.  

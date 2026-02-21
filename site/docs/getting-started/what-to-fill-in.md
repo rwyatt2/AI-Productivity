@@ -4,9 +4,11 @@ title: What to fill in
 
 These are the only parts of the kit that need your input. Keep them small. Only update them when something changes.
 
+The only **required** setup is your project root and (for UI work) a design system. Back-end-only or CLI projects can leave the design system as TODO.
+
 ```mermaid
 flowchart LR
-  startNode([Start here]) --> minFile["Minimum — do first\nai-config.md\nDesign system name + docs + imports"]
+  startNode([Start here]) --> minFile["Minimum — do first\nai-config.md\nPlatform type + (if UI) design system"]
   minFile --> roiFiles["High-ROI — fill when you can\nproject-brief · current-state\npartner-map · glossary · decisions"]
   roiFiles --> ruleNode(["Only update\nwhen something changes"])
 ```
@@ -17,13 +19,10 @@ flowchart LR
 
 **File:** `docs/ai/ai-config.md`
 
-Fill these three things so the AI uses your design system instead of guessing:
+1. **Platform type** — Slug and description of what you're building (e.g. `consumer-app`, `data-platform`, `developer-platform`). The AI uses this for architecture and security decisions.
+2. **Design system (if you have UI)** — Name, docs URL, and import pattern. **Skip or leave TODO** if this project has no UI (e.g. API, CLI, data pipeline). If you have a UI and skip these, the kit still works but the AI may invent UI patterns.
 
-1. **Design system name** — e.g. "Tailwind" or "Our UI library".
-2. **Design system docs** — a link to your design docs (or leave TODO).
-3. **Design system imports/package** — how you import it in code (e.g. package name or path).
-
-If you skip these, the kit still works but the AI may invent UI patterns. See the full template: [AI Config (reference)](../reference/ai-config).
+See the full template: [AI Config (reference)](../reference/ai-config).
 
 ---
 
@@ -46,4 +45,4 @@ These files give the AI clear truth so it doesn’t guess or hallucinate. Fill t
 
 **Only update these when something changes. Keep them small.**
 
-You don’t have to fill everything on day one. Start with the minimum (design system in `ai-config.md`), then add a few bullets to project-brief and current-state when you have time. The more you fill, the less the AI will guess—and the fewer mistakes you’ll get.
+You don’t have to fill everything on day one. Start with the minimum (platform type and, if you have UI, design system in `ai-config.md`), then add a few bullets to project-brief and current-state when you have time. The more you fill, the less the AI will guess—and the fewer mistakes you’ll get.

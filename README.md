@@ -7,19 +7,20 @@
 [![Docs](https://img.shields.io/badge/docs-site-blue?style=flat-square)](https://rwyatt2.github.io/AI-Productivity/)
 [![Editors](https://img.shields.io/badge/editors-Cursor%20%C2%B7%20Copilot%20%C2%B7%20Antigravity-8A2BE2?style=flat-square)](https://github.com/rwyatt2/AI-Productivity#readme)
 
-A small **AI Kit** for working faster and more safely with Cursor, GitHub Copilot, and Google Antigravity. It gives you a clear workflow: plan first, code second, and security checks when it matters.
+A small **AI Kit** for working faster and more safely with Cursor, GitHub Copilot, and Google Antigravity. Use it for **any** project—web apps, APIs, mobile, data tools, CLIs—not just websites. It gives you a clear workflow: plan first, code second, and security checks when it matters.
 
 **kit/ is canonical.** Only edit files in `kit/`. The `starter/` folder is generated from `kit/` — do not edit `starter/` directly.
 
 ## ⚡ Quick start (5 minutes)
 
+**Step 0 — Get your stuff together**  
+Have your project folder ready (new or existing). If you have a UI, have your design system name and docs handy. See [Prerequisites](https://rwyatt2.github.io/AI-Productivity/docs/getting-started/prerequisites).
+
 **Step 1 — Get the files**  
 Download `ai-kit-only.zip` from [Releases](https://github.com/rwyatt2/AI-Productivity/releases) and unzip into your project root. Or copy everything from `kit/` into your project root.
 
 **Step 2 — Fill in your config**  
-Open `docs/ai/ai-config.md` and fill in:
-- Your design system name and docs URL
-- Your component import pattern (e.g., `import { Button } from '@/components/ui'`)
+Open `docs/ai/ai-config.md` and fill in your platform type and project info. If you have a **UI or design system**, add its name, docs URL, and import pattern (e.g. `import { Button } from '@/components/ui'`). Back-end-only or CLI projects can leave design system as TODO.
 
 **Step 3 — Open Cursor and paste the Session Kickoff**  
 Start a new Composer session and paste the Session Kickoff prompt.  
@@ -38,7 +39,7 @@ The AI will clarify one thing if it needs to, then plan before coding.
 
 ## Get started
 
-1. **Read the docs** — [What is this?](https://rwyatt2.github.io/AI-Productivity/docs/getting-started/what-is-this) and [Install by copying](https://rwyatt2.github.io/AI-Productivity/docs/getting-started/install-by-copying).
+1. **Read the docs** — [Prerequisites](https://rwyatt2.github.io/AI-Productivity/docs/getting-started/prerequisites), [What is this?](https://rwyatt2.github.io/AI-Productivity/docs/getting-started/what-is-this), and [Install by copying](https://rwyatt2.github.io/AI-Productivity/docs/getting-started/install-by-copying).
 2. **Get the kit** — Download [Releases](https://github.com/rwyatt2/AI-Productivity/releases) (kit-only or starter zip) or copy from `kit/` into your project root.
 3. **Fill placeholders** — Design system and project info in `docs/ai/`. See [What to fill in](https://rwyatt2.github.io/AI-Productivity/docs/getting-started/what-to-fill-in).
 4. **Use the workflow** — Session Kickoff, Context Pack, Router. [Daily workflow (SPEC-first)](https://rwyatt2.github.io/AI-Productivity/docs/daily-workflow/spec-first).
