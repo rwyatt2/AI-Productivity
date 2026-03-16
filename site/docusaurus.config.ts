@@ -63,7 +63,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/logo.svg',
+    image: 'img/og-image.png',
     mermaid: {
       theme: { light: 'base', dark: 'dark' },
       options: {
