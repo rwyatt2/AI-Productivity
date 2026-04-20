@@ -2,7 +2,8 @@
 /**
  * Sync starter/ from kit/ so starter is generated from kit (prevents drift).
  * Deletes and recreates starter/.cursor, starter/docs/ai, starter/.github,
- * copies from kit, and copies cursor-ai-kit.config.json and .cursorignore. Does NOT touch starter/README.md.
+ * copies from kit, and copies cursor-ai-kit.config.json, .cursorignore, and AGENTS.md.
+ * Also copies kit/AGENTS.md to repo root. Does NOT touch starter/README.md.
  */
 
 import { rm, cp, copyFile } from 'fs/promises';
@@ -40,8 +41,16 @@ async function sync() {
     path.join(kit, '.cursorignore'),
     path.join(starter, '.cursorignore')
   );
+  await copyFile(
+    path.join(kit, 'AGENTS.md'),
+    path.join(starter, 'AGENTS.md')
+  );
+  await copyFile(
+    path.join(kit, 'AGENTS.md'),
+    path.join(root, 'AGENTS.md')
+  );
 
-  console.log('sync-starter-from-kit: starter/.cursor, starter/docs/ai, starter/.github, starter/.agent, starter/cursor-ai-kit.config.json, starter/.cursorignore updated from kit.');
+  console.log('sync-starter-from-kit: starter/.cursor, starter/docs/ai, starter/.github, starter/.agent, starter/cursor-ai-kit.config.json, starter/.cursorignore, starter/AGENTS.md, root AGENTS.md updated from kit.');
 }
 
 sync().catch((err) => {

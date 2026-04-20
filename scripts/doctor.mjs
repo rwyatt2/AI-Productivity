@@ -25,8 +25,11 @@ function ok(label) {
 // 1) Kit completeness
 // ---------------------------------------------------------------------------
 const KIT_PATHS = [
-  { p: "kit/.cursor/agents/", dir: true },
+  { p: "kit/.cursor/hooks.json", dir: false },
+  { p: "kit/.cursor/hooks/", dir: true },
+  { p: "kit/.cursor/lenses/", dir: true },
   { p: "kit/.cursor/prompts/", dir: true },
+  { p: "kit/.cursor/skills/", dir: true },
   { p: "kit/.cursor/rules/", dir: true },
   { p: "kit/docs/ai/", dir: true },
   { p: "kit/.github/", dir: true },
@@ -50,6 +53,98 @@ for (const { p, dir } of KIT_PATHS) {
     fail(`Expected file: ${p}`, `Create it and re-run: npm run doctor`);
   }
   ok(p);
+}
+
+// ---------------------------------------------------------------------------
+// 1b) SKILL.md frontmatter validation
+// ---------------------------------------------------------------------------
+console.log("\n1b) SKILL.md frontmatter validation...");
+const SKILLS_DIR = path.join(ROOT, "kit/.cursor/skills");
+if (fs.existsSync(SKILLS_DIR)) {
+  const skillDirs = fs.readdirSync(SKILLS_DIR).filter((d) =>
+    fs.statSync(path.join(SKILLS_DIR, d)).isDirectory()
+  );
+  for (const dir of skillDirs) {
+    const skillPath = path.join(SKILLS_DIR, dir, "SKILL.md");
+    if (!fs.existsSync(skillPath)) {
+      fail(
+        `Missing SKILL.md in kit/.cursor/skills/${dir}/`,
+        "Every skill directory must contain a SKILL.md file."
+      );
+    }
+    const content = fs.readFileSync(skillPath, "utf8");
+    const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+    if (!fmMatch) {
+      fail(
+        `SKILL.md in kit/.cursor/skills/${dir}/ is missing YAML frontmatter.`,
+        "Add --- delimited frontmatter with name and description fields."
+      );
+    }
+    const fm = fmMatch[1];
+    if (!/^name:\s*.+/m.test(fm)) {
+      fail(
+        `SKILL.md in kit/.cursor/skills/${dir}/ is missing 'name' in frontmatter.`,
+        "Add a name field (max 64 chars, lowercase letters/numbers/hyphens)."
+      );
+    }
+    if (!/^description:\s*.+/m.test(fm) && !/^description:\s*>/m.test(fm)) {
+      fail(
+        `SKILL.md in kit/.cursor/skills/${dir}/ is missing 'description' in frontmatter.`,
+        "Add a description field (max 1024 chars)."
+      );
+    }
+    ok(`kit/.cursor/skills/${dir}/SKILL.md`);
+  }
+} else {
+  ok("No skills directory yet — skipping.");
+}
+
+// ---------------------------------------------------------------------------
+// 1c) Copilot prompt body alignment (kit/.cursor/prompts ↔ kit/.github/prompts)
+// ---------------------------------------------------------------------------
+console.log("\n1c) Copilot prompt body alignment...");
+const PROMPT_MAP = [
+  { cursor: "00-session-kickoff.md", copilot: "session-kickoff.prompt.md" },
+  { cursor: "10-context-pack.md", copilot: "context-pack.prompt.md" },
+  { cursor: "20-router.md", copilot: "router.prompt.md" },
+  { cursor: "90-handoff-summary.md", copilot: "handoff-summary.prompt.md" },
+];
+
+function extractBody(content) {
+  if (content.startsWith("---\n")) {
+    const closingIdx = content.indexOf("\n---\n", 4);
+    if (closingIdx !== -1) {
+      return content.slice(closingIdx + 5).trim();
+    }
+  }
+  return content.trim();
+}
+
+const cursorPromptsDir = path.join(ROOT, "kit/.cursor/prompts");
+const copilotPromptsDir = path.join(ROOT, "kit/.github/prompts");
+
+if (fs.existsSync(copilotPromptsDir)) {
+  for (const { cursor: cursorFile, copilot: copilotFile } of PROMPT_MAP) {
+    const cursorPath = path.join(cursorPromptsDir, cursorFile);
+    const copilotPath = path.join(copilotPromptsDir, copilotFile);
+    if (!fs.existsSync(copilotPath)) {
+      fail(
+        `Missing Copilot prompt file: kit/.github/prompts/${copilotFile}`,
+        `Create it from kit/.cursor/prompts/${cursorFile} with .prompt.md YAML frontmatter.`
+      );
+    }
+    const cursorBody = extractBody(fs.readFileSync(cursorPath, "utf8"));
+    const copilotBody = extractBody(fs.readFileSync(copilotPath, "utf8"));
+    if (cursorBody !== copilotBody) {
+      fail(
+        `Prompt body drift: kit/.cursor/prompts/${cursorFile} ≠ kit/.github/prompts/${copilotFile}`,
+        "Update the Copilot prompt file body to match the Cursor prompt (below the --- fence)."
+      );
+    }
+    ok(`${cursorFile} ↔ ${copilotFile}`);
+  }
+} else {
+  ok("No Copilot prompts directory yet — skipping.");
 }
 
 // ---------------------------------------------------------------------------

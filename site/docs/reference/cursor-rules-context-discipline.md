@@ -24,6 +24,7 @@ Source: `.cursor/rules/30-context-discipline.mdc`
 ```
 ---
 description: Context discipline — small context, no invention, allowed values
+alwaysApply: true
 ---
 
 # Context discipline

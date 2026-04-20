@@ -31,7 +31,7 @@ Paste this at the start of a session. Fill in the placeholders.
 
 ---
 
-**Platform type:** [ data-platform | developer-platform ]
+**Platform type:** (use the slug from `docs/ai/ai-config.md`, e.g. `consumer-app`, `data-platform`, `saas-b2b`)
 
 **Exposure level:** [ internal | external-authenticated | public ]
 

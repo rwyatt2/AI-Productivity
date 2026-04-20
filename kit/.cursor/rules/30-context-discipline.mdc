@@ -1,5 +1,6 @@
 ---
 description: Context discipline — small context, no invention, allowed values
+alwaysApply: true
 ---
 
 # Context discipline

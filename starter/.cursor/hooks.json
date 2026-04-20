@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeShellExecution": [
+      {
+        "command": ".cursor/hooks/security-gate.mjs",
+        "failClosed": true,
+        "timeout": 5
+      }
+    ],
+    "beforeMCPExecution": [
+      {
+        "command": ".cursor/hooks/security-gate.mjs",
+        "failClosed": true,
+        "timeout": 5
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": ".cursor/hooks/security-gate.mjs",
+        "matcher": "Write"
+      }
+    ]
+  }
+}

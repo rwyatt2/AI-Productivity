@@ -1,5 +1,6 @@
 ---
 description: Implementation Package — output contract for IMPLEMENT mode
+alwaysApply: true
 ---
 
 # Implementation Package (output contract)

@@ -23,7 +23,20 @@ Antigravity uses:
 * `.agent/rules/*.md` for project rules (plain Markdown; same content as Cursor rules)
 * `docs/ai/*` for source-of-truth docs
 
+## Artefact mapping
+
+Antigravity has its own first-class artefacts. Here's how the kit's outputs map to them:
+
+| Kit artefact | Antigravity artefact | Notes |
+|---|---|---|
+| Spec Package | `implementation_plan.md` | Both are "plan before code." The agent presents it for your review. |
+| Handoff Summary | `walkthrough.md` | Both summarize what was done and what's next. |
+| Context Pack | `GEMINI.md` or `AGENTS.md` | Paste your switches (platform type, exposure, data sensitivity) here. |
+| Task breakdown (IMPLEMENT) | `task.md` | The agent's living checklist during implementation. |
+
+Antigravity stores these in `~/.gemini/antigravity/brain/<conversation-id>/`.
+
 ## Common mistakes
 
 * Not having the kit in the repo. Without `.agent/rules/`, Antigravity won’t follow the kit’s rules.
-* Expecting Cursor-specific features (e.g. `.cursor/prompts/`, `.cursor/agents/`) in Antigravity. Antigravity uses `.agent/rules/` only; use the same Session Kickoff, Context Pack, and Router text from the docs when you start a session.
+* Expecting Cursor-specific features (e.g. `.cursor/prompts/`, `.cursor/lenses/`) in Antigravity. Antigravity uses `.agent/rules/` only; use the same Session Kickoff, Context Pack, and Router text from the docs when you start a session.

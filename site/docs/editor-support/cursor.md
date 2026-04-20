@@ -25,8 +25,10 @@ Use it whenever you work in Cursor and want the AI to follow the kit’s workflo
 Cursor uses:
 * `.cursor/rules/*` for project rules
 * `.cursor/prompts/*` for copy/paste prompts
-* `.cursor/agents/*` for lenses
+* `.cursor/lenses/*` for kit lenses (role overlays — PM, Design, Security, etc.)
 * `docs/ai/*` for source-of-truth docs
+
+Note: `.cursor/agents/` is reserved by Cursor 2.4+ for its first-class **Subagents** primitive (single Markdown files with YAML `name` and `description`). The kit's lenses live under `.cursor/lenses/` to avoid colliding with that path; the directory is otherwise unused so users can drop real Cursor Subagents in `.cursor/agents/` without conflicts.
 
 ## Common mistakes
 

@@ -18,9 +18,10 @@ Follow these so Copilot matches the kit's operating system.
 - If `docs/ai/ai-config.md` exists, treat it as the source of truth.
 
 **Switches (set per task or in Context Pack)**
-- **Platform type:** data-platform | developer-platform
+- **Platform type:** use the slug from `docs/ai/ai-config.md` (e.g. `consumer-app`, `data-platform`, `saas-b2b`). If missing, ask one question and stop.
 - **Exposure level:** internal | external-authenticated | public
 - **Data sensitivity:** public | internal | confidential | restricted
 
 **Security**
-- When the work touches auth, roles, permissions, uploads, user-supplied URLs/rich text, integrations/webhooks, exports/downloads, external exposure, or sensitive data: include a short **threat-model-lite** (assets, entry points, threats, mitigations) and **security acceptance criteria** (testable or reviewable). Use the exposure level and data sensitivity above. No secrets in code or logs; least privilege.
+- No secrets in code, localStorage, or logs. Least privilege.
+- When the work touches auth, roles, permissions, uploads, webhooks, exports, external exposure, or sensitive data: the security stop gate applies — see `.github/instructions/security.instructions.md` for the full posture (auto-loaded by Copilot on matching paths).

@@ -24,6 +24,7 @@ Source: `.cursor/rules/10-spec-package.mdc`
 ```
 ---
 description: Spec Package — output contract for SPEC mode
+alwaysApply: true
 ---
 
 # Spec Package (output contract)

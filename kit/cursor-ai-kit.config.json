@@ -12,5 +12,8 @@
     "cursor": true,
     "copilot": true,
     "antigravity": true
+  },
+  "hooks": {
+    "enabled": true
   }
 }

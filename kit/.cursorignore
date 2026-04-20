@@ -33,3 +33,7 @@ out/
 *.pdf
 *.mp4
 *.webm
+
+# Hook outputs — audit logs and cache should not be sent to the AI
+.cursor/hooks-audit.log
+.cursor/hooks/cache/

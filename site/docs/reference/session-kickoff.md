@@ -37,6 +37,8 @@ Paste this at the start of a new session so the AI follows the kit protocol.
 * **Switch: SPEC** — Switch to planning/spec mode. Output scope, acceptance criteria, open questions. No code.
 * **Switch: IMPLEMENT** — Switch to implementation mode. Output files to change, plan, diffs, verification. Proceed with code.
 
+In Cursor: SPEC maps to Plan mode, IMPLEMENT maps to Agent mode.
+
 **Grounding:** If `docs/ai/ai-config.md` exists, treat it as authoritative. Do not invent endpoints, file paths, or dependencies.
 
 After pasting this, paste your **Context Pack** (platform type, exposure, data sensitivity, and 3–7 context items).
