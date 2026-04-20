@@ -26,4 +26,4 @@ Antigravity uses:
 ## Common mistakes
 
 * Not having the kit in the repo. Without `.agent/rules/`, Antigravity won’t follow the kit’s rules.
-* Expecting Cursor-specific features (e.g. `.cursor/prompts/`, `.cursor/agents/`) in Antigravity. Antigravity uses `.agent/rules/` only; use the same Session Kickoff, Context Pack, and Router text from the docs when you start a session.
+* Expecting Cursor-specific features (e.g. `.cursor/prompts/`, `.cursor/lenses/`) in Antigravity. Antigravity uses `.agent/rules/` only; use the same Session Kickoff, Context Pack, and Router text from the docs when you start a session.

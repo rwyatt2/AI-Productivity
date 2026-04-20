@@ -1,4 +1,20 @@
 {
-  "__comment": "MCP server config for Cursor. Add server entries under mcpServers as needed. See docs: getting-started/mcp. All servers are opt-in.",
-  "mcpServers": {}
+  "__comment": "MCP server config for Cursor. Each entry under mcpServers is an MCP server the agent can invoke. Trust posture: treat every server as a dependency — review source, pin versions, re-review on every change. See kit/.cursor/rules/40-security.mdc for the full MCP-trust rule. All MCP calls are audit-logged by the beforeMCPExecution hook.",
+  "__schema_reference": "https://cursor.com/docs/mcp",
+  "__trust_checklist": [
+    "1. Review the server's source code or documentation before enabling.",
+    "2. Pin to a specific version or commit hash — never use 'latest'.",
+    "3. Re-review this file on every change (CVE-2025-54136).",
+    "4. Check .cursor/hooks-audit.log periodically for unexpected MCP calls.",
+    "5. Remove servers you no longer use."
+  ],
+  "mcpServers": {},
+  "__example_DO_NOT_ENABLE": {
+    "description": "Example entry showing the schema. Rename this key to a real server name under mcpServers to enable.",
+    "command": "npx",
+    "args": ["-y", "@example/mcp-server@1.2.3"],
+    "env": {
+      "API_KEY": "use-env-var-or-vault-not-literal"
+    }
+  }
 }

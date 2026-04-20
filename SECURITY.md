@@ -26,6 +26,7 @@ We consider the following in scope for this repository:
 - **A threat-model-lite template with insecure defaults** — e.g. `kit/docs/ai/checklists/threat-model-lite.md` or security DoD that encourages skipping controls or omits critical steps.
 - **A prompt that leaks sensitive context** — e.g. a kit prompt that instructs the AI to include secrets, PII, or credentials in responses or logs.
 - **A sync script that writes to unintended paths** — e.g. `scripts/sync-starter-from-kit.mjs` or `scripts/sync-kit-snippets.mjs` writing outside the intended `starter/` or `site/docs/reference/` trees, or missing path checks that could allow path traversal.
+- **An MCP server configuration that bypasses trust review** — e.g. an `mcp.json` change that adds or modifies a server entry without re-review, or an unpinned server version. See `kit/.cursor/rules/40-security.mdc` for the full MCP-trust posture.
 
 ## Out of scope
 

@@ -46,6 +46,10 @@ The AI will clarify one thing if it needs to, then plan before coding.
 
 Full guide: **[Docs site](https://rwyatt2.github.io/AI-Productivity/)**.
 
+## How we test the kit
+
+Golden-trace evaluation dialogues live in [`docs/audit/eval/`](docs/audit/eval/). Each trace is a reference conversation that exercises a specific kit behavior (Advisories, security stop gate, route mismatch, MCP config review, handoff summary). Use them to verify the kit is working after changes.
+
 ## Docs workflow (maintainers)
 
 Reference docs are generated from **kit** so they stay in sync:

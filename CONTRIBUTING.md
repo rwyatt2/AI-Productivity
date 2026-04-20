@@ -26,9 +26,11 @@ From repo root: `npm install`. Then `cd site && npm install` for the docs site. 
 
 Create the file under `kit/.cursor/rules/` with a numeric prefix (see [kit/.cursor/rules/README.md](kit/.cursor/rules/README.md) for ranges). If it should appear in Reference, add an entry to the `FILES` array in `scripts/sync-kit-snippets.mjs`. Run `npm run sync:starter`, `npm run sync`, then `npm run doctor`. Commit any changed starter and reference files.
 
-## 5. Adding a new agent or prompt
+## 5. Adding a new lens or prompt
 
-Add the file under `kit/.cursor/agents/` or `kit/.cursor/prompts/`. Run `npm run sync:starter` (sync copies all of `.cursor/`). Add to `FILES` in `scripts/sync-kit-snippets.mjs` only if you want a reference page. Run `npm run sync` and `npm run doctor` as needed.
+Add the file under `kit/.cursor/lenses/` (for role overlays — PM, Design, Security, etc.) or `kit/.cursor/prompts/` (for copy-paste prompts). Run `npm run sync:starter` (sync copies all of `.cursor/`). Add to `FILES` in `scripts/sync-kit-snippets.mjs` only if you want a reference page. Run `npm run sync` and `npm run doctor` as needed.
+
+Do **not** put kit lens content under `kit/.cursor/agents/` — Cursor 2.4+ reserves that path for its first-class **Subagents** primitive (single `.md` files with YAML `name` and `description` frontmatter). Files there without that frontmatter will be treated as malformed subagent definitions.
 
 ## 6. Adding a new source-of-truth doc (kit/docs/ai/)
 

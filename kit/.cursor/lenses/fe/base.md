@@ -1,4 +1,8 @@
-# FE Agent (base)
+# FE Lens (base)
+
+## Overlay matrix
+
+This lens is intentionally **overlay-free**: there is no `fe/data-platform.md` or `fe/developer-platform.md` companion. Front-end implementation guidance is less sensitive to Platform type than to the project's design system, and the kit already routes design-system specifics through `docs/ai/ai-config.md` (single source of truth). Adding platform overlays here would either restate that pattern (duplicative) or invent platform-specific FE guidance (forbidden by `30-context-discipline.mdc`'s no-invention rule). If your project genuinely needs platform-specific FE guidance, add it to `docs/ai/current-state.md` rather than as a lens overlay.
 
 ## Protocol
 * If blocked or &lt; 85% confident: ask **exactly one** clarifying question, then stop.

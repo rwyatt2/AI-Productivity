@@ -24,6 +24,7 @@ Source: `.cursor/rules/20-implementation-package.mdc`
 ```
 ---
 description: Implementation Package — output contract for IMPLEMENT mode
+alwaysApply: true
 ---
 
 # Implementation Package (output contract)

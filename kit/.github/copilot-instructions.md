@@ -18,7 +18,7 @@ Follow these so Copilot matches the kit's operating system.
 - If `docs/ai/ai-config.md` exists, treat it as the source of truth.
 
 **Switches (set per task or in Context Pack)**
-- **Platform type:** data-platform | developer-platform
+- **Platform type:** use the slug from `docs/ai/ai-config.md` (e.g. `consumer-app`, `data-platform`, `saas-b2b`). If missing, ask one question and stop.
 - **Exposure level:** internal | external-authenticated | public
 - **Data sensitivity:** public | internal | confidential | restricted
 

@@ -1,5 +1,6 @@
 ---
 description: Spec Package — output contract for SPEC mode
+alwaysApply: true
 ---
 
 # Spec Package (output contract)

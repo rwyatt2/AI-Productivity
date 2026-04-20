@@ -25,8 +25,11 @@ function ok(label) {
 // 1) Kit completeness
 // ---------------------------------------------------------------------------
 const KIT_PATHS = [
-  { p: "kit/.cursor/agents/", dir: true },
+  { p: "kit/.cursor/hooks.json", dir: false },
+  { p: "kit/.cursor/hooks/", dir: true },
+  { p: "kit/.cursor/lenses/", dir: true },
   { p: "kit/.cursor/prompts/", dir: true },
+  { p: "kit/.cursor/skills/", dir: true },
   { p: "kit/.cursor/rules/", dir: true },
   { p: "kit/docs/ai/", dir: true },
   { p: "kit/.github/", dir: true },
@@ -50,6 +53,50 @@ for (const { p, dir } of KIT_PATHS) {
     fail(`Expected file: ${p}`, `Create it and re-run: npm run doctor`);
   }
   ok(p);
+}
+
+// ---------------------------------------------------------------------------
+// 1b) SKILL.md frontmatter validation
+// ---------------------------------------------------------------------------
+console.log("\n1b) SKILL.md frontmatter validation...");
+const SKILLS_DIR = path.join(ROOT, "kit/.cursor/skills");
+if (fs.existsSync(SKILLS_DIR)) {
+  const skillDirs = fs.readdirSync(SKILLS_DIR).filter((d) =>
+    fs.statSync(path.join(SKILLS_DIR, d)).isDirectory()
+  );
+  for (const dir of skillDirs) {
+    const skillPath = path.join(SKILLS_DIR, dir, "SKILL.md");
+    if (!fs.existsSync(skillPath)) {
+      fail(
+        `Missing SKILL.md in kit/.cursor/skills/${dir}/`,
+        "Every skill directory must contain a SKILL.md file."
+      );
+    }
+    const content = fs.readFileSync(skillPath, "utf8");
+    const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+    if (!fmMatch) {
+      fail(
+        `SKILL.md in kit/.cursor/skills/${dir}/ is missing YAML frontmatter.`,
+        "Add --- delimited frontmatter with name and description fields."
+      );
+    }
+    const fm = fmMatch[1];
+    if (!/^name:\s*.+/m.test(fm)) {
+      fail(
+        `SKILL.md in kit/.cursor/skills/${dir}/ is missing 'name' in frontmatter.`,
+        "Add a name field (max 64 chars, lowercase letters/numbers/hyphens)."
+      );
+    }
+    if (!/^description:\s*.+/m.test(fm) && !/^description:\s*>/m.test(fm)) {
+      fail(
+        `SKILL.md in kit/.cursor/skills/${dir}/ is missing 'description' in frontmatter.`,
+        "Add a description field (max 1024 chars)."
+      );
+    }
+    ok(`kit/.cursor/skills/${dir}/SKILL.md`);
+  }
+} else {
+  ok("No skills directory yet — skipping.");
 }
 
 // ---------------------------------------------------------------------------
