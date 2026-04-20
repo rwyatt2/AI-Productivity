@@ -432,7 +432,7 @@ Each finding is `F-NN — Title`. Severity, affected files, evidence, fix direct
 | Cursor primitives (Plan mode, Subagents, Skills, Hooks, Rules schema, AGENTS.md support) | High | n/a |
 | GitHub Copilot 3-layer instructions | High | n/a |
 | AGENTS.md cross-tool standard | High | n/a |
-| Antigravity workspace rules path (`.agent/rules/` vs `.agents/rules/`) | **Low** (F-08) | Direct read of `antigravity.google/docs/agent` for the canonical path. |
+| Antigravity workspace rules path (`.agent/rules/` vs `.agents/rules/`) | **High** (F-08, resolved Phase 5) | Verified: `.agent/rules/` (singular) is correct. [T1] Google Codelabs "Getting Started with Google Antigravity" (current); [T2] antigravity.codes/blog/user-rules (2026) file tree. The `.agents/rules/` (plural) on the older Codelab page is legacy/typo. Skills path confirmed as `.agent/skills/` per [T1] Google Codelabs "Authoring Google Antigravity Skills" (current). |
 | MCP threat surface (CVEs, mitigations) | Medium-High | A current Cursor security advisory page enumerating active CVEs and patched versions. |
 | Whether `release-assets.yml` `continue-on-error` is a real ship-bug | Low (F-24) | One historical release whose reference-docs lagged kit by a version. |
 | Current state of `site/docs/getting-started/mcp.md` | Low (mentioned in F-11) | Reading the page directly. |

@@ -7,6 +7,8 @@ Source: `.agent/rules/20-implementation-package.md`
 ```
 # Implementation Package (output contract)
 
+> In Antigravity, the Implementation Package maps to the `task.md` (checklist) and `walkthrough.md` (proof of work) artefacts.
+
 When in **IMPLEMENT** mode, every implementation response must include an **Implementation Package** with these sections. If blocked or < 85% confident: ask **exactly one** question and stop.
 
 **Required sections:**

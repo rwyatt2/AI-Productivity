@@ -160,7 +160,13 @@ const sidebars: SidebarsConfig = {
                         "reference/antigravity-rules-testing",
                         "reference/antigravity-rules-context-discipline",
                         "reference/antigravity-rules-security",
-                        "reference/antigravity-rules-security-stop-gate"
+                        "reference/antigravity-rules-security-stop-gate",
+                        "reference/copilot-security-instructions",
+                        "reference/copilot-tests-instructions",
+                        "reference/copilot-prompt-session-kickoff",
+                        "reference/copilot-prompt-context-pack",
+                        "reference/copilot-prompt-router",
+                        "reference/copilot-prompt-handoff-summary"
                     ]
                 }
             ]

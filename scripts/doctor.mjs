@@ -100,6 +100,54 @@ if (fs.existsSync(SKILLS_DIR)) {
 }
 
 // ---------------------------------------------------------------------------
+// 1c) Copilot prompt body alignment (kit/.cursor/prompts ↔ kit/.github/prompts)
+// ---------------------------------------------------------------------------
+console.log("\n1c) Copilot prompt body alignment...");
+const PROMPT_MAP = [
+  { cursor: "00-session-kickoff.md", copilot: "session-kickoff.prompt.md" },
+  { cursor: "10-context-pack.md", copilot: "context-pack.prompt.md" },
+  { cursor: "20-router.md", copilot: "router.prompt.md" },
+  { cursor: "90-handoff-summary.md", copilot: "handoff-summary.prompt.md" },
+];
+
+function extractBody(content) {
+  if (content.startsWith("---\n")) {
+    const closingIdx = content.indexOf("\n---\n", 4);
+    if (closingIdx !== -1) {
+      return content.slice(closingIdx + 5).trim();
+    }
+  }
+  return content.trim();
+}
+
+const cursorPromptsDir = path.join(ROOT, "kit/.cursor/prompts");
+const copilotPromptsDir = path.join(ROOT, "kit/.github/prompts");
+
+if (fs.existsSync(copilotPromptsDir)) {
+  for (const { cursor: cursorFile, copilot: copilotFile } of PROMPT_MAP) {
+    const cursorPath = path.join(cursorPromptsDir, cursorFile);
+    const copilotPath = path.join(copilotPromptsDir, copilotFile);
+    if (!fs.existsSync(copilotPath)) {
+      fail(
+        `Missing Copilot prompt file: kit/.github/prompts/${copilotFile}`,
+        `Create it from kit/.cursor/prompts/${cursorFile} with .prompt.md YAML frontmatter.`
+      );
+    }
+    const cursorBody = extractBody(fs.readFileSync(cursorPath, "utf8"));
+    const copilotBody = extractBody(fs.readFileSync(copilotPath, "utf8"));
+    if (cursorBody !== copilotBody) {
+      fail(
+        `Prompt body drift: kit/.cursor/prompts/${cursorFile} ≠ kit/.github/prompts/${copilotFile}`,
+        "Update the Copilot prompt file body to match the Cursor prompt (below the --- fence)."
+      );
+    }
+    ok(`${cursorFile} ↔ ${copilotFile}`);
+  }
+} else {
+  ok("No Copilot prompts directory yet — skipping.");
+}
+
+// ---------------------------------------------------------------------------
 // 2) Starter sync check
 // ---------------------------------------------------------------------------
 console.log("\n2) Starter sync check...");

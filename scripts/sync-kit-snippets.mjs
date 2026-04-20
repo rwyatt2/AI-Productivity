@@ -38,7 +38,13 @@ const FILES = [
     { src: ".agent/rules/25-testing.md", dest: "antigravity-rules-testing.md", title: "Antigravity Rules - Testing (Reference)" },
     { src: ".agent/rules/30-context-discipline.md", dest: "antigravity-rules-context-discipline.md", title: "Antigravity Rules - Context Discipline (Reference)" },
     { src: ".agent/rules/40-security.md", dest: "antigravity-rules-security.md", title: "Antigravity Rules - Security (Reference)" },
-    { src: ".agent/rules/41-security-stop-gate.md", dest: "antigravity-rules-security-stop-gate.md", title: "Antigravity Rules - Security Stop Gate (Reference)" }
+    { src: ".agent/rules/41-security-stop-gate.md", dest: "antigravity-rules-security-stop-gate.md", title: "Antigravity Rules - Security Stop Gate (Reference)" },
+    { src: ".github/instructions/security.instructions.md", dest: "copilot-security-instructions.md", title: "Copilot Security Instructions (Reference)" },
+    { src: ".github/instructions/tests.instructions.md", dest: "copilot-tests-instructions.md", title: "Copilot Tests Instructions (Reference)" },
+    { src: ".github/prompts/session-kickoff.prompt.md", dest: "copilot-prompt-session-kickoff.md", title: "Copilot Prompt - Session Kickoff (Reference)" },
+    { src: ".github/prompts/context-pack.prompt.md", dest: "copilot-prompt-context-pack.md", title: "Copilot Prompt - Context Pack (Reference)" },
+    { src: ".github/prompts/router.prompt.md", dest: "copilot-prompt-router.md", title: "Copilot Prompt - Router (Reference)" },
+    { src: ".github/prompts/handoff-summary.prompt.md", dest: "copilot-prompt-handoff-summary.md", title: "Copilot Prompt - Handoff Summary (Reference)" }
 ];
 
 // Contextual docs and steps for each reference page (keyed by dest filename).
@@ -401,6 +407,110 @@ The **Context Pack** is a short message you paste into chat at the start of a se
 
 - When the work touches auth, uploads, sensitive data, or external systems (see \`.cursor/rules/40-security.mdc\` triggers).
 - When in doubt, run it. Use the exact text below to copy or restore.
+
+## Exact text (from kit)
+`,
+
+    "copilot-security-instructions.md": `## What this is
+
+\`.github/instructions/security.instructions.md\` is a **path-specific Copilot instruction file** that activates when Copilot works on files under \`auth/\`, \`authz/\`, \`payments/\`, \`uploads/\`, \`webhooks/\`, or \`secrets/\` paths. It provides the full security posture: stop gate triggers, required context, threat-model-lite requirement, and indirect-injection defence.
+
+## When to use it
+
+- You **don't edit this file** for normal use. Copilot loads it automatically when touching matching paths.
+- If you want to add project-specific security rules, extend the file or create additional \`.instructions.md\` files.
+
+## Steps
+
+1. Ensure the kit is at your **project root** so Copilot sees \`.github/instructions/\`.
+2. Copilot applies these instructions automatically when editing files in security-sensitive paths.
+3. To see or copy the exact text, use the block below.
+
+## Exact text (from kit)
+`,
+
+    "copilot-tests-instructions.md": `## What this is
+
+\`.github/instructions/tests.instructions.md\` is a **path-specific Copilot instruction file** that activates when Copilot works on test or spec files (\`*.test.*\`, \`*.spec.*\`). It enforces the testing posture: require a Tests/rationale section, exclusion list, and security-path override.
+
+## When to use it
+
+- You **don't edit this file** for normal use. Copilot loads it automatically when touching test files.
+- Use it as reference when reviewing that Copilot provided a test story for code changes.
+
+## Steps
+
+1. Ensure the kit is at your **project root** so Copilot sees \`.github/instructions/\`.
+2. Copilot applies these instructions automatically when editing test/spec files.
+3. To see or copy the exact text, use the block below.
+
+## Exact text (from kit)
+`,
+
+    "copilot-prompt-session-kickoff.md": `## What this is
+
+\`.github/prompts/session-kickoff.prompt.md\` is a **Copilot prompt file** that you invoke in VS Code Copilot Chat via \`/session-kickoff\`. It sets SPEC-first, 85% gate, one-question protocol, and switch commands.
+
+## When to use it
+
+- At the **start of a new Copilot Chat session** to anchor the AI to the kit's protocol.
+- Same content as the Cursor prompt (\`.cursor/prompts/00-session-kickoff.md\`), with Copilot-compatible YAML frontmatter.
+
+## Steps
+
+1. In VS Code Copilot Chat, type \`/session-kickoff\` to invoke the prompt.
+2. Follow up with \`/context-pack\` to provide your task context.
+
+## Exact text (from kit)
+`,
+
+    "copilot-prompt-context-pack.md": `## What this is
+
+\`.github/prompts/context-pack.prompt.md\` is a **Copilot prompt file** invoked via \`/context-pack\`. It provides the Context Pack template: platform type, exposure level, data sensitivity, and 3–7 context items.
+
+## When to use it
+
+- At the **start of a session** (after Session Kickoff) or when **switching tasks**.
+- Fill the placeholders so the AI knows the security and platform context.
+
+## Steps
+
+1. In VS Code Copilot Chat, type \`/context-pack\`.
+2. Fill in: platform type, exposure level, data sensitivity, and 3–7 relevant items.
+
+## Exact text (from kit)
+`,
+
+    "copilot-prompt-router.md": `## What this is
+
+\`.github/prompts/router.prompt.md\` is a **Copilot prompt file** invoked via \`/router\`. It tells the AI how to choose between SPEC and IMPLEMENT behavior using the Context Pack.
+
+## When to use it
+
+- When the AI is mixing planning and code in one response — invoke \`/router\` to enforce the split.
+- When you need SPEC/IMPLEMENT routing based on the Context Pack values.
+
+## Steps
+
+1. Ensure your Context Pack is in the chat.
+2. In VS Code Copilot Chat, type \`/router\`.
+
+## Exact text (from kit)
+`,
+
+    "copilot-prompt-handoff-summary.md": `## What this is
+
+\`.github/prompts/handoff-summary.prompt.md\` is a **Copilot prompt file** invoked via \`/handoff-summary\`. It generates a max-8-bullet handoff summary when switching context or handing off to another session.
+
+## When to use it
+
+- When **switching mode** (e.g. SPEC → IMPLEMENT) so the next response starts with a summary.
+- When **handing off** to a teammate or a new chat session.
+
+## Steps
+
+1. In VS Code Copilot Chat, type \`/handoff-summary\`.
+2. The AI outputs a summary following the template (max 8 bullets, no code).
 
 ## Exact text (from kit)
 `,

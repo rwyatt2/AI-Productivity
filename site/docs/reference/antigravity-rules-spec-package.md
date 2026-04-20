@@ -7,6 +7,8 @@ Source: `.agent/rules/10-spec-package.md`
 ```
 # Spec Package (output contract)
 
+> In Antigravity, the Spec Package corresponds to the `implementation_plan.md` artefact.
+
 When in **SPEC** mode, every spec response must include a **Spec Package** with these sections. If blocked or < 85% confident: ask **exactly one** question and stop.
 
 **Required sections:**
