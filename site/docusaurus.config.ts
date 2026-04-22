@@ -16,7 +16,7 @@ const config: Config = {
 
   customFields: {
     kitVersion: kitConfig.version,
-    heroHighlight: 'now with Google Antigravity support',
+    heroHighlight: 'v1.5.0 · Skills, hooks & Cursor-native modes',
   },
 
   future: {

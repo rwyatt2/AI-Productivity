@@ -21,9 +21,9 @@ interface TerminalLine {
 
 const LINES: TerminalLine[] = [
   { type: 'cmd', prefix: 'user@cursor ~ % ', text: 'Please implement the auth system.' },
-  { type: 'ai-warn', prefix: 'AI Assistant (Safety Check): ', text: 'Wait. I see no auth spec in `docs/specs/auth.md`.\nShould I create a spec first? (Y/n)', instant: true },
-  { type: 'cmd-input', prefix: 'user@cursor ~ % ', text: 'Switch: SPEC' },
-  { type: 'ai-ok', prefix: 'AI Assistant (Spec Mode): ', text: 'Switching to SPEC mode. Planning the auth system\nbased on your `docs/ai/ai-config.md`.\nScanning for existing patterns...', instant: true },
+  { type: 'ai-warn', prefix: 'AI (Advisory): ', text: 'No auth spec found. Switching to Plan mode\nto scope this first — no code yet.', instant: true },
+  { type: 'cmd-input', prefix: 'user@cursor ~ % ', text: '[opens Cursor Plan mode]' },
+  { type: 'ai-ok', prefix: 'AI (Plan mode): ', text: 'Scoping auth system based on your\n`docs/ai/ai-config.md`. Scanning for existing patterns...', instant: true },
 ];
 
 const CHAR_DELAY = 38;
@@ -246,7 +246,7 @@ function Stats() {
   const items = [
     { target: 85, suffix: '%', label: 'confidence gate before any action' },
     { target: 1, suffix: '', label: 'question asked at a time, then it stops' },
-    { target: 2, suffix: '', label: 'modes: SPEC and IMPLEMENT — never mixed' },
+    { target: 8, suffix: '', label: 'invokable Skills for every phase of the workflow' },
     { target: 8, suffix: '', label: 'agent lenses covering the full stack' },
   ];
 
@@ -329,11 +329,11 @@ const STEPS = [
   {
     number: '3',
     title: 'Router',
-    desc: 'Picks SPEC or IMPLEMENT. Planning and coding never mix.',
+    desc: 'Routes to Plan, Agent, Debug, or Ask. Modes never mix.',
   },
   {
     number: '4',
-    title: 'SPEC → IMPLEMENT',
+    title: 'Plan → Agent',
     desc: 'Plan first. Code second. Security checks when it matters. Ship.',
   },
 ];
@@ -363,7 +363,7 @@ function HowItWorks() {
 // --- Floating hero badges ---
 
 const FLOATING_BADGES = [
-  { text: 'Switch: SPEC', cls: styles.floatBadge1 },
+  { text: 'Plan mode', cls: styles.floatBadge1 },
   { text: '85% gate', cls: styles.floatBadge2 },
   { text: 'one question', cls: styles.floatBadge3 },
   { text: 'copy into repo', cls: styles.floatBadge4 },
@@ -453,8 +453,8 @@ export default function Home(): JSX.Element {
             />
             <Feature
               tag="MODES"
-              title="Two modes."
-              description="SPEC (planning, PM, design) and IMPLEMENT (code, tests). Say Switch: SPEC or Switch: IMPLEMENT when needed."
+              title="Four modes."
+              description="Plan, Agent, Debug, and Ask — Cursor-native modes that map directly to the kit. Planning and coding never mix."
             />
             <Feature
               tag="GROUNDING"
@@ -464,7 +464,7 @@ export default function Home(): JSX.Element {
             <Feature
               tag="ADVISORIES"
               title="Advisories."
-              description="Every response starts with a route, recommended model, context risk, and switch recommendations so you stay in control."
+              description="Every response starts with Mode: Plan | Agent | Debug | Ask, recommended model, context risk, and switch recommendations so you stay in control."
             />
             <Feature
               tag="SECURITY"
@@ -473,8 +473,8 @@ export default function Home(): JSX.Element {
             />
             <Feature
               tag="PORTABLE"
-              title="Cursor and Copilot."
-              description="Cursor rules, GitHub Copilot instructions, and Google Antigravity rules — all pre-wired and shipping in the same zip."
+              title="Cursor, Copilot, and Antigravity."
+              description="Cursor rules, GitHub Copilot instructions, and Google Antigravity rules — all pre-wired with 8 invokable Skills and shipping in the same zip."
             />
           </div>
 

@@ -32,21 +32,21 @@ The AI will clarify one thing if it needs to, then plan before coding.
 
 ## What it does
 
-- **Spec-first** — Clarify the problem and acceptance criteria before code.
-- **Two modes** — **SPEC** (planning, PM, design, security) and **IMPLEMENT** (code, tests, safe diffs). Say `Switch: SPEC` or `Switch: IMPLEMENT` when the conversation goes the wrong way.
+- **Plan first** — Clarify the problem and acceptance criteria before code.
+- **Two modes** — **Plan mode** (planning, PM, design, security) and **Agent mode** (code, tests, safe diffs). In Cursor, toggle with Shift+Tab. In other editors, type `Switch: SPEC` or `Switch: IMPLEMENT`.
 - **One question at a time** — The AI asks exactly one question when it needs input, then continues.
-- **Advisories** — Every response starts with a short block: route (SPEC/IMPLEMENT), recommended model, context risk, and when to switch or start a new thread.
+- **Advisories** — Every response starts with a short block: route (Plan/Agent), recommended model, context risk, and when to switch or start a new thread.
 - **Security stop gate** — For high-risk work (auth, permissions, exports, uploads, integrations, confidential data), the AI asks one security question and stops until you answer.
 
-## How SPEC and IMPLEMENT work together
+## How Plan mode and Agent mode work together
 
 ```mermaid
 flowchart LR
   task([Your task]) --> route{Need a plan?}
-  route -->|yes| spec["SPEC mode\nClarify · Spec · Security"]
-  route -->|"code ready"| impl["IMPLEMENT mode\nFiles · Edits · Tests"]
-  spec -->|"Switch: IMPLEMENT"| impl
-  impl -->|"Switch: SPEC"| spec
+  route -->|yes| spec["Plan mode\nClarify · Spec · Security"]
+  route -->|"code ready"| impl["Agent mode\nFiles · Edits · Tests"]
+  spec -->|"Agent mode"| impl
+  impl -->|"Plan mode"| spec
 ```
 
 ## Get started
