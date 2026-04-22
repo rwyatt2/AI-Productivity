@@ -10,7 +10,7 @@ Rules, prompts, and config files you copy into your repo so Cursor (and Copilot 
 The kit works the same whether you're building a website, a Python app, an API, a CLI, or an internal tool. The workflow (plan → spec → code → security) is the same; only your tech stack and optional design system change.
 :::
 
-## Quick start {#quick-start}
+## Quick start
 
 :::tip (5 minutes)
 **Step 0 — Get your stuff together**  
