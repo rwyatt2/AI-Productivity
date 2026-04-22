@@ -1,5 +1,5 @@
 ---
-title: Cursor Rules - Implementation Package (Reference)
+title: Cursor Rules - Agent Output (Reference)
 ---
 
 ## What this is

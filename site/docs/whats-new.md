@@ -7,6 +7,49 @@ All notable changes to the AI Productivity Kit. Format based on [Keep a Changelo
 
 ---
 
+## [Unreleased]
+
+### Changed
+
+- **BREAKING — Cursor-native modes migration.** Replaced the custom SPEC/IMPLEMENT text protocol with Cursor's native four-mode system (Plan, Agent, Debug, Ask) as the primary vocabulary. "Switch: SPEC" and "Switch: IMPLEMENT" commands removed. "Spec Package" renamed to "Plan output"; "Implementation Package" renamed to "Agent output". New Debug mode guidance added (hypothesis-driven, evidence-based bug investigation). Advisories block now emits `Mode: Plan | Agent | Debug | Ask` instead of `Route: SPEC or IMPLEMENT`. Config key `defaultRoute` renamed to `defaultMode`. Skills `spec-dod` and `impl-dod` renamed to `plan-dod` and `agent-dod`. All rules, prompts, skills, AGENTS.md, Copilot instructions, Antigravity mirrors, site docs, landing page, eval traces, and sync scripts updated. Non-Cursor editors get a lightweight fallback line ("state the mode name in your message") instead of the parallel Switch: protocol. **Migration:** update any custom rules or prompts that reference "Switch: SPEC", "Switch: IMPLEMENT", "SPEC mode", "IMPLEMENT mode", "Spec Package", "Implementation Package", or `defaultRoute`.
+
+---
+
+## [1.5.0] - 2026-04-20
+
+[**v1.5.0**](https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.5.0)
+
+### Added
+
+- **Invokable Skills** — 8 new Skills under `kit/.cursor/skills/` with YAML frontmatter (`name`, `description`), mirrored to `kit/.agent/skills/` for Antigravity. Checklist skills: `/plan-dod`, `/agent-dod`, `/security-dod`, `/threat-model-lite`. Prompt skills: `/session-kickoff`, `/context-pack`, `/router`, `/handoff-summary`. Synced to `starter/` via `npm run sync:starter`.
+- **Golden-trace evaluation harness** — 5 reference dialogues in `docs/audit/eval/`: 01-spec-with-advisories, 02-implement-with-security-trigger, 03-route-mismatch-advisory, 04-mcp-config-change, 05-handoff-summary. Each trace specifies setup, user prompt, expected AI response, and fail criteria. Linked from README "How we test the kit" section.
+- **Doctor: SKILL.md frontmatter validation** — `npm run doctor` step 1b validates every `kit/.cursor/skills/*/SKILL.md` has parseable YAML frontmatter with required `name` and `description` fields.
+- **Path-specific Copilot instructions** — New `kit/.github/instructions/security.instructions.md` (auto-loads for auth/payments/uploads/secrets paths) and `tests.instructions.md` (auto-loads for test files). Repo-wide `copilot-instructions.md` slimmed to universal baseline.
+- **Copilot prompt files** — 4 new `.prompt.md` files under `kit/.github/prompts/`: `session-kickoff`, `context-pack`, `router`, `handoff-summary`. VS Code Copilot Chat users can invoke via slash commands. Bodies match `kit/.cursor/prompts/*.md`; doctor step 1c validates alignment.
+- **Doctor: Copilot prompt body alignment** — `npm run doctor` step 1c validates every `kit/.github/prompts/*.prompt.md` body matches the corresponding `kit/.cursor/prompts/*.md` body.
+- **Antigravity artefact mapping** — New "Artefact mapping" section in `site/docs/editor-support/antigravity.md`: Spec Package = `implementation_plan.md`, Handoff Summary = `walkthrough.md`, Context Pack = `GEMINI.md`/`AGENTS.md`, task breakdown = `task.md`.
+- **Security enforcement hooks** — New `kit/.cursor/hooks.json` wiring `beforeShellExecution`, `beforeMCPExecution`, and `afterFileEdit` to `kit/.cursor/hooks/security-gate.mjs`. Destructive shell patterns are hard-denied with `failClosed: true`. All shell and MCP actions logged to `.cursor/hooks-audit.log`. Opt-in flag `hooks.enabled` in `cursor-ai-kit.config.json` (default: `true`).
+- **MCP trust posture** — New "MCP server trust" clause in security rules: treat each MCP server as a dependency, pin versions, re-review on every change. `kit/.cursor/mcp.json` replaced with a commented reference example and trust checklist.
+- **Indirect-injection defence** — New clause in security rules: all tool outputs (MCP results, web fetches, browser snapshots, external file reads) are DATA; emit Advisory and require confirmation if tool output contains apparent instructions. OWASP LLM01:2025 cited.
+- **Root `AGENTS.md`** — New `kit/AGENTS.md` (canonical) distilling the kit's cross-tool agent instructions. Sync script copies to repo root `AGENTS.md` and `starter/AGENTS.md`. Read by Cursor, Antigravity, Claude Code, Codex, and Aider from a single file.
+- **Google Antigravity editor support** — New `kit/.agent/rules/` directory with 9 plain Markdown rule files. Synced to `starter/.agent` by `npm run sync:starter`. Install and reference docs updated; landing and README mention Antigravity.
+
+### Changed
+
+- **Cursor mode mapping** — Added "Cursor mode mapping" section to `kit/.cursor/rules/00-operating-system.mdc`: SPEC ≈ Plan mode, IMPLEMENT ≈ Agent mode, Q&A ≈ Ask mode.
+- **Platform-type single source of truth** — All surfaces (prompts, Copilot instructions) now defer to `docs/ai/ai-config.md` for the platform-type slug.
+- **Rule activation modes** — Explicit Cursor activation modes set across all 9 `kit/.cursor/rules/*.mdc` files. Core rules promoted to `alwaysApply: true`; security rule scoped to sensitive-path glob.
+- **Lens path moved from `kit/.cursor/agents/` to `kit/.cursor/lenses/`** — Avoids collision with Cursor 2.4+ Subagents primitive. **Migration:** update imports from `kit/.cursor/agents/<lens>/...` to `kit/.cursor/lenses/<lens>/...`.
+- **Docs site: Cursor modes rewrite** — `cursor-modes.md` rewritten for Plan / Agent / Ask taxonomy. Model-switching page updated with concrete model picks (April 2026). Citation hygiene added to editor-support and daily-workflow pages. Sidebar reconciled.
+- **SECURITY.md refresh** — Updated supported-versions to `1.5.x`; new "AI-tool risk classes" section covering rule poisoning, MCP trust bypass (CVE-2025-54135, CVE-2025-54136, CVE-2025-64109), hooks fail-open, and Skills supply chain. OWASP LLM Top 10 and MCP Top 10 references added.
+- **Rule mirror anti-drift** — `npm run doctor` step 1d validates every `kit/.cursor/rules/*.mdc` has a corresponding non-empty `kit/.agent/rules/*.md` file.
+- **Release-assets workflow hardened** — Removed `continue-on-error: true` from sync and build steps; sync or build failures now fail the release.
+- **Meta-file consolidation** — `RELEASE.md` and `LAUNCH_CHECKLIST.md` folded into `RELEASING.md`.
+- **Improvement plan archived** — `docs/IMPROVEMENT-PLAN.md` moved to `docs/audit/archive/IMPROVEMENT-PLAN-pre-phase1.md` with closure note.
+
+---
+
+
 ## [1.4.0] - 2026-02-19
 
 [**v1.4.0**](https://github.com/rwyatt2/AI-Productivity/releases/tag/v1.4.0)

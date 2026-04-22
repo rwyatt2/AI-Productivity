@@ -1,5 +1,5 @@
 ---
-title: Antigravity Rules - Implementation Package (Reference)
+title: Antigravity Rules - Agent Output (Reference)
 ---
 
 Source: `.agent/rules/20-implementation-package.md`

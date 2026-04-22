@@ -1,5 +1,5 @@
 ---
-title: Cursor Rules - Spec Package (Reference)
+title: Cursor Rules - Plan Output (Reference)
 ---
 
 ## What this is

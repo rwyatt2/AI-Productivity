@@ -1,5 +1,5 @@
 ---
-title: Antigravity Rules - Spec Package (Reference)
+title: Antigravity Rules - Plan Output (Reference)
 ---
 
 Source: `.agent/rules/10-spec-package.md`
