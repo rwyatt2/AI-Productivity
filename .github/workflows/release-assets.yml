@@ -68,7 +68,7 @@ jobs:
                   test -f ai-kit-only.zip && test -f ai-kit-starter.zip || (echo "Missing zip assets" && exit 1)
 
             - name: Create Release and upload assets
-              uses: softprops/action-gh-release@v2
+              uses: softprops/action-gh-release@v3
               with:
                   tag_name: ${{ github.event.inputs.tag_name || github.ref_name }}
                   files: |
